@@ -9,11 +9,27 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import CURRENCY
-from .database import Base, engine
+from .database import Base, SessionLocal, engine
+from .models import Store
 from .routers import alerts, auth, favorites, lists, products, stores
 
 # Create tables on startup if they don't exist (simple approach for an MVP).
 Base.metadata.create_all(bind=engine)
+
+
+def _seed_if_empty():
+    """On a fresh deployment the database is empty; load starter data once."""
+    db = SessionLocal()
+    try:
+        if db.query(Store).count() == 0:
+            from .seed import run
+
+            run()
+    finally:
+        db.close()
+
+
+_seed_if_empty()
 
 app = FastAPI(title="Pickly API", version="0.1.0")
 
