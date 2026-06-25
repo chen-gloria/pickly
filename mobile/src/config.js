@@ -8,6 +8,9 @@
 //       ipconfig getifaddr en0
 //   and make sure your phone and computer are on the same Wi-Fi.
 // ---------------------------------------------------------------------------
-export const API_URL = "http://localhost:8000";
+// TEMP for local phone testing — your Mac's LAN IP. When you deploy to Render,
+// swap this for your live URL, e.g. "https://pickly-api.onrender.com".
+// (Don't commit this LAN IP — it only works on your home Wi-Fi.)
+export const API_URL = "http://192.168.20.3:8000";
 
 export const CURRENCY_SYMBOL = "$"; // AUD
