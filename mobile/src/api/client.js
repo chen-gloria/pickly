@@ -1,6 +1,6 @@
 // Tiny wrapper around fetch() so every screen calls the backend the same way.
 import { API_URL, MOCK_MODE } from "../config";
-import { MOCK_PRODUCTS, MOCK_CATEGORIES, MOCK_USER } from "./mockData";
+import { MOCK_PRODUCTS, MOCK_CATEGORIES, MOCK_BEST_VALUE, MOCK_USER } from "./mockData";
 
 async function request(path, { method = "GET", body, token } = {}) {
   const headers = { "Content-Type": "application/json" };
@@ -51,6 +51,12 @@ export const api = {
   categories: () => MOCK_MODE
     ? Promise.resolve(MOCK_CATEGORIES)
     : request("/products/categories"),
+
+  // No dedicated endpoint on the real backend yet — falls back to a plain
+  // product list there rather than failing the whole screen.
+  bestValue: () => MOCK_MODE
+    ? Promise.resolve(MOCK_BEST_VALUE)
+    : request("/products").catch(() => []),
 
   productDetail: (id) => MOCK_MODE
     ? Promise.resolve(MOCK_PRODUCTS.find(p => p.id === Number(id)))

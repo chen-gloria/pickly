@@ -14,6 +14,7 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { api } from "../api/client";
 import ProductCard from "../components/ProductCard";
+import BestValueCard from "../components/BestValueCard";
 import { colors, radius, spacing } from "../theme";
 import {
   addRecentSearch,
@@ -28,7 +29,11 @@ const CATEGORY_ICONS = {
   Dairy: "cow",
   Bakery: "bread-slice",
   Meat: "food-drumstick",
-  Produce: "carrot",
+  Produce: "food-apple",
+  Pantry: "basket-outline",
+  Beverages: "bottle-soda-classic",
+  Frozen: "snowflake",
+  Snacks: "popcorn",
 };
 
 export default function SearchScreen({ navigation }) {
@@ -41,10 +46,12 @@ export default function SearchScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [recent, setRecent] = useState([]);
   const [showRecent, setShowRecent] = useState(false);
+  const [bestValue, setBestValue] = useState([]);
   const inputRef = useRef(null);
 
   useEffect(() => {
     api.categories().then(setCategories).catch(() => {});
+    api.bestValue().then(setBestValue).catch(() => {});
     getRecentSearches().then(setRecent);
   }, []);
 
@@ -229,6 +236,27 @@ export default function SearchScreen({ navigation }) {
         />
       </View>
 
+      {bestValue.length > 0 && (
+        <View style={styles.bestValueSection}>
+          <Text style={styles.bestValueTitle}>Best Value Today</Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={bestValue}
+            keyExtractor={(item) => `bv-${item.id}`}
+            contentContainerStyle={{ paddingHorizontal: spacing.md }}
+            renderItem={({ item }) => (
+              <BestValueCard
+                product={item}
+                onPress={() =>
+                  navigation.navigate("ProductDetail", { id: item.id, name: item.name })
+                }
+              />
+            )}
+          />
+        </View>
+      )}
+
       {loading ? (
         <ActivityIndicator style={{ marginTop: spacing.xl }} color={colors.primary} />
       ) : (
@@ -331,6 +359,9 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: -1000,
     zIndex: 5,
+    // This is just a dismiss target, not a button — it shouldn't look
+    // clickable. Pressable defaults to cursor:pointer on web otherwise.
+    ...(Platform.OS === "web" ? { cursor: "default" } : null),
   },
   recentCard: {
     position: "absolute",
@@ -378,13 +409,13 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: colors.text,
     marginHorizontal: spacing.md,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   chip: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
-    paddingHorizontal: spacing.md,
+    gap: 5,
+    paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.sm,
     backgroundColor: colors.card,
     borderRadius: radius.lg,
@@ -395,7 +426,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   chipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
-  chipText: { color: colors.primaryDark, fontSize: 13, fontWeight: "600" },
-  chipTextActive: { color: "#fff", fontWeight: "700" },
+  chipText: { color: colors.primaryDark, fontSize: 13, fontWeight: "400" },
+  chipTextActive: { color: "#fff", fontWeight: "400" },
+  bestValueSection: { marginTop: spacing.md },
+  bestValueTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.text,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+  },
   empty: { textAlign: "center", color: colors.textMuted, marginTop: spacing.xl },
 });
