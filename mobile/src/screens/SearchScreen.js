@@ -1,16 +1,24 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
+  Pressable,
   Text,
   TextInput,
   TouchableOpacity,
   View,
   StyleSheet,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { api } from "../api/client";
 import ProductCard from "../components/ProductCard";
 import { colors, radius, spacing } from "../theme";
+import {
+  addRecentSearch,
+  clearRecentSearches,
+  getRecentSearches,
+  removeRecentSearch,
+} from "../utils/recentSearches";
 
 export default function SearchScreen({ navigation }) {
   const [query, setQuery] = useState("");
@@ -18,9 +26,13 @@ export default function SearchScreen({ navigation }) {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [recent, setRecent] = useState([]);
+  const [showRecent, setShowRecent] = useState(false);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     api.categories().then(setCategories).catch(() => {});
+    getRecentSearches().then(setRecent);
   }, []);
 
   const load = useCallback(async (q, cat) => {
@@ -42,18 +54,91 @@ export default function SearchScreen({ navigation }) {
     return () => clearTimeout(t);
   }, [query, category, load]);
 
+  function onChangeQuery(text) {
+    setQuery(text);
+    setShowRecent(text.trim().length === 0);
+  }
+
+  function onFocusSearch() {
+    if (query.trim().length === 0) setShowRecent(true);
+  }
+
+  async function commitSearch(term) {
+    setQuery(term);
+    setShowRecent(false);
+    setRecent(await addRecentSearch(term));
+  }
+
+  function onSubmitSearch() {
+    if (query.trim()) commitSearch(query);
+  }
+
+  async function onRemoveRecent(term) {
+    setRecent(await removeRecentSearch(term));
+  }
+
+  async function onClearRecent() {
+    setRecent(await clearRecentSearches());
+    setShowRecent(false);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.searchBar}>
-        <Text style={{ fontSize: 16 }}>🔍</Text>
+        <Ionicons name="search" size={18} color={colors.textMuted} />
         <TextInput
+          ref={inputRef}
           style={styles.searchInput}
           placeholder="Search products, e.g. milk"
+          placeholderTextColor={colors.textMuted}
           value={query}
-          onChangeText={setQuery}
+          onChangeText={onChangeQuery}
+          onFocus={onFocusSearch}
+          onSubmitEditing={onSubmitSearch}
+          returnKeyType="search"
           autoCapitalize="none"
         />
+        <TouchableOpacity style={styles.scanButton} hitSlop={8}>
+          <Ionicons name="scan-outline" size={16} color={colors.primaryDark} />
+        </TouchableOpacity>
       </View>
+
+      {showRecent && (
+        <>
+          {/* Tapping outside the dropdown closes it without swallowing taps
+              on the rows/Clear button inside (those sit above this layer). */}
+          <Pressable style={styles.recentOverlay} onPress={() => setShowRecent(false)} />
+          <View style={styles.recentCard}>
+            <View style={styles.recentHeader}>
+              <Text style={styles.recentTitle}>Recent</Text>
+              {recent.length > 0 && (
+                <TouchableOpacity onPress={onClearRecent} hitSlop={8}>
+                  <Text style={styles.recentClear}>Clear</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+
+            {recent.length === 0 ? (
+              <Text style={styles.recentEmpty}>No recent searches yet.</Text>
+            ) : (
+              recent.map((term) => (
+                <View key={term} style={styles.recentRow}>
+                  <TouchableOpacity
+                    style={styles.recentRowMain}
+                    onPress={() => commitSearch(term)}
+                  >
+                    <Ionicons name="time-outline" size={16} color={colors.textMuted} />
+                    <Text style={styles.recentText}>{term}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => onRemoveRecent(term)} hitSlop={8}>
+                    <Ionicons name="close" size={16} color={colors.textMuted} />
+                  </TouchableOpacity>
+                </View>
+              ))
+            )}
+          </View>
+        </>
+      )}
 
       <View style={{ height: 44 }}>
         <FlatList
@@ -109,13 +194,68 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderRadius: radius.pill,
     margin: spacing.md,
-    paddingHorizontal: spacing.md,
+    paddingLeft: spacing.md,
+    paddingRight: spacing.xs,
+    height: 52,
+    gap: spacing.sm,
+    // Soft shadow instead of a hard border, matching the Figma search bar.
+    shadowColor: "#0F2A18",
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 1,
   },
-  searchInput: { flex: 1, padding: spacing.md, fontSize: 16 },
+  searchInput: { flex: 1, fontSize: 16, color: colors.text },
+  scanButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: colors.background,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  recentOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: -1000,
+    zIndex: 5,
+  },
+  recentCard: {
+    position: "absolute",
+    top: 68,
+    left: spacing.md,
+    right: spacing.md,
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    padding: spacing.md,
+    zIndex: 10,
+    shadowColor: "#0F2A18",
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
+  },
+  recentHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: spacing.sm,
+  },
+  recentTitle: { fontSize: 14, fontWeight: "700", color: colors.text },
+  recentClear: { fontSize: 13, fontWeight: "700", color: colors.primaryDark },
+  recentEmpty: { fontSize: 13, color: colors.textMuted, paddingVertical: spacing.sm },
+  recentRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingVertical: spacing.sm,
+  },
+  recentRowMain: { flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 },
+  recentText: { fontSize: 14, color: colors.text },
   chip: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
