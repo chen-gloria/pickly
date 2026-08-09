@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
+  Platform,
   Pressable,
   Text,
   TextInput,
@@ -63,14 +64,31 @@ export default function SearchScreen({ navigation }) {
     if (query.trim().length === 0) setShowRecent(true);
   }
 
-  async function commitSearch(term) {
-    setQuery(term);
-    setShowRecent(false);
-    setRecent(await addRecentSearch(term));
+  // Records `term` into recent-search history without changing what's typed
+  // — used on submit and on blur (the two moments that mean "the user is
+  // done with this search"), not on every keystroke.
+  async function recordSearch(term) {
+    const trimmed = term.trim();
+    if (!trimmed) return;
+    setRecent(await addRecentSearch(trimmed));
   }
 
   function onSubmitSearch() {
-    if (query.trim()) commitSearch(query);
+    recordSearch(query);
+    setShowRecent(false);
+  }
+
+  // Typing and then tapping away (e.g. to look at results) should count as
+  // a real search too, not just pressing Enter.
+  function onBlurSearch() {
+    recordSearch(query);
+  }
+
+  // Tapping a recent term re-runs it and re-bumps it to the front.
+  function selectRecent(term) {
+    setQuery(term);
+    setShowRecent(false);
+    recordSearch(term);
   }
 
   async function onRemoveRecent(term) {
@@ -94,12 +112,13 @@ export default function SearchScreen({ navigation }) {
           value={query}
           onChangeText={onChangeQuery}
           onFocus={onFocusSearch}
+          onBlur={onBlurSearch}
           onSubmitEditing={onSubmitSearch}
           returnKeyType="search"
           autoCapitalize="none"
         />
         <TouchableOpacity style={styles.scanButton} hitSlop={8}>
-          <Ionicons name="scan-outline" size={16} color={colors.primaryDark} />
+          <Ionicons name="barcode-outline" size={18} color={colors.primaryDark} />
         </TouchableOpacity>
       </View>
 
@@ -125,7 +144,7 @@ export default function SearchScreen({ navigation }) {
                 <View key={term} style={styles.recentRow}>
                   <TouchableOpacity
                     style={styles.recentRowMain}
-                    onPress={() => commitSearch(term)}
+                    onPress={() => selectRecent(term)}
                   >
                     <Ionicons name="time-outline" size={16} color={colors.textMuted} />
                     <Text style={styles.recentText}>{term}</Text>
@@ -207,7 +226,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     elevation: 1,
   },
-  searchInput: { flex: 1, fontSize: 16, color: colors.text },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: colors.text,
+    // RN Web renders this as a real <input> that gets the browser's default
+    // focus ring; we draw our own via the pill container instead.
+    ...(Platform.OS === "web" ? { outlineStyle: "none" } : null),
+  },
   scanButton: {
     width: 36,
     height: 36,
@@ -230,7 +256,12 @@ const styles = StyleSheet.create({
     left: spacing.md,
     right: spacing.md,
     backgroundColor: colors.card,
-    borderRadius: radius.lg,
+    // Square top corners so this reads as an extension of the search bar
+    // right above it, not a separate floating card.
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderBottomLeftRadius: radius.lg,
+    borderBottomRightRadius: radius.lg,
     padding: spacing.md,
     zIndex: 10,
     shadowColor: "#0F2A18",
