@@ -10,6 +10,8 @@ export const colors = {
   border: "#E4E9E6",
   danger: "#E0533D",
   saving: "#1FAB5B",
+  saveBadgeBg: "#F6C945", // "Save $X" badge, matches Figma
+  star: "#F0A93A",
 };
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32 };
