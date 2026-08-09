@@ -38,7 +38,9 @@ function MainTabs() {
       <Tab.Screen
         name="Search"
         component={SearchScreen}
-        options={{ title: "Compare", tabBarIcon: tabIcon("🔍") }}
+        // This screen draws its own header (logo + profile/filter/favorite
+        // icons) to match the Figma design instead of the default bar.
+        options={{ title: "Compare", tabBarIcon: tabIcon("🔍"), headerShown: false }}
       />
       <Tab.Screen
         name="List"

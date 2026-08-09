@@ -39,13 +39,14 @@ export const api = {
     ? Promise.resolve(MOCK_USER)
     : request("/auth/me", { token }),
 
-  // Products
-  searchProducts: (q = "", category = "") => MOCK_MODE
+  // Products. `categories` is an array — any number can be active at once,
+  // matching if the product's category is any one of them; [] means no filter.
+  searchProducts: (q = "", categories = []) => MOCK_MODE
     ? Promise.resolve(MOCK_PRODUCTS.filter(p =>
         (!q || p.name.toLowerCase().includes(q.toLowerCase())) &&
-        (!category || p.category === category)
+        (categories.length === 0 || categories.includes(p.category))
       ))
-    : request(`/products?q=${encodeURIComponent(q)}&category=${encodeURIComponent(category)}`),
+    : request(`/products?q=${encodeURIComponent(q)}&category=${encodeURIComponent(categories.join(","))}`),
 
   categories: () => MOCK_MODE
     ? Promise.resolve(MOCK_CATEGORIES)

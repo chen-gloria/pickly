@@ -10,7 +10,8 @@ import {
   View,
   StyleSheet,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { api } from "../api/client";
 import ProductCard from "../components/ProductCard";
 import { colors, radius, spacing } from "../theme";
@@ -21,9 +22,20 @@ import {
   removeRecentSearch,
 } from "../utils/recentSearches";
 
+// Best-fit icon per category. Falls back to a generic tag icon for any
+// category the mock/real data introduces later that isn't listed here.
+const CATEGORY_ICONS = {
+  Dairy: "cow",
+  Bakery: "bread-slice",
+  Meat: "food-drumstick",
+  Produce: "carrot",
+};
+
 export default function SearchScreen({ navigation }) {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("");
+  // Multiple categories can be selected at once — an empty array means "no
+  // filter, show everything" (there's no separate "All" chip for that).
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,10 +48,10 @@ export default function SearchScreen({ navigation }) {
     getRecentSearches().then(setRecent);
   }, []);
 
-  const load = useCallback(async (q, cat) => {
+  const load = useCallback(async (q, cats) => {
     setLoading(true);
     try {
-      const data = await api.searchProducts(q, cat);
+      const data = await api.searchProducts(q, cats);
       // Fetch cheapest price for each product for the list display.
       setProducts(data);
     } catch (_) {
@@ -51,9 +63,17 @@ export default function SearchScreen({ navigation }) {
 
   // Debounced search as you type.
   useEffect(() => {
-    const t = setTimeout(() => load(query, category), 250);
+    const t = setTimeout(() => load(query, selectedCategories), 250);
     return () => clearTimeout(t);
-  }, [query, category, load]);
+  }, [query, selectedCategories, load]);
+
+  // Tapping a category adds it to the filter; tapping an already-selected
+  // one removes it again. Any number of categories can be active together.
+  function toggleCategory(cat) {
+    setSelectedCategories((prev) =>
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
+    );
+  }
 
   function onChangeQuery(text) {
     setQuery(text);
@@ -101,81 +121,108 @@ export default function SearchScreen({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchBar}>
-        <Ionicons name="search" size={18} color={colors.textMuted} />
-        <TextInput
-          ref={inputRef}
-          style={styles.searchInput}
-          placeholder="Search products, e.g. milk"
-          placeholderTextColor={colors.textMuted}
-          value={query}
-          onChangeText={onChangeQuery}
-          onFocus={onFocusSearch}
-          onBlur={onBlurSearch}
-          onSubmitEditing={onSubmitSearch}
-          returnKeyType="search"
-          autoCapitalize="none"
-        />
-        <TouchableOpacity style={styles.scanButton} hitSlop={8}>
-          <Ionicons name="barcode-outline" size={18} color={colors.primaryDark} />
-        </TouchableOpacity>
+    <SafeAreaView style={styles.container} edges={["top"]}>
+      <View style={styles.header}>
+        <View style={styles.logoBox}>
+          <Ionicons name="cart" size={22} color={colors.primaryDark} />
+        </View>
+        <View style={styles.headerIcons}>
+          <TouchableOpacity hitSlop={8} onPress={() => navigation.navigate("Profile")}>
+            <Ionicons name="person-outline" size={22} color={colors.primaryDark} />
+          </TouchableOpacity>
+          <TouchableOpacity hitSlop={8}>
+            <Ionicons name="options-outline" size={22} color={colors.primaryDark} />
+          </TouchableOpacity>
+          <TouchableOpacity hitSlop={8}>
+            <Ionicons name="heart-outline" size={22} color={colors.primaryDark} />
+          </TouchableOpacity>
+        </View>
       </View>
 
-      {showRecent && (
-        <>
-          {/* Tapping outside the dropdown closes it without swallowing taps
-              on the rows/Clear button inside (those sit above this layer). */}
-          <Pressable style={styles.recentOverlay} onPress={() => setShowRecent(false)} />
-          <View style={styles.recentCard}>
-            <View style={styles.recentHeader}>
-              <Text style={styles.recentTitle}>Recent</Text>
-              {recent.length > 0 && (
-                <TouchableOpacity onPress={onClearRecent} hitSlop={8}>
-                  <Text style={styles.recentClear}>Clear</Text>
-                </TouchableOpacity>
+      {/* The dropdown positions itself relative to THIS wrapper (not the
+          screen), so it always lines up with the bar no matter what sits
+          above it (header height, safe-area insets, etc). */}
+      <View style={styles.searchWrap}>
+        <View style={[styles.searchBar, showRecent && styles.searchBarConnected]}>
+          <Ionicons name="search" size={18} color={colors.textMuted} />
+          <TextInput
+            ref={inputRef}
+            style={styles.searchInput}
+            placeholder="Search products, e.g. milk"
+            placeholderTextColor={colors.textMuted}
+            value={query}
+            onChangeText={onChangeQuery}
+            onFocus={onFocusSearch}
+            onBlur={onBlurSearch}
+            onSubmitEditing={onSubmitSearch}
+            returnKeyType="search"
+            autoCapitalize="none"
+          />
+          <TouchableOpacity style={styles.scanButton} hitSlop={8}>
+            <Ionicons name="barcode-outline" size={18} color={colors.primaryDark} />
+          </TouchableOpacity>
+        </View>
+
+        {showRecent && (
+          <>
+            {/* Tapping outside the dropdown closes it without swallowing taps
+                on the rows/Clear button inside (those sit above this layer). */}
+            <Pressable style={styles.recentOverlay} onPress={() => setShowRecent(false)} />
+            <View style={styles.recentCard}>
+              <View style={styles.recentHeader}>
+                <Text style={styles.recentTitle}>Recent</Text>
+                {recent.length > 0 && (
+                  <TouchableOpacity onPress={onClearRecent} hitSlop={8}>
+                    <Text style={styles.recentClear}>Clear</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+
+              {recent.length === 0 ? (
+                <Text style={styles.recentEmpty}>No recent searches yet.</Text>
+              ) : (
+                recent.map((term) => (
+                  <View key={term} style={styles.recentRow}>
+                    <TouchableOpacity
+                      style={styles.recentRowMain}
+                      onPress={() => selectRecent(term)}
+                    >
+                      <Ionicons name="time-outline" size={16} color={colors.textMuted} />
+                      <Text style={styles.recentText}>{term}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => onRemoveRecent(term)} hitSlop={8}>
+                      <Ionicons name="close" size={16} color={colors.textMuted} />
+                    </TouchableOpacity>
+                  </View>
+                ))
               )}
             </View>
+          </>
+        )}
+      </View>
 
-            {recent.length === 0 ? (
-              <Text style={styles.recentEmpty}>No recent searches yet.</Text>
-            ) : (
-              recent.map((term) => (
-                <View key={term} style={styles.recentRow}>
-                  <TouchableOpacity
-                    style={styles.recentRowMain}
-                    onPress={() => selectRecent(term)}
-                  >
-                    <Ionicons name="time-outline" size={16} color={colors.textMuted} />
-                    <Text style={styles.recentText}>{term}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => onRemoveRecent(term)} hitSlop={8}>
-                    <Ionicons name="close" size={16} color={colors.textMuted} />
-                  </TouchableOpacity>
-                </View>
-              ))
-            )}
-          </View>
-        </>
-      )}
-
+      <Text style={styles.categoriesTitle}>Categories</Text>
       <View style={{ height: 44 }}>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={["", ...categories]}
-          keyExtractor={(item) => item || "all"}
+          data={categories}
+          keyExtractor={(item) => item}
           contentContainerStyle={{ paddingHorizontal: spacing.md }}
           renderItem={({ item }) => {
-            const selected = item === category;
+            const selected = selectedCategories.includes(item);
+            const iconName = CATEGORY_ICONS[item] || "tag-outline";
             return (
               <TouchableOpacity
                 style={[styles.chip, selected && styles.chipActive]}
-                onPress={() => setCategory(item)}
+                onPress={() => toggleCategory(item)}
               >
-                <Text style={[styles.chipText, selected && styles.chipTextActive]}>
-                  {item || "All"}
-                </Text>
+                <MaterialCommunityIcons
+                  name={iconName}
+                  size={15}
+                  color={selected ? "#fff" : colors.primaryDark}
+                />
+                <Text style={[styles.chipText, selected && styles.chipTextActive]}>{item}</Text>
               </TouchableOpacity>
             );
           }}
@@ -203,12 +250,33 @@ export default function SearchScreen({ navigation }) {
           )}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm,
+  },
+  logoBox: {
+    width: 44,
+    height: 44,
+    borderRadius: radius.md,
+    backgroundColor: colors.iconBg,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  headerIcons: { flexDirection: "row", alignItems: "center", gap: spacing.lg },
+  // Explicit zIndex here (not just on recentCard) so this whole wrapper is
+  // unambiguously compared against later siblings (Categories, product
+  // list) as one stacking unit — relying on recentCard's own zIndex alone
+  // doesn't reliably win against them on RN Web.
+  searchWrap: { zIndex: 10 },
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
@@ -225,6 +293,20 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 2 },
     elevation: 1,
+    // Must paint above recentOverlay (zIndex 5) once the dropdown is open,
+    // otherwise the overlay's own "pointer" cursor covers the bar and the
+    // input never gets real hover/click access to itself.
+    zIndex: 6,
+  },
+  // While the Recent panel is open, the bar's bottom corners go square and
+  // its shadow drops out — together with the panel's square top corners
+  // (recentCard below) this reads as one continuous shape, not two stacked
+  // cards.
+  searchBarConnected: {
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    shadowOpacity: 0,
+    elevation: 0,
   },
   searchInput: {
     flex: 1,
@@ -266,8 +348,12 @@ const styles = StyleSheet.create({
     zIndex: 10,
     shadowColor: "#0F2A18",
     shadowOpacity: 0.12,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 6 },
+    // A blurred shadow spreads `shadowRadius` px past the box's edge in
+    // every direction, including upward — with a small offset that leak
+    // shows as a seam right where this card meets the search bar above it.
+    // Keeping offset >= radius confines the shadow to the sides/bottom only.
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 12 },
     elevation: 6,
   },
   recentHeader: {
@@ -287,7 +373,17 @@ const styles = StyleSheet.create({
   },
   recentRowMain: { flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 },
   recentText: { fontSize: 14, color: colors.text },
+  categoriesTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.text,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+  },
   chip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     backgroundColor: colors.card,
@@ -299,7 +395,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   chipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
-  chipText: { color: colors.text, fontSize: 13 },
+  chipText: { color: colors.primaryDark, fontSize: 13, fontWeight: "600" },
   chipTextActive: { color: "#fff", fontWeight: "700" },
   empty: { textAlign: "center", color: colors.textMuted, marginTop: spacing.xl },
 });

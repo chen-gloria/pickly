@@ -14,6 +14,7 @@ export const colors = {
   saving: "#1FAB5B",
   saveBadgeBg: "#F6C945", // "Save $X" badge, matches Figma
   star: "#F0A93A",
+  iconBg: "#DBEFDF", // logo mark / icon-button tint, a shade past the page background
 };
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32 };
