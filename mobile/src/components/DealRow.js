@@ -6,15 +6,17 @@
 // card grid.
 import React from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import Sparkline from "./Sparkline";
+import VerdictBadge from "./VerdictBadge";
 import { colors, radius, spacing, type } from "../theme";
 import { dealVoice, compactNumber } from "../utils/dealVoice";
 import { timeAgo } from "../api/deals";
 
-export default function DealRow({ deal, rank, onPress }) {
+export default function DealRow({ deal, onPress }) {
+  const judgement = deal.judgement;
+
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.85}>
-      <Text style={styles.rank}>{String(rank).padStart(2, "0")}</Text>
-
       <View style={styles.thumbWrap}>
         {deal.image ? (
           <Image source={{ uri: deal.image }} style={styles.thumb} resizeMode="cover" />
@@ -35,9 +37,27 @@ export default function DealRow({ deal, rank, onPress }) {
           {deal.title}
         </Text>
 
-        <Text style={styles.voice} numberOfLines={1}>
-          {dealVoice(deal)}
-        </Text>
+        {/* Only badge a row when we actually have a call to make. Stamping
+            "TRACKING" on nearly every row would put our data-collection
+            status where the user's benefit should be, and repeated forty
+            times it just reads as "this app isn't ready yet". Unjudged rows
+            instead show what IS true and useful today — the community's
+            read, or the retailer's own claim, attributed. */}
+        {judgement?.confident ? (
+          <View style={styles.judgeRow}>
+            <VerdictBadge verdict={judgement.verdict} small />
+            <Text style={styles.reason} numberOfLines={1}>
+              {judgement.detail}
+            </Text>
+            <Sparkline series={judgement.series} width={52} height={18} />
+          </View>
+        ) : (
+          <Text style={styles.voice} numberOfLines={1}>
+            {judgement?.detail?.startsWith("Claimed")
+              ? judgement.detail
+              : dealVoice(deal)}
+          </Text>
+        )}
 
         <View style={styles.footer}>
           {deal.price != null && <Text style={styles.price}>${deal.price.toFixed(2)}</Text>}
@@ -65,14 +85,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
   },
-  rank: {
-    width: 26,
-    fontSize: 17,
-    fontWeight: "800",
-    color: colors.textFaint,
-    marginTop: 2,
-    letterSpacing: -0.5,
-  },
   thumbWrap: {
     width: 66,
     height: 66,
@@ -88,6 +100,8 @@ const styles = StyleSheet.create({
   age: { color: colors.textFaint, fontSize: 11 },
   title: { color: colors.text, ...type.body, lineHeight: 19, marginTop: 3 },
   voice: { color: colors.accent, fontSize: 12, fontWeight: "600", marginTop: 5, fontStyle: "italic" },
+  judgeRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 7 },
+  reason: { flex: 1, color: colors.textMuted, fontSize: 11.5, fontWeight: "600" },
   footer: { flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.sm },
   price: { color: colors.saving, fontSize: 16, fontWeight: "800" },
   stat: { flexDirection: "row", alignItems: "center", gap: 3 },

@@ -1,12 +1,13 @@
-// The feed — the "open it when you're bored" surface.
+// The feed, organised by verdict.
 //
-// Shape is deliberately editorial rather than a uniform grid:
-//   hero (one lead story) → horizontal rail (variable reward, flick to
-//   reveal) → ranked vertical list (a countdown you scroll to finish).
-// Everything shown is real OzBargain community data — votes, comments,
-// timestamps. We use genuine social proof instead of a manufactured
-// countdown clock, which is both more honest and more persuasive.
-import React, { useCallback, useEffect, useState } from "react";
+// The important design decision here: the verdict is not a badge bolted onto
+// a popularity ranking, it decides what you see and in what order. The screen
+// opens by answering one question — "is there anything worth buying today?" —
+// instead of handing over a list to evaluate yourself. Sections that need no
+// action (tracking, skipped) collapse, and the count of what we filtered out
+// is shown deliberately: proof that the app did work on the user's behalf is
+// worth more than the filtered items themselves.
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -20,12 +21,10 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DealHeroCard from "../components/DealHeroCard";
-import DealCard from "../components/DealCard";
 import DealRow from "../components/DealRow";
 import { fetchDeals, timeAgo, DEAL_SOURCE } from "../api/deals";
+import { groupByVerdict, trackingDays as getTrackingDays } from "../utils/priceHistory";
 import { colors, radius, spacing, type } from "../theme";
-
-const RAIL_COUNT = 6;
 
 export default function DealsScreen({ navigation }) {
   const [deals, setDeals] = useState([]);
@@ -33,6 +32,10 @@ export default function DealsScreen({ navigation }) {
   const [source, setSource] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  // Tracking starts open on purpose. Until history accrues almost everything
+  // is unjudged, and a screen that collapses all of it looks broken on day
+  // one — people should still be able to browse while the record builds.
+  const [expanded, setExpanded] = useState({ wait: true, tracking: true, skip: false });
 
   const load = useCallback(async () => {
     const res = await fetchDeals();
@@ -52,15 +55,48 @@ export default function DealsScreen({ navigation }) {
     setRefreshing(false);
   }, [load]);
 
-  // Every deal keeps its canonical OzBargain link — that's both the right
-  // attribution and where the actual discussion/verification lives.
   function openDeal(deal) {
     Linking.openURL(deal.url).catch(() => {});
   }
 
-  const hero = deals[0];
-  const rail = deals.slice(1, 1 + RAIL_COUNT);
-  const feed = deals.slice(1 + RAIL_COUNT);
+  function toggle(section) {
+    setExpanded((prev) => ({ ...prev, [section]: !prev[section] }));
+  }
+
+  const buckets = useMemo(() => groupByVerdict(deals), [deals]);
+  const trackingDays = useMemo(() => getTrackingDays(), []);
+
+  // Flatten into one list so the whole screen scrolls as a unit, with
+  // section headers injected as rows.
+  const rows = useMemo(() => {
+    const out = [];
+    const push = (key, label, hint, items, collapsible) => {
+      if (!items.length) return;
+      out.push({ type: "header", key: `h-${key}`, section: key, label, hint, count: items.length, collapsible });
+      if (!collapsible || expanded[key]) {
+        for (const d of items) out.push({ type: "deal", key: `d-${d.id}`, deal: d });
+      }
+    };
+
+    push("buy", "We'd buy these", "we can show you why", buckets.buy, false);
+    push("wait", "Close, but not the lowest", "you could do better", buckets.wait, true);
+    push("tracking", "Today's deals", "ranked by community votes", buckets.tracking, true);
+    push("skip", "We'd skip these", "cheaper before", buckets.skip, true);
+    return out;
+  }, [buckets, expanded]);
+
+  const headline =
+    buckets.buy.length > 0
+      ? `${buckets.buy.length} worth buying`
+      : `${deals.length} deals today`;
+
+  // Prefer to lead with something we can actually vouch for. When nothing
+  // qualifies yet, fall back to the community's top pick rather than an
+  // empty screen — the hero's kicker is phrased off votes ("TOP FIND RIGHT
+  // NOW"), so it stays an honest description and never implies we've
+  // verified the price.
+  const hero = buckets.buy[0] || deals[0] || null;
+  const heroIsVerified = buckets.buy.length > 0;
 
   if (loading) {
     return (
@@ -73,8 +109,8 @@ export default function DealsScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <FlatList
-        data={feed}
-        keyExtractor={(item) => `deal-${item.id}`}
+        data={rows}
+        keyExtractor={(item) => item.key}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}
@@ -83,24 +119,51 @@ export default function DealsScreen({ navigation }) {
             colors={[colors.primary]}
           />
         }
-        renderItem={({ item, index }) => (
-          <DealRow deal={item} rank={index + 1 + RAIL_COUNT + 1} onPress={() => openDeal(item)} />
-        )}
+        renderItem={({ item }) => {
+          if (item.type === "header") {
+            return (
+              <TouchableOpacity
+                style={styles.sectionHead}
+                activeOpacity={item.collapsible ? 0.6 : 1}
+                onPress={() => item.collapsible && toggle(item.section)}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.sectionTitle}>
+                    {item.label} <Text style={styles.sectionCount}>{item.count}</Text>
+                  </Text>
+                  <Text style={styles.sectionHint}>{item.hint}</Text>
+                </View>
+                {item.collapsible && (
+                  <Ionicons
+                    name={expanded[item.section] ? "chevron-up" : "chevron-down"}
+                    size={18}
+                    color={colors.textMuted}
+                  />
+                )}
+              </TouchableOpacity>
+            );
+          }
+          return <DealRow deal={item.deal} onPress={() => openDeal(item.deal)} />;
+        }}
         ListHeaderComponent={
           <View>
             <View style={styles.header}>
-              <View>
-                <Text style={styles.wordmark}>Pickly</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.kicker}>TODAY</Text>
+                <Text style={styles.headline}>{headline}</Text>
                 <View style={styles.statusRow}>
                   <View
                     style={[
                       styles.statusDot,
-                      { backgroundColor: source === DEAL_SOURCE.LIVE ? colors.primary : colors.textFaint },
+                      {
+                        backgroundColor:
+                          source === DEAL_SOURCE.LIVE ? colors.primary : colors.textFaint,
+                      },
                     ]}
                   />
                   <Text style={styles.statusText}>
-                    {deals.length} deals
-                    {capturedAt ? ` · updated ${timeAgo(capturedAt)}` : ""}
+                    {deals.length} checked
+                    {capturedAt ? ` · ${timeAgo(capturedAt)}` : ""}
                   </Text>
                 </View>
               </View>
@@ -117,49 +180,26 @@ export default function DealsScreen({ navigation }) {
               </View>
             </View>
 
-            {hero && (
-              <>
-                <DealHeroCard deal={hero} onPress={() => openDeal(hero)} />
-                <View style={styles.attribution}>
-                  <Text style={styles.attributionText}>
-                    Community deals from OzBargain
-                  </Text>
-                </View>
-              </>
-            )}
+            {hero && <DealHeroCard deal={hero} onPress={() => openDeal(hero)} />}
 
-            {rail.length > 0 && (
-              <View style={styles.section}>
-                <View style={styles.sectionHead}>
-                  <Text style={styles.sectionTitle}>Heating Up</Text>
-                  <Text style={styles.sectionHint}>swipe →</Text>
-                </View>
-                <FlatList
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  data={rail}
-                  keyExtractor={(item) => `rail-${item.id}`}
-                  contentContainerStyle={{ paddingHorizontal: spacing.md }}
-                  renderItem={({ item }) => (
-                    <DealCard deal={item} onPress={() => openDeal(item)} />
-                  )}
-                />
-              </View>
-            )}
-
-            {feed.length > 0 && (
-              <View style={styles.sectionHead}>
-                <Text style={styles.sectionTitle}>The Rundown</Text>
-                <Text style={styles.sectionHint}>ranked by heat</Text>
+            {/* Says plainly why there are no verdicts yet and when they
+                start. A limitation you explain is a reason to come back; one
+                you hide just looks like a broken app. */}
+            {!heroIsVerified && (
+              <View style={styles.buildingNote}>
+                <Ionicons name="hourglass-outline" size={15} color={colors.accent} />
+                <Text style={styles.buildingText}>
+                  <Text style={styles.buildingStrong}>We're building price history.</Text>{" "}
+                  Once we've watched an item long enough, you'll see whether it's
+                  genuinely cheap — not just discounted. Day {trackingDays}.
+                </Text>
               </View>
             )}
           </View>
         }
         ListFooterComponent={
           <View style={styles.footer}>
-            <Text style={styles.footerText}>
-              That's everything worth flagging right now.
-            </Text>
+            <Text style={styles.footerText}>Community deals from OzBargain</Text>
             <Text style={styles.footerSub}>Pull down to refresh</Text>
           </View>
         }
@@ -173,29 +213,40 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "space-between",
     paddingHorizontal: spacing.md,
     paddingTop: spacing.sm,
     paddingBottom: spacing.md,
   },
-  wordmark: { ...type.display, color: colors.text },
-  statusRow: { flexDirection: "row", alignItems: "center", gap: 6, marginTop: 3 },
+  kicker: { ...type.micro, color: colors.textFaint },
+  headline: { ...type.display, color: colors.text, marginTop: 2 },
+  statusRow: { flexDirection: "row", alignItems: "center", gap: 6, marginTop: 5 },
   statusDot: { width: 6, height: 6, borderRadius: 3 },
   statusText: { color: colors.textMuted, ...type.caption },
   headerIcons: { flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: 6 },
-  attribution: { paddingHorizontal: spacing.md, paddingTop: spacing.sm },
-  attributionText: { color: colors.textFaint, fontSize: 11 },
-  section: { marginTop: spacing.lg },
+  buildingNote: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.sm,
+    marginHorizontal: spacing.md,
+    marginTop: spacing.md,
+    padding: spacing.md,
+    backgroundColor: colors.card,
+    borderRadius: radius.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  buildingText: { flex: 1, color: colors.textMuted, ...type.caption, lineHeight: 18 },
+  buildingStrong: { color: colors.text, fontWeight: "800" },
   sectionHead: {
     flexDirection: "row",
-    alignItems: "baseline",
-    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: spacing.md,
     marginTop: spacing.lg,
-    marginBottom: spacing.sm + 2,
+    marginBottom: spacing.sm,
   },
   sectionTitle: { ...type.section, color: colors.text },
-  sectionHint: { color: colors.textFaint, fontSize: 11, fontWeight: "600" },
+  sectionCount: { color: colors.textFaint },
+  sectionHint: { color: colors.textFaint, fontSize: 11, fontWeight: "600", marginTop: 2 },
   footer: { padding: spacing.xl, alignItems: "center" },
   footerText: { color: colors.textMuted, ...type.caption },
   footerSub: { color: colors.textFaint, fontSize: 11, marginTop: 4 },
