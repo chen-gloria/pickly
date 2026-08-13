@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
   },
-  saveBadgeText: { fontSize: 12, fontWeight: "700", color: colors.primaryDark },
+  saveBadgeText: { fontSize: 12, fontWeight: "700", color: colors.saveBadgeText },
   metaRow: {
     flexDirection: "row",
     alignItems: "center",

@@ -128,12 +128,12 @@ const styles = StyleSheet.create({
   name: { fontSize: 24, fontWeight: "800", color: colors.text },
   sub: { color: colors.textMuted, marginTop: spacing.xs, marginBottom: spacing.md },
   savingBanner: {
-    backgroundColor: "#E7F7EE",
+    backgroundColor: colors.cardHi,
     borderRadius: radius.md,
     padding: spacing.md,
     marginBottom: spacing.md,
   },
-  savingText: { color: colors.primaryDark, fontWeight: "700" },
+  savingText: { color: colors.saving, fontWeight: "700" },
   section: { fontSize: 16, fontWeight: "700", color: colors.text, marginBottom: spacing.sm },
   priceRow: {
     flexDirection: "row",
@@ -152,15 +152,15 @@ const styles = StyleSheet.create({
   bestTag: {
     fontSize: 10,
     fontWeight: "800",
-    color: colors.primaryDark,
-    backgroundColor: "#E7F7EE",
+    color: colors.saving,
+    backgroundColor: colors.cardHi,
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 6,
     marginRight: spacing.sm,
   },
   priceVal: { fontSize: 18, fontWeight: "700", color: colors.text },
-  priceValBest: { color: colors.primaryDark },
+  priceValBest: { color: colors.saving },
   actions: { marginTop: spacing.lg },
   primaryBtn: {
     backgroundColor: colors.primary,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     alignItems: "center",
   },
-  primaryBtnText: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  primaryBtnText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
   secondaryBtn: {
     flex: 1,
     backgroundColor: colors.card,

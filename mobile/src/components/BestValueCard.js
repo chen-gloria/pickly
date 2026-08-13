@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   iconSlot: { width: 40, height: 40, alignItems: "center", justifyContent: "center" },
   content: { flex: 1, marginLeft: spacing.sm, alignItems: "flex-start" },
-  category: { fontSize: 11, fontWeight: "700", color: colors.primaryDark, textTransform: "uppercase" },
+  category: { fontSize: 11, fontWeight: "700", color: colors.primary, textTransform: "uppercase" },
   name: { fontSize: 14, fontWeight: "700", color: colors.text, marginTop: 2 },
   price: { fontSize: 16, fontWeight: "800", color: colors.text, marginTop: 4 },
   saveBadge: {
@@ -61,5 +61,5 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     marginTop: 6,
   },
-  saveBadgeText: { fontSize: 11, fontWeight: "700", color: colors.primaryDark },
+  saveBadgeText: { fontSize: 11, fontWeight: "700", color: colors.saveBadgeText },
 });

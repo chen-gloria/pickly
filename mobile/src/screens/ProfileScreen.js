@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: spacing.md,
   },
-  avatarText: { color: "#fff", fontSize: 36, fontWeight: "800" },
+  avatarText: { color: colors.onPrimary, fontSize: 36, fontWeight: "800" },
   name: { fontSize: 22, fontWeight: "700", color: colors.text },
   email: { color: colors.textMuted, marginTop: spacing.xs },
   logout: {

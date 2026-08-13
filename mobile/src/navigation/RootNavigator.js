@@ -1,7 +1,7 @@
 // Decides what the user sees: auth screens when logged out, the main tabs when in.
 import React from "react";
 import { ActivityIndicator, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -10,6 +10,7 @@ import { colors } from "../theme";
 
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
+import DealsScreen from "../screens/DealsScreen";
 import SearchScreen from "../screens/SearchScreen";
 import ProductDetailScreen from "../screens/ProductDetailScreen";
 import ListScreen from "../screens/ListScreen";
@@ -18,6 +19,20 @@ import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+// Without this, React Navigation paints its own default background between
+// screens — a white flash on every push in an otherwise dark app.
+const navTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    background: colors.background,
+    card: colors.card,
+    text: colors.text,
+    border: colors.border,
+    primary: colors.primary,
+  },
+};
 
 // Simple emoji icons keep us dependency-free.
 function tabIcon(emoji) {
@@ -30,11 +45,20 @@ function MainTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
-        headerTintColor: "#fff",
-        tabBarActiveTintColor: colors.primaryDark,
+        headerStyle: { backgroundColor: colors.background },
+        headerTintColor: colors.text,
+        headerShadowVisible: false,
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textFaint,
+        tabBarStyle: { backgroundColor: colors.card, borderTopColor: colors.border },
       }}
     >
+      <Tab.Screen
+        name="Deals"
+        component={DealsScreen}
+        // The feed is the home surface — it draws its own editorial header.
+        options={{ tabBarIcon: tabIcon("🔥"), headerShown: false }}
+      />
       <Tab.Screen
         name="Search"
         component={SearchScreen}
@@ -66,18 +90,27 @@ export default function RootNavigator() {
 
   if (loading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: colors.background,
+        }}
+      >
         <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navTheme}>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: colors.primary },
-          headerTintColor: "#fff",
+          headerStyle: { backgroundColor: colors.background },
+          headerTintColor: colors.text,
+          headerShadowVisible: false,
+          contentStyle: { backgroundColor: colors.background },
         }}
       >
         {token ? (

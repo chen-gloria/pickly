@@ -60,7 +60,7 @@ export default function LoginScreen({ navigation }) {
 
       <TouchableOpacity style={styles.button} onPress={onLogin} disabled={busy}>
         {busy ? (
-          <ActivityIndicator color="#fff" />
+          <ActivityIndicator color={colors.onPrimary} />
         ) : (
           <Text style={styles.buttonText}>Log in</Text>
         )}
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: spacing.lg,
   },
-  logo: { fontSize: 40, fontWeight: "800", textAlign: "center", color: colors.primaryDark },
+  logo: { fontSize: 40, fontWeight: "800", textAlign: "center", color: colors.primary },
   tagline: {
     textAlign: "center",
     color: colors.textMuted,
@@ -105,6 +105,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: spacing.sm,
   },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
   link: { textAlign: "center", marginTop: spacing.lg, color: colors.text },
 });

@@ -131,17 +131,17 @@ export default function SearchScreen({ navigation }) {
     <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
         <View style={styles.logoBox}>
-          <Ionicons name="cart" size={22} color={colors.primaryDark} />
+          <Ionicons name="cart" size={22} color={colors.primary} />
         </View>
         <View style={styles.headerIcons}>
           <TouchableOpacity hitSlop={8} onPress={() => navigation.navigate("Profile")}>
-            <Ionicons name="person-outline" size={22} color={colors.primaryDark} />
+            <Ionicons name="person-outline" size={22} color={colors.text} />
           </TouchableOpacity>
           <TouchableOpacity hitSlop={8}>
-            <Ionicons name="options-outline" size={22} color={colors.primaryDark} />
+            <Ionicons name="options-outline" size={22} color={colors.text} />
           </TouchableOpacity>
           <TouchableOpacity hitSlop={8}>
-            <Ionicons name="heart-outline" size={22} color={colors.primaryDark} />
+            <Ionicons name="heart-outline" size={22} color={colors.text} />
           </TouchableOpacity>
         </View>
       </View>
@@ -166,7 +166,7 @@ export default function SearchScreen({ navigation }) {
             autoCapitalize="none"
           />
           <TouchableOpacity style={styles.scanButton} hitSlop={8}>
-            <Ionicons name="barcode-outline" size={18} color={colors.primaryDark} />
+            <Ionicons name="barcode-outline" size={18} color={colors.primary} />
           </TouchableOpacity>
         </View>
 
@@ -227,7 +227,7 @@ export default function SearchScreen({ navigation }) {
                 <MaterialCommunityIcons
                   name={iconName}
                   size={15}
-                  color={selected ? "#fff" : colors.primaryDark}
+                  color={selected ? colors.onPrimary : colors.primary}
                 />
                 <Text style={[styles.chipText, selected && styles.chipTextActive]}>{item}</Text>
               </TouchableOpacity>
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
     height: 52,
     gap: spacing.sm,
     // Soft shadow instead of a hard border, matching the Figma search bar.
-    shadowColor: "#0F2A18",
+    shadowColor: "#000",
     shadowOpacity: 0.06,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 2 },
@@ -348,7 +348,7 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: colors.background,
+    backgroundColor: colors.cardHi,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: radius.lg,
     padding: spacing.md,
     zIndex: 10,
-    shadowColor: "#0F2A18",
+    shadowColor: "#000",
     shadowOpacity: 0.12,
     // A blurred shadow spreads `shadowRadius` px past the box's edge in
     // every direction, including upward — with a small offset that leak
@@ -394,7 +394,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   recentTitle: { fontSize: 14, fontWeight: "700", color: colors.text },
-  recentClear: { fontSize: 13, fontWeight: "700", color: colors.primaryDark },
+  recentClear: { fontSize: 13, fontWeight: "700", color: colors.primary },
   recentEmpty: { fontSize: 13, color: colors.textMuted, paddingVertical: spacing.sm },
   recentRow: {
     flexDirection: "row",
@@ -426,8 +426,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   chipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
-  chipText: { color: colors.primaryDark, fontSize: 13, fontWeight: "400" },
-  chipTextActive: { color: "#fff", fontWeight: "400" },
+  chipText: { color: colors.text, fontSize: 13, fontWeight: "400" },
+  chipTextActive: { color: colors.onPrimary, fontWeight: "400" },
   bestValueSection: { marginTop: spacing.md },
   bestValueTitle: {
     fontSize: 16,

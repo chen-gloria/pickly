@@ -60,7 +60,7 @@ export default function SignupScreen() {
         onChangeText={setPassword}
       />
       <TouchableOpacity style={styles.button} onPress={onSignup} disabled={busy}>
-        {busy ? <ActivityIndicator color="#fff" /> : <Text style={styles.buttonText}>Create account</Text>}
+        {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text style={styles.buttonText}>Create account</Text>}
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );
@@ -78,5 +78,5 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   button: { backgroundColor: colors.primary, borderRadius: radius.md, padding: spacing.md, alignItems: "center" },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
 });
