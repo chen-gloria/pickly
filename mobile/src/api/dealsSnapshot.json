@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-13T14:01:14.931Z",
+  "capturedAt": "2026-08-13T19:58:17.660Z",
   "deals": [
     {
       "id": "970992",
@@ -10,13 +10,13 @@
       "store": "Giftcards.com.au",
       "price": null,
       "kind": "10% OFF",
-      "votes": 811,
-      "votesPos": 812,
+      "votes": 812,
+      "votesPos": 813,
       "comments": 714,
-      "clicks": 31216,
+      "clicks": 31263,
       "postedAt": "Tue, 11 Aug 2026 20:24:06 +1000",
       "category": "Groceries",
-      "heat": 165.65
+      "heat": 156.49
     },
     {
       "id": "971173",
@@ -27,13 +27,13 @@
       "store": "Flybuys",
       "price": null,
       "kind": "REWARDS",
-      "votes": 170,
-      "votesPos": 170,
+      "votes": 179,
+      "votesPos": 179,
       "comments": 71,
-      "clicks": 476,
+      "clicks": 500,
       "postedAt": "Thu, 13 Aug 2026 10:02:55 +1000",
       "category": "Groceries",
-      "heat": 45.8
+      "heat": 40.17
     },
     {
       "id": "971003",
@@ -44,13 +44,13 @@
       "store": "Muscle Chef",
       "price": 89.21,
       "kind": "DEAL",
-      "votes": 195,
-      "votesPos": 195,
+      "votes": 196,
+      "votesPos": 196,
       "comments": 140,
-      "clicks": 5636,
+      "clicks": 5678,
       "postedAt": "Tue, 11 Aug 2026 21:31:23 +1000",
       "category": "Groceries",
-      "heat": 36.38
+      "heat": 34.45
     },
     {
       "id": "971098",
@@ -64,10 +64,10 @@
       "votes": 110,
       "votesPos": 110,
       "comments": 14,
-      "clicks": 2033,
+      "clicks": 2037,
       "postedAt": "Wed, 12 Aug 2026 19:02:16 +1000",
       "category": "Health & Beauty",
-      "heat": 20.78
+      "heat": 18.87
     },
     {
       "id": "971278",
@@ -78,30 +78,13 @@
       "store": "Coles",
       "price": 1.5,
       "kind": "½ PRICE",
-      "votes": 37,
-      "votesPos": 37,
-      "comments": 15,
-      "clicks": 277,
+      "votes": 45,
+      "votesPos": 45,
+      "comments": 23,
+      "clicks": 388,
       "postedAt": "Thu, 13 Aug 2026 21:28:27 +1000",
       "category": "Groceries",
-      "heat": 20.55
-    },
-    {
-      "id": "971202",
-      "title": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend)",
-      "rawTitle": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend) @ Amazon AU (OOS) / Coles",
-      "url": "https://www.ozbargain.com.au/node/971202",
-      "image": "https://files.ozbargain.com.au/n/02/971202l.jpg?h=e0913bf6",
-      "store": "Amazon AU (OOS) / Coles",
-      "price": 6,
-      "kind": "DEAL",
-      "votes": 47,
-      "votesPos": 47,
-      "comments": 21,
-      "clicks": 1038,
-      "postedAt": "Thu, 13 Aug 2026 11:58:32 +1000",
-      "category": "Groceries",
-      "heat": 15.87
+      "heat": 16.57
     },
     {
       "id": "970736",
@@ -115,10 +98,27 @@
       "votes": 135,
       "votesPos": 135,
       "comments": 61,
-      "clicks": 3989,
+      "clicks": 3990,
       "postedAt": "Sun, 09 Aug 2026 13:58:33 +1000",
       "category": "Groceries",
-      "heat": 15.63
+      "heat": 15.18
+    },
+    {
+      "id": "971202",
+      "title": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend)",
+      "rawTitle": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend) @ Amazon AU (OOS) / Coles",
+      "url": "https://www.ozbargain.com.au/node/971202",
+      "image": "https://files.ozbargain.com.au/n/02/971202l.jpg?h=e0913bf6",
+      "store": "Amazon AU (OOS) / Coles",
+      "price": 6,
+      "kind": "DEAL",
+      "votes": 50,
+      "votesPos": 50,
+      "comments": 21,
+      "clicks": 1084,
+      "postedAt": "Thu, 13 Aug 2026 11:58:32 +1000",
+      "category": "Groceries",
+      "heat": 13.73
     },
     {
       "id": "971064",
@@ -132,10 +132,10 @@
       "votes": 64,
       "votesPos": 64,
       "comments": 45,
-      "clicks": 1427,
+      "clicks": 1444,
       "postedAt": "Wed, 12 Aug 2026 15:18:11 +1000",
       "category": "Groceries",
-      "heat": 14.32
+      "heat": 13.15
     },
     {
       "id": "971118",
@@ -149,10 +149,27 @@
       "votes": 58,
       "votesPos": 58,
       "comments": 37,
-      "clicks": 1326,
+      "clicks": 1347,
       "postedAt": "Wed, 12 Aug 2026 21:06:03 +1000",
       "category": "Health & Beauty",
-      "heat": 14.11
+      "heat": 12.76
+    },
+    {
+      "id": "971267",
+      "title": "100x Cetirizine 10mg $8.99 Delivered",
+      "rawTitle": "100x Cetirizine 10mg $8.99 Delivered @ PharmacySavings",
+      "url": "https://www.ozbargain.com.au/node/971267",
+      "image": "https://files.ozbargain.com.au/n/67/971267l.jpg?h=3b42e794",
+      "store": "PharmacySavings",
+      "price": 8.99,
+      "kind": "DEAL",
+      "votes": 37,
+      "votesPos": 37,
+      "comments": 0,
+      "clicks": 302,
+      "postedAt": "Thu, 13 Aug 2026 20:08:51 +1000",
+      "category": "Health & Beauty",
+      "heat": 10.29
     },
     {
       "id": "970843",
@@ -166,10 +183,10 @@
       "votes": 93,
       "votesPos": 93,
       "comments": 23,
-      "clicks": 855,
+      "clicks": 856,
       "postedAt": "Mon, 10 Aug 2026 17:14:55 +1000",
       "category": "Groceries",
-      "heat": 10.1
+      "heat": 9.71
     },
     {
       "id": "970540",
@@ -183,10 +200,10 @@
       "votes": 103,
       "votesPos": 103,
       "comments": 75,
-      "clicks": 1237,
+      "clicks": 1238,
       "postedAt": "Fri, 07 Aug 2026 12:14:20 +1000",
       "category": "Groceries",
-      "heat": 9.45
+      "heat": 9.26
     },
     {
       "id": "969996",
@@ -200,10 +217,10 @@
       "votes": 154,
       "votesPos": 154,
       "comments": 25,
-      "clicks": 2263,
+      "clicks": 2264,
       "postedAt": "Mon, 03 Aug 2026 02:03:06 +1000",
       "category": "Health & Beauty",
-      "heat": 8.81
+      "heat": 8.7
     },
     {
       "id": "970171",
@@ -220,7 +237,7 @@
       "clicks": 1028,
       "postedAt": "Tue, 04 Aug 2026 14:01:52 +1000",
       "category": "Groceries",
-      "heat": 8.77
+      "heat": 8.65
     },
     {
       "id": "971014",
@@ -234,10 +251,10 @@
       "votes": 42,
       "votesPos": 42,
       "comments": 31,
-      "clicks": 796,
+      "clicks": 808,
       "postedAt": "Wed, 12 Aug 2026 06:56:53 +1000",
       "category": "Groceries",
-      "heat": 8.26
+      "heat": 7.71
     },
     {
       "id": "969920",
@@ -251,10 +268,10 @@
       "votes": 103,
       "votesPos": 103,
       "comments": 54,
-      "clicks": 1624,
+      "clicks": 1627,
       "postedAt": "Sun, 02 Aug 2026 08:40:31 +1000",
       "category": "Groceries",
-      "heat": 6.58
+      "heat": 6.5
     },
     {
       "id": "970047",
@@ -268,10 +285,10 @@
       "votes": 49,
       "votesPos": 49,
       "comments": 40,
-      "clicks": 6420,
+      "clicks": 6421,
       "postedAt": "Mon, 03 Aug 2026 13:52:46 +1000",
       "category": "Groceries",
-      "heat": 6.36
+      "heat": 6.28
     },
     {
       "id": "970061",
@@ -288,23 +305,6 @@
       "clicks": 5438,
       "postedAt": "Mon, 03 Aug 2026 15:39:24 +1000",
       "category": "Health & Beauty",
-      "heat": 6.3
-    },
-    {
-      "id": "970726",
-      "title": "½ Price: Connoisseur Ice Cream Tub Varieties 1L $6.50",
-      "rawTitle": "½ Price: Connoisseur Ice Cream Tub Varieties 1L $6.50 @ Coles",
-      "url": "https://www.ozbargain.com.au/node/970726",
-      "image": "https://files.ozbargain.com.au/n/26/970726l.jpg?h=ea68645a",
-      "store": "Coles",
-      "price": 6.5,
-      "kind": "½ PRICE",
-      "votes": 51,
-      "votesPos": 51,
-      "comments": 46,
-      "clicks": 928,
-      "postedAt": "Sun, 09 Aug 2026 10:15:39 +1000",
-      "category": "Groceries",
       "heat": 6.22
     },
     {
@@ -322,7 +322,24 @@
       "clicks": 822,
       "postedAt": "Tue, 04 Aug 2026 20:39:54 +1000",
       "category": "Groceries",
-      "heat": 6.19
+      "heat": 6.1
+    },
+    {
+      "id": "970726",
+      "title": "½ Price: Connoisseur Ice Cream Tub Varieties 1L $6.50",
+      "rawTitle": "½ Price: Connoisseur Ice Cream Tub Varieties 1L $6.50 @ Coles",
+      "url": "https://www.ozbargain.com.au/node/970726",
+      "image": "https://files.ozbargain.com.au/n/26/970726l.jpg?h=ea68645a",
+      "store": "Coles",
+      "price": 6.5,
+      "kind": "½ PRICE",
+      "votes": 51,
+      "votesPos": 51,
+      "comments": 46,
+      "clicks": 930,
+      "postedAt": "Sun, 09 Aug 2026 10:15:39 +1000",
+      "category": "Groceries",
+      "heat": 6.05
     },
     {
       "id": "970023",
@@ -339,7 +356,7 @@
       "clicks": 2395,
       "postedAt": "Mon, 03 Aug 2026 10:57:51 +1000",
       "category": "Health & Beauty",
-      "heat": 5.98
+      "heat": 5.9
     },
     {
       "id": "970075",
@@ -356,7 +373,7 @@
       "clicks": 1944,
       "postedAt": "Mon, 03 Aug 2026 17:31:26 +1000",
       "category": "Groceries",
-      "heat": 5.85
+      "heat": 5.77
     },
     {
       "id": "970836",
@@ -373,7 +390,7 @@
       "clicks": 1327,
       "postedAt": "Mon, 10 Aug 2026 16:06:10 +1000",
       "category": "Groceries",
-      "heat": 5.83
+      "heat": 5.61
     },
     {
       "id": "968803",
@@ -390,7 +407,7 @@
       "clicks": 4433,
       "postedAt": "Thu, 23 Jul 2026 07:03:41 +1000",
       "category": "Health & Beauty",
-      "heat": 4.71
+      "heat": 4.68
     },
     {
       "id": "970192",
@@ -407,7 +424,7 @@
       "clicks": 816,
       "postedAt": "Tue, 04 Aug 2026 16:48:43 +1000",
       "category": "Groceries",
-      "heat": 4.66
+      "heat": 4.59
     },
     {
       "id": "969539",
@@ -421,10 +438,10 @@
       "votes": 58,
       "votesPos": 58,
       "comments": 22,
-      "clicks": 4946,
+      "clicks": 4947,
       "postedAt": "Wed, 29 Jul 2026 18:07:01 +1000",
       "category": "Groceries",
-      "heat": 4.6
+      "heat": 4.56
     },
     {
       "id": "969758",
@@ -441,7 +458,7 @@
       "clicks": 952,
       "postedAt": "Fri, 31 Jul 2026 14:01:56 +1000",
       "category": "Groceries",
-      "heat": 3.97
+      "heat": 3.94
     },
     {
       "id": "969693",
@@ -455,10 +472,10 @@
       "votes": 80,
       "votesPos": 80,
       "comments": 15,
-      "clicks": 648,
+      "clicks": 649,
       "postedAt": "Thu, 30 Jul 2026 22:07:44 +1000",
       "category": "Groceries",
-      "heat": 3.81
+      "heat": 3.77
     },
     {
       "id": "970235",
@@ -475,7 +492,7 @@
       "clicks": 899,
       "postedAt": "Wed, 05 Aug 2026 06:43:16 +1000",
       "category": "Groceries",
-      "heat": 3.71
+      "heat": 3.65
     },
     {
       "id": "970838",
@@ -489,10 +506,10 @@
       "votes": 30,
       "votesPos": 30,
       "comments": 4,
-      "clicks": 939,
+      "clicks": 942,
       "postedAt": "Mon, 10 Aug 2026 16:09:43 +1000",
       "category": "Health & Beauty",
-      "heat": 3.67
+      "heat": 3.53
     },
     {
       "id": "970702",
@@ -509,7 +526,7 @@
       "clicks": 632,
       "postedAt": "Sat, 08 Aug 2026 19:04:33 +1000",
       "category": "Groceries",
-      "heat": 3.44
+      "heat": 3.35
     },
     {
       "id": "970392",
@@ -526,7 +543,7 @@
       "clicks": 872,
       "postedAt": "Thu, 06 Aug 2026 10:01:36 +1000",
       "category": "Groceries",
-      "heat": 3.19
+      "heat": 3.14
     },
     {
       "id": "970625",
@@ -540,27 +557,10 @@
       "votes": 32,
       "votesPos": 32,
       "comments": 24,
-      "clicks": 542,
+      "clicks": 543,
       "postedAt": "Fri, 07 Aug 2026 22:58:57 +1000",
       "category": "Groceries",
-      "heat": 3.18
-    },
-    {
-      "id": "966116",
-      "title": "Sensodyne Repair & Protect Toothpaste 100g $6.15 ($5.53 via Subscribe & Save) + Delivery ($0 Prime/ $59 Spend)",
-      "rawTitle": "Sensodyne Repair & Protect Toothpaste 100g $6.15 ($5.53 via Subscribe & Save) + Delivery ($0 Prime/ $59 Spend) @ Amazon AU",
-      "url": "https://www.ozbargain.com.au/node/966116",
-      "image": "https://files.ozbargain.com.au/n/16/966116l.jpg?h=033b65ea",
-      "store": "Amazon AU",
-      "price": 6.15,
-      "kind": "DEAL",
-      "votes": 108,
-      "votesPos": 108,
-      "comments": 21,
-      "clicks": 2324,
-      "postedAt": "Thu, 02 Jul 2026 23:20:29 +1000",
-      "category": "Health & Beauty",
-      "heat": 3.15
+      "heat": 3.11
     },
     {
       "id": "968937",
@@ -577,7 +577,7 @@
       "clicks": 2790,
       "postedAt": "Fri, 24 Jul 2026 08:28:04 +1000",
       "category": "Health & Beauty",
-      "heat": 3.1
+      "heat": 3.08
     },
     {
       "id": "970118",
@@ -594,7 +594,7 @@
       "clicks": 1479,
       "postedAt": "Tue, 04 Aug 2026 01:46:43 +1000",
       "category": "Groceries",
-      "heat": 3.03
+      "heat": 2.99
     },
     {
       "id": "968402",
@@ -608,10 +608,10 @@
       "votes": 67,
       "votesPos": 67,
       "comments": 35,
-      "clicks": 1544,
+      "clicks": 1550,
       "postedAt": "Sun, 19 Jul 2026 19:58:02 +1000",
       "category": "Health & Beauty",
-      "heat": 2.95
+      "heat": 2.93
     },
     {
       "id": "969973",
@@ -625,10 +625,10 @@
       "votes": 41,
       "votesPos": 41,
       "comments": 24,
-      "clicks": 898,
+      "clicks": 899,
       "postedAt": "Sun, 02 Aug 2026 21:04:07 +1000",
       "category": "Health & Beauty",
-      "heat": 2.86
+      "heat": 2.82
     },
     {
       "id": "969993",
@@ -645,24 +645,7 @@
       "clicks": 564,
       "postedAt": "Mon, 03 Aug 2026 01:40:18 +1000",
       "category": "Groceries",
-      "heat": 2.78
-    },
-    {
-      "id": "969289",
-      "title": "Priceline Pharmacy: 15% Cashback (Uncapped, Excludes La Roche-Posay, Avène, Bioderma, BoostLab, 3%)",
-      "rawTitle": "Priceline Pharmacy: 15% Cashback (Uncapped, Excludes La Roche-Posay, Avène, Bioderma, BoostLab, 3%) @ TopCashback AU",
-      "url": "https://www.ozbargain.com.au/node/969289",
-      "image": "https://files.ozbargain.com.au/n/89/969289l.jpg?h=e1ea34a2",
-      "store": "TopCashback AU",
-      "price": null,
-      "kind": "REWARDS",
-      "votes": 58,
-      "votesPos": 58,
-      "comments": 12,
-      "clicks": 847,
-      "postedAt": "Mon, 27 Jul 2026 17:26:12 +1000",
-      "category": "Health & Beauty",
-      "heat": 2.63
+      "heat": 2.74
     },
     {
       "id": "966614",
@@ -679,7 +662,24 @@
       "clicks": 3281,
       "postedAt": "Tue, 07 Jul 2026 07:51:01 +1000",
       "category": "Health & Beauty",
-      "heat": 2.63
+      "heat": 2.62
+    },
+    {
+      "id": "969289",
+      "title": "Priceline Pharmacy: 15% Cashback (Uncapped, Excludes La Roche-Posay, Avène, Bioderma, BoostLab, 3%)",
+      "rawTitle": "Priceline Pharmacy: 15% Cashback (Uncapped, Excludes La Roche-Posay, Avène, Bioderma, BoostLab, 3%) @ TopCashback AU",
+      "url": "https://www.ozbargain.com.au/node/969289",
+      "image": "https://files.ozbargain.com.au/n/89/969289l.jpg?h=e1ea34a2",
+      "store": "TopCashback AU",
+      "price": null,
+      "kind": "REWARDS",
+      "votes": 58,
+      "votesPos": 58,
+      "comments": 12,
+      "clicks": 847,
+      "postedAt": "Mon, 27 Jul 2026 17:26:12 +1000",
+      "category": "Health & Beauty",
+      "heat": 2.61
     }
   ]
 }

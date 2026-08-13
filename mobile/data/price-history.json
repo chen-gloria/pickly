@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-13T14:16:04.392Z",
+  "updatedAt": "2026-08-13T19:58:17.170Z",
   "products": {
     "musclechef|chef-delivered-high-muscle-protein-subscription": {
       "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
@@ -1304,6 +1304,28 @@
           "votes": 33,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/967908"
+        }
+      ]
+    },
+    "pharmacysavings|100x-10mg-cetirizine-delivered": {
+      "key": "pharmacysavings|100x-10mg-cetirizine-delivered",
+      "store": "pharmacysavings",
+      "storeLabel": "PharmacySavings",
+      "tokens": [
+        "100x",
+        "10mg",
+        "cetirizine",
+        "delivered"
+      ],
+      "sizes": [],
+      "title": "100x Cetirizine 10mg $8.99 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 8.99,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971267"
         }
       ]
     }
