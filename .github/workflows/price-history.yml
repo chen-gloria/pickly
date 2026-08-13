@@ -1,0 +1,50 @@
+name: Record daily price history
+
+# The moat. Every day this doesn't run is a permanent hole in the record —
+# price history is the one asset a competitor cannot catch up on, because
+# they cannot buy back time. Keep it running even while the app is unfinished.
+on:
+  schedule:
+    # 19:10 UTC ≈ 05:10 AEST — after the Australian evening's deals have
+    # settled, and off the top of the hour to avoid GitHub's busiest minute.
+    - cron: "10 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: price-history
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # No install step: the recorder and its parser are dependency-free by
+      # design, so this can't break on a bad transitive dependency.
+      - name: Record today's prices
+        working-directory: mobile
+        run: node scripts/record-prices.js
+
+      - name: Refresh the bundled deals snapshot
+        working-directory: mobile
+        run: node scripts/fetch-ozbargain.js
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "pickly-bot"
+          git config user.email "actions@github.com"
+          git add mobile/data/price-history.json mobile/src/api/dealsSnapshot.json
+          if git diff --staged --quiet; then
+            echo "Nothing new today."
+          else
+            git commit -m "chore: price history for $(date -u +%Y-%m-%d)"
+            git push
+          fi

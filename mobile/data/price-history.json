@@ -1,0 +1,1311 @@
+{
+  "startedAt": "2026-08-13T14:16:04.379Z",
+  "updatedAt": "2026-08-13T14:16:04.392Z",
+  "products": {
+    "musclechef|chef-delivered-high-muscle-protein-subscription": {
+      "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
+      "store": "musclechef",
+      "storeLabel": "Muscle Chef",
+      "tokens": [
+        "chef",
+        "delivered",
+        "high",
+        "muscle",
+        "protein",
+        "subscription"
+      ],
+      "sizes": [],
+      "title": "Muscle Chef High Protein Pack (10 Meals) Subscription - $89.21 Delivered (New Customers Only)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 89.21,
+          "votes": 195,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971003"
+        }
+      ]
+    },
+    "amazonau|200ml-2pk-500ml-del-gel-men-nivea-power-shaving-shower|200ml+2pk+500ml": {
+      "key": "amazonau|200ml-2pk-500ml-del-gel-men-nivea-power-shaving-shower|200ml+2pk+500ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "200ml",
+        "2pk",
+        "500ml",
+        "del",
+        "gel",
+        "men",
+        "nivea",
+        "power",
+        "shaving",
+        "shower"
+      ],
+      "sizes": [
+        "200ml",
+        "2pk",
+        "500ml"
+      ],
+      "title": "NIVEA MEN Power Shower Gel 500ml 2pk $4.86 S&S (OOS), Shaving Gel 200ml 2pk $4.39 S&S & More + Del ($0 Prime/$59+)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 4.86,
+          "votes": 110,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971098"
+        }
+      ]
+    },
+    "coles|50g-bar-chocolate-milk-slab-whittakers|50g": {
+      "key": "coles|50g-bar-chocolate-milk-slab-whittakers|50g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "50g",
+        "bar",
+        "chocolate",
+        "milk",
+        "slab",
+        "whittakers"
+      ],
+      "sizes": [
+        "50g"
+      ],
+      "title": "½ Price Whittaker's Slab Milk Chocolate Bar 50g $1.50 (Was $3)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 1.5,
+          "votes": 38,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971278"
+        }
+      ]
+    },
+    "amazonauooscoles|30cm-50m-baking-multix-non-paper-stick": {
+      "key": "amazonauooscoles|30cm-50m-baking-multix-non-paper-stick",
+      "store": "amazonauooscoles",
+      "storeLabel": "Amazon AU (OOS) / Coles",
+      "tokens": [
+        "30cm",
+        "50m",
+        "baking",
+        "multix",
+        "non",
+        "paper",
+        "stick"
+      ],
+      "sizes": [],
+      "title": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 6,
+          "votes": 47,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971202"
+        }
+      ]
+    },
+    "amazonau|chewing-fresh-gum-mentos-pure-spearmint": {
+      "key": "amazonau|chewing-fresh-gum-mentos-pure-spearmint",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "chewing",
+        "fresh",
+        "gum",
+        "mentos",
+        "pure",
+        "spearmint"
+      ],
+      "sizes": [],
+      "title": "Mentos Pure Fresh Chewing Gum, Spearmint 10-Pack $17.50 ($15.75 S&S) (RRP $29.99) + Delivery ($0 Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 17.5,
+          "votes": 135,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970736"
+        }
+      ]
+    },
+    "chemistwarehouse|1150mg-glycinate-magnesium-natures-own-tablets": {
+      "key": "chemistwarehouse|1150mg-glycinate-magnesium-natures-own-tablets",
+      "store": "chemistwarehouse",
+      "storeLabel": "Chemist Warehouse",
+      "tokens": [
+        "1150mg",
+        "glycinate",
+        "magnesium",
+        "natures",
+        "own",
+        "tablets"
+      ],
+      "sizes": [],
+      "title": "Nature's Own Magnesium Glycinate 1150mg 300 Tablets $29.99 + Delivery ($0 C&C/ in-Store)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 29.99,
+          "votes": 58,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971118"
+        }
+      ]
+    },
+    "coles219more|1kg-457ml-borgs-cream-dazs-haagen-ice-pastizzi-spinach-tub-woolworths|1000g+457ml": {
+      "key": "coles219more|1kg-457ml-borgs-cream-dazs-haagen-ice-pastizzi-spinach-tub-woolworths|1000g+457ml",
+      "store": "coles219more",
+      "storeLabel": "Coles + 219 More",
+      "tokens": [
+        "1kg",
+        "457ml",
+        "borgs",
+        "cream",
+        "dazs",
+        "haagen",
+        "ice",
+        "pastizzi",
+        "spinach",
+        "tub",
+        "woolworths"
+      ],
+      "sizes": [
+        "1000g",
+        "457ml"
+      ],
+      "title": "½ Price: Haagen-Dazs Ice Cream Tub 457ml $7.00 @ Woolworths, Borg's Spinach Pastizzi 1kg $5.00",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 7,
+          "votes": 93,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/970843"
+        }
+      ]
+    },
+    "eatclub|as-back-card-credit-digital-dining-eatclub-online-pay-shop-woolworths|60cap": {
+      "key": "eatclub|as-back-card-credit-digital-dining-eatclub-online-pay-shop-woolworths|60cap",
+      "store": "eatclub",
+      "storeLabel": "EatClub",
+      "tokens": [
+        "as",
+        "back",
+        "card",
+        "credit",
+        "digital",
+        "dining",
+        "eatclub",
+        "online",
+        "pay",
+        "shop",
+        "woolworths"
+      ],
+      "sizes": [
+        "60cap"
+      ],
+      "title": "Shop Online at Woolworths, Pay with EatClub Digital Card & Get 10%-12% Back as Dining Credit ($60 Cap/Day)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 60,
+          "votes": 103,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970540"
+        }
+      ]
+    },
+    "amazonau|100g-del-protect-repair-sensodyne-toothpaste|100g": {
+      "key": "amazonau|100g-del-protect-repair-sensodyne-toothpaste|100g",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "100g",
+        "del",
+        "protect",
+        "repair",
+        "sensodyne",
+        "toothpaste"
+      ],
+      "sizes": [
+        "100g"
+      ],
+      "title": "Sensodyne Repair & Protect Toothpaste 100g $5.75 or $5.84 ($5.17 or $5.26 S&S) + Del ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 5.75,
+          "votes": 154,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969996"
+        }
+      ]
+    },
+    "limebluecoffee|1kg-beans-coffee-decaf-origin-single-teas|1000g": {
+      "key": "limebluecoffee|1kg-beans-coffee-decaf-origin-single-teas|1000g",
+      "store": "limebluecoffee",
+      "storeLabel": "Lime Blue Coffee",
+      "tokens": [
+        "1kg",
+        "beans",
+        "coffee",
+        "decaf",
+        "origin",
+        "single",
+        "teas"
+      ],
+      "sizes": [
+        "1000g"
+      ],
+      "title": "50% off Single Origin Coffee Beans 1kg $30.65, Decaf $35, 30% off Teas + Delivery ($0 with $99 Order, C&C)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 30.65,
+          "votes": 42,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971014"
+        }
+      ]
+    },
+    "woolworths|420g-bean-mexican-mix-style-woolworths|420g": {
+      "key": "woolworths|420g-bean-mexican-mix-style-woolworths|420g",
+      "store": "woolworths",
+      "storeLabel": "Woolworths",
+      "tokens": [
+        "420g",
+        "bean",
+        "mexican",
+        "mix",
+        "style",
+        "woolworths"
+      ],
+      "sizes": [
+        "420g"
+      ],
+      "title": "Woolworths Mexican Style 3 Bean Mix 420g $0.60",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 0.6,
+          "votes": 103,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969920"
+        }
+      ]
+    },
+    "costcomembers|30pk-bosch-choc-chunk-cookies-dishwasher-katoomba-kirkland-paratha-roti-sms4hti01a|30pk": {
+      "key": "costcomembers|30pk-bosch-choc-chunk-cookies-dishwasher-katoomba-kirkland-paratha-roti-sms4hti01a|30pk",
+      "store": "costcomembers",
+      "storeLabel": "Costco (Members)",
+      "tokens": [
+        "30pk",
+        "bosch",
+        "choc",
+        "chunk",
+        "cookies",
+        "dishwasher",
+        "katoomba",
+        "kirkland",
+        "paratha",
+        "roti",
+        "sms4hti01a"
+      ],
+      "sizes": [
+        "30pk"
+      ],
+      "title": "Katoomba Roti Paratha 30Pk $10.99, Bosch Dishwasher SMS4HTI01A $799.99, Kirkland 24 Choc Chunk Cookies $11.99",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 10.99,
+          "votes": 49,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970047"
+        }
+      ]
+    },
+    "renphoviaamazonau|air-compression-leg-massager-renpho": {
+      "key": "renphoviaamazonau|air-compression-leg-massager-renpho",
+      "store": "renphoviaamazonau",
+      "storeLabel": "Renpho via Amazon AU",
+      "tokens": [
+        "air",
+        "compression",
+        "leg",
+        "massager",
+        "renpho"
+      ],
+      "sizes": [],
+      "title": "RENPHO Leg Massager with Air Compression $49.99 (RRP $204.55) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 49.99,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970061"
+        }
+      ]
+    },
+    "coles|1l-connoisseur-cream-ice-tub|1000ml": {
+      "key": "coles|1l-connoisseur-cream-ice-tub|1000ml",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "1l",
+        "connoisseur",
+        "cream",
+        "ice",
+        "tub"
+      ],
+      "sizes": [
+        "1000ml"
+      ],
+      "title": "½ Price: Connoisseur Ice Cream Tub Varieties 1L $6.50",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 6.5,
+          "votes": 51,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/970726"
+        }
+      ]
+    },
+    "amazonau|36pk-cleaning-daily-denture-mouthguard-polident-retainer-tablets|36pk": {
+      "key": "amazonau|36pk-cleaning-daily-denture-mouthguard-polident-retainer-tablets|36pk",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "36pk",
+        "cleaning",
+        "daily",
+        "denture",
+        "mouthguard",
+        "polident",
+        "retainer",
+        "tablets"
+      ],
+      "sizes": [
+        "36pk"
+      ],
+      "title": "Polident Retainer & Mouthguard Daily Denture Cleaning Tablets 36pk $3.30 ($2.97 S&S) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 3.3,
+          "votes": 83,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970023"
+        }
+      ]
+    },
+    "woolworths182more|165g-bars-binggrae-chips-coles-deli-ice-melon-melona-potato-red-rock|165g": {
+      "key": "woolworths182more|165g-bars-binggrae-chips-coles-deli-ice-melon-melona-potato-red-rock|165g",
+      "store": "woolworths182more",
+      "storeLabel": "Woolworths + 182 More",
+      "tokens": [
+        "165g",
+        "bars",
+        "binggrae",
+        "chips",
+        "coles",
+        "deli",
+        "ice",
+        "melon",
+        "melona",
+        "potato",
+        "red",
+        "rock"
+      ],
+      "sizes": [
+        "165g"
+      ],
+      "title": "½ Price: Binggrae Melona Melon Ice Bars 4-Pack $3.50 @ Coles, Red Rock Deli Potato Chips 150-165g $3.00",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 3.5,
+          "votes": 91,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/970075"
+        }
+      ]
+    },
+    "amazonau|12pk-bars-cookies-cream-dipped-protein-quest|12pk": {
+      "key": "amazonau|12pk-bars-cookies-cream-dipped-protein-quest|12pk",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "12pk",
+        "bars",
+        "cookies",
+        "cream",
+        "dipped",
+        "protein",
+        "quest"
+      ],
+      "sizes": [
+        "12pk"
+      ],
+      "title": "Quest Dipped Cookies & Cream Protein Bars 12pk $29.99 ($26.99 Sub & Save) + Delivery ($0 with Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 29.99,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970836"
+        }
+      ]
+    },
+    "priceline|avene-boost-cerave-la-lab-posay-roche": {
+      "key": "priceline|avene-boost-cerave-la-lab-posay-roche",
+      "store": "priceline",
+      "storeLabel": "Priceline",
+      "tokens": [
+        "avene",
+        "boost",
+        "cerave",
+        "la",
+        "lab",
+        "posay",
+        "roche"
+      ],
+      "sizes": [],
+      "title": "40% off CeraVe (Excl Travel Size), La Roche-Posay, Avene, Boost Lab + Delivery ($0 OnePass/ C&C / in-Store)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 0,
+          "votes": 89,
+          "kind": "40% OFF",
+          "url": "https://www.ozbargain.com.au/node/968803"
+        }
+      ]
+    },
+    "aldi|2l-cobram-estate-oil-olive-virgin|2000ml": {
+      "key": "aldi|2l-cobram-estate-oil-olive-virgin|2000ml",
+      "store": "aldi",
+      "storeLabel": "ALDI",
+      "tokens": [
+        "2l",
+        "cobram",
+        "estate",
+        "oil",
+        "olive",
+        "virgin"
+      ],
+      "sizes": [
+        "2000ml"
+      ],
+      "title": "Cobram Estate Extra Virgin Olive Oil 2L $36.99",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 36.99,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970192"
+        }
+      ]
+    },
+    "amazonaucoleslimitedstor|1kg-chew-damla-fruit-lollies-soft|1000g": {
+      "key": "amazonaucoleslimitedstor|1kg-chew-damla-fruit-lollies-soft|1000g",
+      "store": "amazonaucoleslimitedstor",
+      "storeLabel": "Amazon AU / Coles (Limited Stores)",
+      "tokens": [
+        "1kg",
+        "chew",
+        "damla",
+        "fruit",
+        "lollies",
+        "soft"
+      ],
+      "sizes": [
+        "1000g"
+      ],
+      "title": "[Backorder] Damla Soft Fruit Chew Lollies 1kg $7.55 + Delivery ($0 Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 7.55,
+          "votes": 58,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969539"
+        }
+      ]
+    },
+    "woolworths|bags-dilmah-premium-quality-tea": {
+      "key": "woolworths|bags-dilmah-premium-quality-tea",
+      "store": "woolworths",
+      "storeLabel": "Woolworths",
+      "tokens": [
+        "bags",
+        "dilmah",
+        "premium",
+        "quality",
+        "tea"
+      ],
+      "sizes": [],
+      "title": "Dilmah Premium Quality Tea Bags 100-Pack $4.30",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 4.3,
+          "votes": 59,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969758"
+        }
+      ]
+    },
+    "limebluecoffee|1kg-beans-blend-coffee-ethiopia-so-thank-you|1000g": {
+      "key": "limebluecoffee|1kg-beans-blend-coffee-ethiopia-so-thank-you|1000g",
+      "store": "limebluecoffee",
+      "storeLabel": "Lime Blue Coffee",
+      "tokens": [
+        "1kg",
+        "beans",
+        "blend",
+        "coffee",
+        "ethiopia",
+        "so",
+        "thank",
+        "you"
+      ],
+      "sizes": [
+        "1000g"
+      ],
+      "title": "40% off Coffee Beans 1kg: Thank You Blend $34.99, Ethiopia SO $36.50 + Delivery ($0 VIC C&C/ $99 Order)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 34.99,
+          "votes": 46,
+          "kind": "40% OFF",
+          "url": "https://www.ozbargain.com.au/node/970235"
+        }
+      ]
+    },
+    "amazonau|100g-care-clean-complete-sensodyne-smart-toothpaste|100g": {
+      "key": "amazonau|100g-care-clean-complete-sensodyne-smart-toothpaste|100g",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "100g",
+        "care",
+        "clean",
+        "complete",
+        "sensodyne",
+        "smart",
+        "toothpaste"
+      ],
+      "sizes": [
+        "100g"
+      ],
+      "title": "Sensodyne Complete Care + Smart Clean Toothpaste 100g $5.84 ($5.26 Sub & Save) + Delivery ($0 with Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 5.84,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970838"
+        }
+      ]
+    },
+    "coles|200g-black-blend-leaf-madura-premium-tea|200g": {
+      "key": "coles|200g-black-blend-leaf-madura-premium-tea|200g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "200g",
+        "black",
+        "blend",
+        "leaf",
+        "madura",
+        "premium",
+        "tea"
+      ],
+      "sizes": [
+        "200g"
+      ],
+      "title": "Madura Premium Blend Black Leaf Tea 200g $4",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 4,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970702"
+        }
+      ]
+    },
+    "mannabeans|2kg-beans-coffee-fresh-roasted-specialty|2000g": {
+      "key": "mannabeans|2kg-beans-coffee-fresh-roasted-specialty|2000g",
+      "store": "mannabeans",
+      "storeLabel": "Manna Beans",
+      "tokens": [
+        "2kg",
+        "beans",
+        "coffee",
+        "fresh",
+        "roasted",
+        "specialty"
+      ],
+      "sizes": [
+        "2000g"
+      ],
+      "title": "2kg Fresh Roasted Specialty Coffee Beans $69.95 & Free Shipping",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 69.95,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970392"
+        }
+      ]
+    },
+    "harrisfarmmarkets|500g-australian-bottle-honey-online-squeeze|500g": {
+      "key": "harrisfarmmarkets|500g-australian-bottle-honey-online-squeeze|500g",
+      "store": "harrisfarmmarkets",
+      "storeLabel": "Harris Farm Markets",
+      "tokens": [
+        "500g",
+        "australian",
+        "bottle",
+        "honey",
+        "online",
+        "squeeze"
+      ],
+      "sizes": [
+        "500g"
+      ],
+      "title": "[NSW, ACT, QLD] Australian Honey Squeeze Bottle 500g $4.99 (Save $5) Online Only",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 4.99,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970625"
+        }
+      ]
+    },
+    "amazonau|250g-cream-healing-sudocrem|250g": {
+      "key": "amazonau|250g-cream-healing-sudocrem|250g",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "250g",
+        "cream",
+        "healing",
+        "sudocrem"
+      ],
+      "sizes": [
+        "250g"
+      ],
+      "title": "Sudocrem Healing Cream 250g $14.45 ($13.00 S&S) + Delivery ($0 with Prime / $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 14.45,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968937"
+        }
+      ]
+    },
+    "henrysmercatowaverleygar|13kg-18kg-9kg-imperial-mandarins-navel-oranges-packham-pears|13000g+18000g+9000g": {
+      "key": "henrysmercatowaverleygar|13kg-18kg-9kg-imperial-mandarins-navel-oranges-packham-pears|13000g+18000g+9000g",
+      "store": "henrysmercatowaverleygar",
+      "storeLabel": "Henry's Mercato, Waverley Gardens",
+      "tokens": [
+        "13kg",
+        "18kg",
+        "9kg",
+        "imperial",
+        "mandarins",
+        "navel",
+        "oranges",
+        "packham",
+        "pears"
+      ],
+      "sizes": [
+        "13000g",
+        "18000g",
+        "9000g"
+      ],
+      "title": "[VIC] 9kg Imperial Mandarins $8, 13kg Packham Pears $10, 15-18kg Navel Oranges $12",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 8,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970118"
+        }
+      ]
+    },
+    "pharmacysavings|200mg-20x-5mg-96x-delivered-diclofenac-ibuprofen-muscle-pain-rapid-relief": {
+      "key": "pharmacysavings|200mg-20x-5mg-96x-delivered-diclofenac-ibuprofen-muscle-pain-rapid-relief",
+      "store": "pharmacysavings",
+      "storeLabel": "PharmacySavings",
+      "tokens": [
+        "200mg",
+        "20x",
+        "5mg",
+        "96x",
+        "delivered",
+        "diclofenac",
+        "ibuprofen",
+        "muscle",
+        "pain",
+        "rapid",
+        "relief"
+      ],
+      "sizes": [],
+      "title": "96x Ibuprofen 200mg + 20x Diclofenac Rapid 12.5mg Muscle/Pain Relief $12.99 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 12.99,
+          "votes": 67,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968402"
+        }
+      ]
+    },
+    "woolworths|47g-biscuit-choc-coated-lotte-pepero-sticks|47g": {
+      "key": "woolworths|47g-biscuit-choc-coated-lotte-pepero-sticks|47g",
+      "store": "woolworths",
+      "storeLabel": "Woolworths",
+      "tokens": [
+        "47g",
+        "biscuit",
+        "choc",
+        "coated",
+        "lotte",
+        "pepero",
+        "sticks"
+      ],
+      "sizes": [
+        "47g"
+      ],
+      "title": "1/2 Price: Lotte Pepero Choc Coated Biscuit Sticks 32-47g Varieties $1",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 1,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969993"
+        }
+      ]
+    },
+    "amazonau|delivered-paper-ply-silky-sorbent-toilet-white": {
+      "key": "amazonau|delivered-paper-ply-silky-sorbent-toilet-white",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "paper",
+        "ply",
+        "silky",
+        "sorbent",
+        "toilet",
+        "white"
+      ],
+      "sizes": [],
+      "title": "[Prime] Sorbent 3-Ply Silky White Toilet Paper 32-Pack $12.92 ($11.63 Subscribe & Save) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 12.92,
+          "votes": 70,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/966614"
+        }
+      ]
+    },
+    "shavershop|brush-clean-head-oral-refills-sensitive": {
+      "key": "shavershop|brush-clean-head-oral-refills-sensitive",
+      "store": "shavershop",
+      "storeLabel": "Shaver Shop",
+      "tokens": [
+        "brush",
+        "clean",
+        "head",
+        "oral",
+        "refills",
+        "sensitive"
+      ],
+      "sizes": [],
+      "title": "Oral-B Sensitive Clean Brush Head Refills 16-Pack $49 (Was $105.99) + Delivery ($0 C&C / Free $70+)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 49,
+          "votes": 41,
+          "kind": "FREE",
+          "url": "https://www.ozbargain.com.au/node/969314"
+        }
+      ]
+    },
+    "amazonau|6x1l-cocobella-coconut-coffee-straight-water-watermelon": {
+      "key": "amazonau|6x1l-cocobella-coconut-coffee-straight-water-watermelon",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "6x1l",
+        "cocobella",
+        "coconut",
+        "coffee",
+        "straight",
+        "water",
+        "watermelon"
+      ],
+      "sizes": [],
+      "title": "Cocobella Coconut Water Straight Up / Watermelon / Coffee 6x1L $16.50 ($15.67 Sub & Save) + Delivery ($0 Prime/$59)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 16.5,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969532"
+        }
+      ]
+    },
+    "amazonau|cut-delivered-hair-kit-rapid-remington-ultimate": {
+      "key": "amazonau|cut-delivered-hair-kit-rapid-remington-ultimate",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "cut",
+        "delivered",
+        "hair",
+        "kit",
+        "rapid",
+        "remington",
+        "ultimate"
+      ],
+      "sizes": [],
+      "title": "Remington Rapid Ultimate Hair Cut Kit $68 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 68,
+          "votes": 43,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968739"
+        }
+      ]
+    },
+    "amazonau|blade-delivered-dry-panasonic-pop-rechargeable-shaver-trimmer-wet": {
+      "key": "amazonau|blade-delivered-dry-panasonic-pop-rechargeable-shaver-trimmer-wet",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "blade",
+        "delivered",
+        "dry",
+        "panasonic",
+        "pop",
+        "rechargeable",
+        "shaver",
+        "trimmer",
+        "wet"
+      ],
+      "sizes": [],
+      "title": "[Prime] Panasonic Rechargeable Wet/Dry 5-Blade Shaver with Pop-Up Trimmer $236.55 (RRP $549) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 236.55,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967506"
+        }
+      ]
+    },
+    "priceline|cotton-paper-stems-swisspers-tips": {
+      "key": "priceline|cotton-paper-stems-swisspers-tips",
+      "store": "priceline",
+      "storeLabel": "Priceline",
+      "tokens": [
+        "cotton",
+        "paper",
+        "stems",
+        "swisspers",
+        "tips"
+      ],
+      "sizes": [],
+      "title": "Swisspers Cotton Tips Paper Stems 400-Pack $3.49 + Delivery ($0 C&C/in-Store/OnePass)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 3.49,
+          "votes": 57,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968826"
+        }
+      ]
+    },
+    "amazonau|1l-aveeno-body-daily-greasy-lotion-moisturising-non|1000ml": {
+      "key": "amazonau|1l-aveeno-body-daily-greasy-lotion-moisturising-non|1000ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "1l",
+        "aveeno",
+        "body",
+        "daily",
+        "greasy",
+        "lotion",
+        "moisturising",
+        "non"
+      ],
+      "sizes": [
+        "1000ml"
+      ],
+      "title": "Aveeno Daily Moisturising Non-Greasy Body Lotion 1L $12.99 ($11.69 Sub & Save) + Delivery ($0 Prime/$59+ Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 12.99,
+          "votes": 66,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967900"
+        }
+      ]
+    },
+    "amazonau|1l-antibacterial-hand-lime-liquid-palmolive-refill-wash|1000ml": {
+      "key": "amazonau|1l-antibacterial-hand-lime-liquid-palmolive-refill-wash|1000ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "1l",
+        "antibacterial",
+        "hand",
+        "lime",
+        "liquid",
+        "palmolive",
+        "refill",
+        "wash"
+      ],
+      "sizes": [
+        "1000ml"
+      ],
+      "title": "Palmolive Antibacterial Liquid Hand Wash Refill Lime 6 x 1L $15 ($13.50 Sub & Save) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 15,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968652"
+        }
+      ]
+    },
+    "amazonau|blade-fusion-gillette-handle-power-razor-refill": {
+      "key": "amazonau|blade-fusion-gillette-handle-power-razor-refill",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "blade",
+        "fusion",
+        "gillette",
+        "handle",
+        "power",
+        "razor",
+        "refill"
+      ],
+      "sizes": [],
+      "title": "Gillette Fusion 5 Power Razor Handle + 1 Blade Refill $9.95 ($8.95 Sub & Save) + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 9.95,
+          "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968773"
+        }
+      ]
+    },
+    "amazonau|clean-delivered-electric-heads-oral-replacement-sensitive-toothbrush|2pk": {
+      "key": "amazonau|clean-delivered-electric-heads-oral-replacement-sensitive-toothbrush|2pk",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "clean",
+        "delivered",
+        "electric",
+        "heads",
+        "oral",
+        "replacement",
+        "sensitive",
+        "toothbrush"
+      ],
+      "sizes": [
+        "2pk"
+      ],
+      "title": "[Prime] 2 x Oral-B Sensitive Clean Electric Toothbrush Replacement Heads 2 Pack $11.88 (S&S) Delivered ($2.97ea)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 11.88,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967151"
+        }
+      ]
+    },
+    "amazonau|delivered-electric-i9000-philips-prestige-series-shaver-ultra": {
+      "key": "amazonau|delivered-electric-i9000-philips-prestige-series-shaver-ultra",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "electric",
+        "i9000",
+        "philips",
+        "prestige",
+        "series",
+        "shaver",
+        "ultra"
+      ],
+      "sizes": [],
+      "title": "[Prime] Philips Series i9000 Prestige Ultra Electric Shaver (AU Version) $369.01 (RRP $999) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 369.01,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967593"
+        }
+      ]
+    },
+    "costcomembershiprequired|cordless-delivered-ultra-waterflosser-waterpik": {
+      "key": "costcomembershiprequired|cordless-delivered-ultra-waterflosser-waterpik",
+      "store": "costcomembershiprequired",
+      "storeLabel": "Costco (Membership Required)",
+      "tokens": [
+        "cordless",
+        "delivered",
+        "ultra",
+        "waterflosser",
+        "waterpik"
+      ],
+      "sizes": [],
+      "title": "Waterpik Ultra Waterflosser & Waterpik Cordless Plus Waterflosser Pack $89.98 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 89.98,
+          "votes": 43,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/966313"
+        }
+      ]
+    },
+    "amazonau|1l-alcohol-care-listerine-mouthwash-total-zero|1000ml": {
+      "key": "amazonau|1l-alcohol-care-listerine-mouthwash-total-zero|1000ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "1l",
+        "alcohol",
+        "care",
+        "listerine",
+        "mouthwash",
+        "total",
+        "zero"
+      ],
+      "sizes": [
+        "1000ml"
+      ],
+      "title": "Listerine Total Care Zero Alcohol Mouthwash 1L $7.25 ($6.52 Sub & Save)  + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 7.25,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967894"
+        }
+      ]
+    },
+    "amazonau|100ml-absolu-boss-bottled-delivered-hugo-intense-men-parfum-postcodes|100ml": {
+      "key": "amazonau|100ml-absolu-boss-bottled-delivered-hugo-intense-men-parfum-postcodes|100ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "100ml",
+        "absolu",
+        "boss",
+        "bottled",
+        "delivered",
+        "hugo",
+        "intense",
+        "men",
+        "parfum",
+        "postcodes"
+      ],
+      "sizes": [
+        "100ml"
+      ],
+      "title": "[Prime] Hugo Boss Bottled Absolu Parfum Intense for Men 100ml $90 Delivered to Selected Postcodes (RRP $202)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 90,
+          "votes": 35,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967426"
+        }
+      ]
+    },
+    "amazonau|beard-blade-delivered-electric-oneblade-philips-shaver-trimmer": {
+      "key": "amazonau|beard-blade-delivered-electric-oneblade-philips-shaver-trimmer",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "beard",
+        "blade",
+        "delivered",
+        "electric",
+        "oneblade",
+        "philips",
+        "shaver",
+        "trimmer"
+      ],
+      "sizes": [],
+      "title": "[Prime] Philips OneBlade 360 + Extra Blade, Electric Beard Trimmer and Shaver $49 (RRP $99.95) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 49,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967430"
+        }
+      ]
+    },
+    "amazonau|afib-blood-delivered-detection-elite-hem7361t-monitor-omron-pressure": {
+      "key": "amazonau|afib-blood-delivered-detection-elite-hem7361t-monitor-omron-pressure",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "afib",
+        "blood",
+        "delivered",
+        "detection",
+        "elite",
+        "hem7361t",
+        "monitor",
+        "omron",
+        "pressure"
+      ],
+      "sizes": [],
+      "title": "[Prime] Omron HEM7361T Elite+ Blood Pressure Monitor with AFIB Detection $144.76 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 144.76,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967458"
+        }
+      ]
+    },
+    "amazonau|delivered-dry-electric-philips-series-shaver-skiniq-technology-wet": {
+      "key": "amazonau|delivered-dry-electric-philips-series-shaver-skiniq-technology-wet",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "dry",
+        "electric",
+        "philips",
+        "series",
+        "shaver",
+        "skiniq",
+        "technology",
+        "wet"
+      ],
+      "sizes": [],
+      "title": "[Prime] Philips Shaver Series 5000 Wet & Dry Electric Shaver with SkinIQ Technology $106.21 (RRP $209) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 106.21,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967558"
+        }
+      ]
+    },
+    "amazonau|100ml-boss-bottled-delivered-elixir-postcodes|100ml": {
+      "key": "amazonau|100ml-boss-bottled-delivered-elixir-postcodes|100ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "100ml",
+        "boss",
+        "bottled",
+        "delivered",
+        "elixir",
+        "postcodes"
+      ],
+      "sizes": [
+        "100ml"
+      ],
+      "title": "[Prime] Boss Bottled Elixir 100ml $84.96 ($76.46 Sub & Save) Delivered to Selected Postcodes (Excl. TAS, NT)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 84.96,
+          "votes": 36,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/966619"
+        }
+      ]
+    },
+    "amazonau|110pk-aloe-facial-plain-ply-quilton-tissues|110pk": {
+      "key": "amazonau|110pk-aloe-facial-plain-ply-quilton-tissues|110pk",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "110pk",
+        "aloe",
+        "facial",
+        "plain",
+        "ply",
+        "quilton",
+        "tissues"
+      ],
+      "sizes": [
+        "110pk"
+      ],
+      "title": "Quilton 3-Ply Aloe Facial Tissues 110pk x 12: $18.95 ($17.05 S&S), Plain $18 ($16.20 S&S) + Delivery ($0 Prime/$59+)",
+      "observations": [
+        {
+          "date": "2026-08-13",
+          "price": 18.95,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/967908"
+        }
+      ]
+    }
+  }
+}
