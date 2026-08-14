@@ -99,6 +99,10 @@ function parseFeed(xml, fallbackCategory) {
     const votesPos = Number(attr(block, "ozb:meta", "votes-pos")) || 0;
     const votesNeg = Number(attr(block, "ozb:meta", "votes-neg")) || 0;
     const link = tagText(block, "link");
+    // OzBargain flags dead/limited deals here: "expired", "out of stock",
+    // "targeted". Roughly a third of any feed pull is already expired, and
+    // showing those is worse than showing fewer deals.
+    const status = (tagText(block, "ozb:title-msg") || "").toLowerCase() || null;
 
     return {
       // OzBargain node id — stable across refreshes, good React key.
@@ -115,9 +119,23 @@ function parseFeed(xml, fallbackCategory) {
       comments: Number(attr(block, "ozb:meta", "comment-count")) || 0,
       clicks: Number(attr(block, "ozb:meta", "click-count")) || 0,
       postedAt: tagText(block, "pubDate"),
+      // The retailer's actual end date as recorded by the poster — a real
+      // deadline, not a manufactured countdown.
+      expiresAt: attr(block, "ozb:meta", "expiry") || null,
+      startsAt: attr(block, "ozb:meta", "starting") || null,
+      status,
       category: fallbackCategory,
     };
   });
+}
+
+function isDead(deal, now) {
+  if (deal.status === "expired" || deal.status === "out of stock") return true;
+  if (deal.expiresAt) {
+    const end = new Date(deal.expiresAt).getTime();
+    if (Number.isFinite(end) && end < now) return true;
+  }
+  return false;
 }
 
 // Ranking blends community votes with recency so the feed genuinely changes
@@ -135,6 +153,10 @@ function rankDeals(deals, now = Date.now()) {
     .filter((d) => {
       if (!d.id || seen.has(d.id)) return false;
       seen.add(d.id);
+      // Expired and sold-out posts are the single biggest source of junk in
+      // this feed — routinely a third of a pull. Sending someone to a dead
+      // deal costs more trust than an emptier list does.
+      if (isDead(d, now)) return false;
       // Community-downvoted posts are noise, not deals.
       return d.votes > 0;
     })
@@ -161,6 +183,7 @@ async function fetchAllDeals(fetchImpl = fetch) {
 
 module.exports = {
   FEEDS,
+  isDead,
   parseFeed,
   rankDeals,
   heatScore,

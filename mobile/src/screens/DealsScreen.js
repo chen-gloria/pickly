@@ -23,6 +23,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import DealHeroCard from "../components/DealHeroCard";
 import DealRow from "../components/DealRow";
 import { fetchDeals, timeAgo, DEAL_SOURCE } from "../api/deals";
+import { getWatchlist, toggleWatch } from "../utils/watchlist";
 import { groupByVerdict, trackingDays as getTrackingDays } from "../utils/priceHistory";
 import { colors, radius, spacing, type } from "../theme";
 
@@ -36,8 +37,10 @@ export default function DealsScreen({ navigation }) {
   // is unjudged, and a screen that collapses all of it looks broken on day
   // one — people should still be able to browse while the record builds.
   const [expanded, setExpanded] = useState({ wait: true, tracking: true, skip: false });
+  const [watched, setWatched] = useState(new Set());
 
   const load = useCallback(async () => {
+    setWatched(new Set((await getWatchlist()).map((w) => w.id)));
     const res = await fetchDeals();
     setDeals(res.deals);
     setCapturedAt(res.capturedAt);
@@ -57,6 +60,11 @@ export default function DealsScreen({ navigation }) {
 
   function openDeal(deal) {
     Linking.openURL(deal.url).catch(() => {});
+  }
+
+  async function onToggleWatch(deal) {
+    const next = await toggleWatch(deal);
+    setWatched(new Set(next.map((w) => w.id)));
   }
 
   function toggle(section) {
@@ -80,7 +88,7 @@ export default function DealsScreen({ navigation }) {
 
     push("buy", "We'd buy these", "we can show you why", buckets.buy, false);
     push("wait", "Close, but not the lowest", "you could do better", buckets.wait, true);
-    push("tracking", "Today's deals", "ranked by community votes", buckets.tracking, true);
+    push("tracking", "Everything else today", "ranked by community votes", buckets.tracking, true);
     push("skip", "We'd skip these", "cheaper before", buckets.skip, true);
     return out;
   }, [buckets, expanded]);
@@ -143,7 +151,14 @@ export default function DealsScreen({ navigation }) {
               </TouchableOpacity>
             );
           }
-          return <DealRow deal={item.deal} onPress={() => openDeal(item.deal)} />;
+          return (
+            <DealRow
+              deal={item.deal}
+              onPress={() => openDeal(item.deal)}
+              watched={watched.has(item.deal.id)}
+              onToggleWatch={() => onToggleWatch(item.deal)}
+            />
+          );
         }}
         ListHeaderComponent={
           <View>

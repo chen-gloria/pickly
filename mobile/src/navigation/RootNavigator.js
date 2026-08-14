@@ -13,8 +13,7 @@ import SignupScreen from "../screens/SignupScreen";
 import DealsScreen from "../screens/DealsScreen";
 import SearchScreen from "../screens/SearchScreen";
 import ProductDetailScreen from "../screens/ProductDetailScreen";
-import ListScreen from "../screens/ListScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
+import WatchlistScreen from "../screens/WatchlistScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
@@ -67,14 +66,11 @@ function MainTabs() {
         options={{ title: "Compare", tabBarIcon: tabIcon("🔍"), headerShown: false }}
       />
       <Tab.Screen
-        name="List"
-        component={ListScreen}
-        options={{ title: "My List", tabBarIcon: tabIcon("🛒") }}
-      />
-      <Tab.Screen
         name="Favorites"
-        component={FavoritesScreen}
-        options={{ title: "Saved", tabBarIcon: tabIcon("⭐") }}
+        component={WatchlistScreen}
+        // Route name kept as "Favorites" so existing navigate() calls and
+        // deep links don't break; the surface itself is the watchlist.
+        options={{ title: "Watching", tabBarIcon: tabIcon("🔖"), headerShown: false }}
       />
       <Tab.Screen
         name="Profile"

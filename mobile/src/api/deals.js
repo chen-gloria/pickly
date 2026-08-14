@@ -35,6 +35,26 @@ export async function fetchDeals() {
   };
 }
 
+// How long is left on a deal, from the retailer's own end date recorded on
+// the post. Returns null when there's no stated deadline — plenty of deals
+// simply don't have one, and inventing urgency for those is exactly the
+// pattern we're avoiding.
+export function timeLeft(expiresAt) {
+  if (!expiresAt) return null;
+  const end = new Date(expiresAt).getTime();
+  if (!Number.isFinite(end)) return null;
+
+  const ms = end - Date.now();
+  if (ms <= 0) return null;
+
+  const hours = ms / 36e5;
+  if (hours < 24) return { label: `${Math.max(1, Math.round(hours))}h left`, urgent: true };
+  const days = Math.round(hours / 24);
+  // "Ends tomorrow" reads more concretely than "1 day left".
+  if (days === 1) return { label: "Ends tomorrow", urgent: true };
+  return { label: `${days} days left`, urgent: days <= 3 };
+}
+
 // "2h ago" / "3d ago" — freshness is the honest substitute for a fake
 // countdown timer, and it's the signal that rewards coming back.
 export function timeAgo(dateString) {

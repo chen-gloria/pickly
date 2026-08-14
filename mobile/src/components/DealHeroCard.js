@@ -8,9 +8,11 @@ import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { colors, radius, spacing, type } from "../theme";
 import { heroKicker, compactNumber } from "../utils/dealVoice";
-import { timeAgo } from "../api/deals";
+import { timeAgo, timeLeft } from "../api/deals";
 
 export default function DealHeroCard({ deal, onPress }) {
+  const left = timeLeft(deal.expiresAt);
+
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.9}>
       {deal.image ? (
@@ -39,6 +41,14 @@ export default function DealHeroCard({ deal, onPress }) {
         <View style={styles.kicker}>
           <Text style={styles.kickerText}>{heroKicker(deal)}</Text>
         </View>
+        {/* The retailer's own end date, when there is one. */}
+        {left && (
+          <View style={[styles.endsChip, left.urgent && styles.endsChipUrgent]}>
+            <Text style={[styles.endsText, left.urgent && styles.endsTextUrgent]}>
+              {left.label}
+            </Text>
+          </View>
+        )}
       </View>
 
       <View style={styles.body}>
@@ -82,7 +92,7 @@ const styles = StyleSheet.create({
   },
   image: { ...StyleSheet.absoluteFillObject, width: "100%", height: "100%" },
   imageFallback: { backgroundColor: colors.cardHi },
-  kickerRow: { flexDirection: "row", padding: spacing.md },
+  kickerRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, padding: spacing.md },
   kicker: {
     backgroundColor: colors.accent,
     borderRadius: radius.pill,
@@ -90,6 +100,15 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   kickerText: { ...type.micro, color: colors.saveBadgeText },
+  endsChip: {
+    backgroundColor: "rgba(14,18,16,0.75)",
+    borderRadius: radius.pill,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  endsChipUrgent: { backgroundColor: "rgba(255,107,74,0.22)" },
+  endsText: { ...type.micro, color: colors.text },
+  endsTextUrgent: { color: colors.ember },
   body: { padding: spacing.lg },
   metaRow: { flexDirection: "row", alignItems: "center", gap: 7, marginBottom: spacing.sm },
   votePill: {

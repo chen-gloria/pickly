@@ -6,14 +6,16 @@
 // card grid.
 import React from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Sparkline from "./Sparkline";
 import VerdictBadge from "./VerdictBadge";
 import { colors, radius, spacing, type } from "../theme";
 import { dealVoice, compactNumber } from "../utils/dealVoice";
-import { timeAgo } from "../api/deals";
+import { timeAgo, timeLeft } from "../api/deals";
 
-export default function DealRow({ deal, onPress }) {
+export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
   const judgement = deal.judgement;
+  const left = timeLeft(deal.expiresAt);
 
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.85}>
@@ -30,6 +32,15 @@ export default function DealRow({ deal, onPress }) {
           <Text style={styles.store} numberOfLines={1}>
             {deal.store || deal.category}
           </Text>
+          {onToggleWatch && (
+            <TouchableOpacity onPress={onToggleWatch} hitSlop={10} style={styles.bookmark}>
+              <Ionicons
+                name={watched ? "bookmark" : "bookmark-outline"}
+                size={16}
+                color={watched ? colors.accent : colors.textFaint}
+              />
+            </TouchableOpacity>
+          )}
           <Text style={styles.age}>{timeAgo(deal.postedAt)}</Text>
         </View>
 
@@ -69,6 +80,13 @@ export default function DealRow({ deal, onPress }) {
             <Text style={styles.statIcon}>💬</Text>
             <Text style={styles.statText}>{compactNumber(deal.comments)}</Text>
           </View>
+          {/* Only shown when the poster recorded a real end date. No
+              deadline invented where the retailer didn't state one. */}
+          {left && (
+            <Text style={[styles.expiry, left.urgent && styles.expiryUrgent]}>
+              {left.label}
+            </Text>
+          )}
         </View>
       </View>
     </TouchableOpacity>
@@ -97,7 +115,10 @@ const styles = StyleSheet.create({
   content: { flex: 1 },
   topRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
   store: { ...type.micro, color: colors.primary, flex: 1 },
+  bookmark: { paddingHorizontal: spacing.sm },
   age: { color: colors.textFaint, fontSize: 11 },
+  expiry: { color: colors.textMuted, fontSize: 11, fontWeight: "700", marginLeft: "auto" },
+  expiryUrgent: { color: colors.ember },
   title: { color: colors.text, ...type.body, lineHeight: 19, marginTop: 3 },
   voice: { color: colors.accent, fontSize: 12, fontWeight: "600", marginTop: 5, fontStyle: "italic" },
   judgeRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 7 },
