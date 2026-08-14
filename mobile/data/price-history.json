@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-13T19:58:17.170Z",
+  "updatedAt": "2026-08-14T19:51:57.536Z",
   "products": {
     "musclechef|chef-delivered-high-muscle-protein-subscription": {
       "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
@@ -21,6 +21,13 @@
           "date": "2026-08-13",
           "price": 89.21,
           "votes": 195,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971003"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 89.21,
+          "votes": 201,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971003"
         }
@@ -55,6 +62,13 @@
           "votes": 110,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971098"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 4.86,
+          "votes": 124,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971098"
         }
       ]
     },
@@ -79,6 +93,13 @@
           "date": "2026-08-13",
           "price": 1.5,
           "votes": 38,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971278"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 1.5,
+          "votes": 109,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/971278"
         }
@@ -154,6 +175,13 @@
           "votes": 58,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971118"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 29.99,
+          "votes": 62,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971118"
         }
       ]
     },
@@ -182,6 +210,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 7,
+          "votes": 93,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/970843"
+        },
+        {
+          "date": "2026-08-14",
           "price": 7,
           "votes": 93,
           "kind": "½ PRICE",
@@ -243,6 +278,13 @@
           "votes": 154,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/969996"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 5.75,
+          "votes": 154,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969996"
         }
       ]
     },
@@ -266,6 +308,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 30.65,
+          "votes": 42,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971014"
+        },
+        {
+          "date": "2026-08-14",
           "price": 30.65,
           "votes": 42,
           "kind": "½ PRICE",
@@ -296,6 +345,13 @@
           "votes": 103,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/969920"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 0.6,
+          "votes": 104,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969920"
         }
       ]
     },
@@ -323,6 +379,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 10.99,
+          "votes": 49,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970047"
+        },
+        {
+          "date": "2026-08-14",
           "price": 10.99,
           "votes": 49,
           "kind": "DEAL",
@@ -375,6 +438,13 @@
           "votes": 51,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/970726"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 6.5,
+          "votes": 51,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/970726"
         }
       ]
     },
@@ -399,6 +469,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 3.3,
+          "votes": 83,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970023"
+        },
+        {
+          "date": "2026-08-14",
           "price": 3.3,
           "votes": 83,
           "kind": "DEAL",
@@ -513,6 +590,13 @@
           "votes": 52,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970192"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 36.99,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970192"
         }
       ]
     },
@@ -617,6 +701,13 @@
           "votes": 30,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970838"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 5.84,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970838"
         }
       ]
     },
@@ -670,6 +761,13 @@
           "votes": 33,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970392"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 69.95,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970392"
         }
       ]
     },
@@ -696,6 +794,13 @@
           "votes": 32,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970625"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 4.99,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970625"
         }
       ]
     },
@@ -716,6 +821,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 14.45,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968937"
+        },
+        {
+          "date": "2026-08-14",
           "price": 14.45,
           "votes": 45,
           "kind": "DEAL",
@@ -776,6 +888,13 @@
       "observations": [
         {
           "date": "2026-08-13",
+          "price": 12.99,
+          "votes": 67,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968402"
+        },
+        {
+          "date": "2026-08-14",
           "price": 12.99,
           "votes": 67,
           "kind": "DEAL",
@@ -1326,6 +1445,67 @@
           "votes": 37,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971267"
+        },
+        {
+          "date": "2026-08-14",
+          "price": 8.99,
+          "votes": 72,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971267"
+        }
+      ]
+    },
+    "shopbackapp|325g-any-bega-caramel-creamy-eligible-peanut-spread-store|325g": {
+      "key": "shopbackapp|325g-any-bega-caramel-creamy-eligible-peanut-spread-store|325g",
+      "store": "shopbackapp",
+      "storeLabel": "Shopback App",
+      "tokens": [
+        "325g",
+        "any",
+        "bega",
+        "caramel",
+        "creamy",
+        "eligible",
+        "peanut",
+        "spread",
+        "store"
+      ],
+      "sizes": [
+        "325g"
+      ],
+      "title": "$3 Cashback on Bega Creamy Caramel Peanut Spread 325g from Any Eligible Store (Currently $3 from Woolworths)",
+      "observations": [
+        {
+          "date": "2026-08-14",
+          "price": 3,
+          "votes": 54,
+          "kind": "REWARDS",
+          "url": "https://www.ozbargain.com.au/node/971393"
+        }
+      ]
+    },
+    "amazonaucoles|30cm-50m-baking-multix-non-paper-stick": {
+      "key": "amazonaucoles|30cm-50m-baking-multix-non-paper-stick",
+      "store": "amazonaucoles",
+      "storeLabel": "Amazon AU / Coles",
+      "tokens": [
+        "30cm",
+        "50m",
+        "baking",
+        "multix",
+        "non",
+        "paper",
+        "stick"
+      ],
+      "sizes": [],
+      "title": "Multix Non-Stick Baking Paper 50m x 30cm $6 (2 for $11.40) + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-14",
+          "price": 6,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971202"
         }
       ]
     }
