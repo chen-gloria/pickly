@@ -1,70 +1,79 @@
 // The core screen: side-by-side store prices, cheapest highlighted, savings,
-// plus add-to-list, favorite, and price-alert actions.
+// plus a save-to-Watching toggle backed by the same watchlist used by the
+// deal feed (see src/utils/watchlist.js) — so saving a product here shows up
+// in the same "Favorites" tab as a saved deal, with one persisted list
+// instead of two.
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Alert,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
   StyleSheet,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { api } from "../api/client";
-import { useAuth } from "../context/AuthContext";
 import { colors, radius, spacing } from "../theme";
 import { CURRENCY_SYMBOL } from "../config";
+import { getWatchlist, toggleWatch, productToWatchItem, productWatchId } from "../utils/watchlist";
 
-export default function ProductDetailScreen({ route }) {
+export default function ProductDetailScreen({ route, navigation }) {
   const { id } = route.params;
-  const { token } = useAuth();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [watching, setWatching] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setLoadError(false);
     api
       .productDetail(id)
-      .then(setProduct)
-      .catch((e) => Alert.alert("Error", e.message))
-      .finally(() => setLoading(false));
+      .then((p) => {
+        if (cancelled) return;
+        if (!p) {
+          setLoadError(true);
+          return;
+        }
+        setProduct(p);
+      })
+      .catch(() => !cancelled && setLoadError(true))
+      .finally(() => !cancelled && setLoading(false));
+    getWatchlist().then((list) => {
+      if (!cancelled) setWatching(list.some((w) => w.id === productWatchId(id)));
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
 
-  async function addToList() {
-    try {
-      await api.addToList(token, id, 1);
-      Alert.alert("Added", `${product.name} added to your shopping list.`);
-    } catch (e) {
-      Alert.alert("Error", e.message);
-    }
-  }
-
-  async function favorite() {
-    try {
-      await api.addFavorite(token, id);
-      Alert.alert("Saved", `${product.name} added to favorites.`);
-    } catch (e) {
-      Alert.alert("Error", e.message);
-    }
-  }
-
-  async function setAlert() {
-    if (!product.cheapest_price) return;
-    const target = Math.max(0, product.cheapest_price - 0.5).toFixed(2);
-    try {
-      await api.createAlert(token, id, Number(target));
-      Alert.alert(
-        "Price alert set",
-        `We'll watch for ${product.name} dropping below ${CURRENCY_SYMBOL}${target}.`
-      );
-    } catch (e) {
-      Alert.alert("Error", e.message);
-    }
+  async function toggleWatching() {
+    const next = await toggleWatch(productToWatchItem(product));
+    setWatching(next.some((w) => w.id === productWatchId(id)));
   }
 
   if (loading) {
     return <ActivityIndicator style={{ marginTop: 40 }} color={colors.primary} />;
   }
-  if (!product) return null;
+
+  if (loadError || !product) {
+    return (
+      <View style={styles.notFound}>
+        <Ionicons name="alert-circle-outline" size={32} color={colors.textFaint} />
+        <Text style={styles.notFoundTitle}>Couldn't load this product</Text>
+        <Text style={styles.notFoundBody}>
+          It may have been removed, or there was a problem fetching it.
+        </Text>
+        {navigation?.canGoBack() && (
+          <TouchableOpacity style={styles.notFoundBtn} onPress={() => navigation.goBack()}>
+            <Text style={styles.notFoundBtnText}>Go back</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+    );
+  }
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: spacing.md }}>
@@ -107,17 +116,19 @@ export default function ProductDetailScreen({ route }) {
       })}
 
       <View style={styles.actions}>
-        <TouchableOpacity style={styles.primaryBtn} onPress={addToList}>
-          <Text style={styles.primaryBtnText}>🛒 Add to list</Text>
+        <TouchableOpacity
+          style={[styles.primaryBtn, watching && styles.primaryBtnActive]}
+          onPress={toggleWatching}
+        >
+          <Ionicons
+            name={watching ? "heart" : "heart-outline"}
+            size={18}
+            color={watching ? colors.primary : colors.onPrimary}
+          />
+          <Text style={[styles.primaryBtnText, watching && styles.primaryBtnTextActive]}>
+            {watching ? "Saved to Watching" : "Save to Watching"}
+          </Text>
         </TouchableOpacity>
-        <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.sm }}>
-          <TouchableOpacity style={styles.secondaryBtn} onPress={favorite}>
-            <Text style={styles.secondaryBtnText}>⭐ Save</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.secondaryBtn} onPress={setAlert}>
-            <Text style={styles.secondaryBtnText}>🔔 Price alert</Text>
-          </TouchableOpacity>
-        </View>
       </View>
     </ScrollView>
   );
@@ -163,20 +174,48 @@ const styles = StyleSheet.create({
   priceValBest: { color: colors.saving },
   actions: { marginTop: spacing.lg },
   primaryBtn: {
+    flexDirection: "row",
+    gap: spacing.sm,
     backgroundColor: colors.primary,
     borderRadius: radius.md,
     padding: spacing.md,
     alignItems: "center",
+    justifyContent: "center",
+  },
+  primaryBtnActive: {
+    backgroundColor: colors.cardHi,
+    borderWidth: 1,
+    borderColor: colors.primary,
   },
   primaryBtnText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
-  secondaryBtn: {
+  primaryBtnTextActive: { color: colors.primary },
+  notFound: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: spacing.xl,
+    backgroundColor: colors.background,
+  },
+  notFoundTitle: {
+    color: colors.text,
+    fontSize: 17,
+    fontWeight: "700",
+    marginTop: spacing.md,
+  },
+  notFoundBody: {
+    color: colors.textMuted,
+    textAlign: "center",
+    marginTop: spacing.xs,
+    lineHeight: 20,
+  },
+  notFoundBtn: {
+    marginTop: spacing.lg,
     backgroundColor: colors.card,
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: radius.md,
-    padding: spacing.md,
-    alignItems: "center",
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm + 2,
   },
-  secondaryBtnText: { color: colors.text, fontWeight: "600" },
+  notFoundBtnText: { color: colors.text, fontWeight: "700" },
 });

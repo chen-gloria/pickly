@@ -45,6 +45,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor={colors.textMuted}
         autoCapitalize="none"
         keyboardType="email-address"
         value={email}
@@ -53,6 +54,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        placeholderTextColor={colors.textMuted}
         secureTextEntry
         value={password}
         onChangeText={setPassword}
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     fontSize: 16,
     marginBottom: spacing.md,
+    color: colors.text,
   },
   button: {
     backgroundColor: colors.primary,

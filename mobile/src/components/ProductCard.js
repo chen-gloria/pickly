@@ -11,8 +11,21 @@ import ProductIcon from "./ProductIcon";
 import { colors, radius, spacing } from "../theme";
 import { CURRENCY_SYMBOL } from "../config";
 
-export default function ProductCard({ product, cheapest, onPress, right, onFavoritePress }) {
-  const [favorited, setFavorited] = useState(false);
+// `favorited` + `onFavoritePress`: when a parent passes both, the heart is
+// controlled (its state comes from the parent's own persisted store — see
+// BrowseScreen wiring it to the watchlist). Without them it falls back to
+// local-only state, which is fine for a purely decorative use but never
+// claims to have saved anything.
+export default function ProductCard({
+  product,
+  cheapest,
+  onPress,
+  right,
+  onFavoritePress,
+  favorited: favoritedProp,
+}) {
+  const [localFavorited, setLocalFavorited] = useState(false);
+  const favorited = onFavoritePress ? !!favoritedProp : localFavorited;
 
   const price = cheapest != null ? cheapest : product.cheapest_price;
   const saveAmount = product.save_amount ?? product.potential_saving ?? 0;
@@ -23,7 +36,7 @@ export default function ProductCard({ product, cheapest, onPress, right, onFavor
     if (onFavoritePress) {
       onFavoritePress(product);
     } else {
-      setFavorited((f) => !f);
+      setLocalFavorited((f) => !f);
     }
   }
 

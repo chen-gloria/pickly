@@ -43,10 +43,17 @@ export default function SignupScreen() {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-      <TextInput style={styles.input} placeholder="Your name" value={name} onChangeText={setName} />
+      <TextInput
+        style={styles.input}
+        placeholder="Your name"
+        placeholderTextColor={colors.textMuted}
+        value={name}
+        onChangeText={setName}
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor={colors.textMuted}
         autoCapitalize="none"
         keyboardType="email-address"
         value={email}
@@ -55,6 +62,7 @@ export default function SignupScreen() {
       <TextInput
         style={styles.input}
         placeholder="Password (min 6 chars)"
+        placeholderTextColor={colors.textMuted}
         secureTextEntry
         value={password}
         onChangeText={setPassword}
@@ -76,6 +84,7 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     fontSize: 16,
     marginBottom: spacing.md,
+    color: colors.text,
   },
   button: { backgroundColor: colors.primary, borderRadius: radius.md, padding: spacing.md, alignItems: "center" },
   buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
