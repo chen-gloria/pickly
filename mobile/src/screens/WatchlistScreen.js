@@ -23,9 +23,10 @@ import {
   removeFromWatchlist,
   findDrops,
 } from "../utils/watchlist";
+import { shareText } from "../utils/shareText";
 import { colors, radius, spacing, type } from "../theme";
 
-export default function WatchlistScreen() {
+export default function WatchlistScreen({ navigation }) {
   const [items, setItems] = useState([]);
   const [drops, setDrops] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,9 +55,36 @@ export default function WatchlistScreen() {
     setDrops((prev) => prev.filter((d) => d.id !== id));
   }
 
+  // Stands in for the "friends" social loop from the original plan — no
+  // account graph to build or moderate, and it's useful the day you save
+  // your first item rather than only once other people join.
+  function shareList() {
+    const lines = items.map((it) => {
+      const price = it.priceWhenSaved != null ? ` — $${it.priceWhenSaved.toFixed(2)}` : "";
+      const store = it.store ? ` (${it.store})` : "";
+      return `• ${it.title}${price}${store}`;
+    });
+    const message = `My Pickly watchlist (${items.length} item${items.length === 1 ? "" : "s"}):\n${lines.join(
+      "\n"
+    )}\n\nvia Pickly`;
+    shareText(message, { subject: "My Pickly watchlist" });
+  }
+
+  // Watching is a tab root, not a pushed screen, so there's no native back
+  // button here by default — but the bottom tab bar alone wasn't a clear
+  // enough way out for people expecting a header control. This jumps
+  // straight to Browse the same way tapping the tab does.
+  const backRow = (
+    <TouchableOpacity style={styles.backRow} hitSlop={8} onPress={() => navigation.navigate("Browse")}>
+      <Ionicons name="chevron-back" size={22} color={colors.text} />
+      <Text style={styles.backText}>Browse</Text>
+    </TouchableOpacity>
+  );
+
   if (loading) {
     return (
       <SafeAreaView style={styles.container} edges={["top"]}>
+        {backRow}
         <ActivityIndicator style={{ marginTop: spacing.xl * 2 }} color={colors.primary} />
       </SafeAreaView>
     );
@@ -73,15 +101,23 @@ export default function WatchlistScreen() {
         contentContainerStyle={{ paddingBottom: spacing.xl }}
         ListHeaderComponent={
           <View>
+            {backRow}
             <View style={styles.header}>
-              <Text style={styles.kicker}>WATCHING</Text>
-              <Text style={styles.headline}>
-                {items.length === 0
-                  ? "Nothing saved yet"
-                  : drops.length > 0
-                  ? `${drops.length} dropped`
-                  : `${items.length} item${items.length === 1 ? "" : "s"}`}
-              </Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.kicker}>WATCHING</Text>
+                <Text style={styles.headline}>
+                  {items.length === 0
+                    ? "Nothing saved yet"
+                    : drops.length > 0
+                    ? `${drops.length} dropped`
+                    : `${items.length} item${items.length === 1 ? "" : "s"}`}
+                </Text>
+              </View>
+              {items.length > 0 && (
+                <TouchableOpacity style={styles.shareBtn} onPress={shareList} hitSlop={8}>
+                  <Ionicons name="share-outline" size={20} color={colors.text} />
+                </TouchableOpacity>
+              )}
             </View>
 
             {items.length === 0 && (
@@ -167,7 +203,30 @@ export default function WatchlistScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
-  header: { paddingHorizontal: spacing.md, paddingTop: spacing.sm, paddingBottom: spacing.md },
+  backRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: spacing.sm,
+    paddingTop: spacing.sm,
+    alignSelf: "flex-start",
+  },
+  backText: { color: colors.text, fontSize: 15, fontWeight: "600", marginLeft: 2 },
+  header: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.md,
+  },
+  shareBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.cardHi,
+    marginTop: 2,
+  },
   kicker: { ...type.micro, color: colors.textFaint },
   headline: { ...type.display, color: colors.text, marginTop: 2 },
   empty: {
