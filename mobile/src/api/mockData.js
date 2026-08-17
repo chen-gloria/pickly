@@ -4,17 +4,44 @@
 // — work identically whether MOCK_MODE is on or off.
 //
 // Products are generated (not hand-authored one by one) so we get a large,
-// realistic-feeling catalogue (100+ items across 8 categories) without 100
+// realistic-feeling catalogue (130+ items across 11 categories) without 100
 // lines of copy-pasted boilerplate. Every product renders as a flat vector
 // icon (see ProductIcon.js) rather than a photo — deliberately, so there's
 // never a stock-photo background behind it, just the product glyph on a
 // transparent background.
-
-const STORES = {
+//
+// Four retailer sets, not one: Compare originally covered groceries only,
+// narrower than the Deals feed, which pulls four real OzBargain category
+// feeds (see scripts/lib/ozbargain.js — Groceries, Health & Beauty,
+// Electronics, Home & Garden). Rather than inventing categories nothing in
+// the feed actually has, each Compare category shops the same retailers its
+// real deal posts do, so tapping a deal on Browse and searching the same
+// kind of product land in the same retailer universe.
+const GROCERY_STORES = {
   woolworths: { id: 1, name: "Woolworths", slug: "woolworths", color: "#1E7A34" },
   coles: { id: 2, name: "Coles", slug: "coles", color: "#E2231A" },
   aldi: { id: 3, name: "ALDI", slug: "aldi", color: "#0060A9" },
 };
+
+const HEALTH_STORES = {
+  chemistWarehouse: { id: 4, name: "Chemist Warehouse", slug: "chemist-warehouse", color: "#E4002B" },
+  priceline: { id: 5, name: "Priceline", slug: "priceline", color: "#E4007C" },
+  amazonau: { id: 6, name: "Amazon AU", slug: "amazon-au", color: "#FF9900" },
+};
+
+const ELECTRONICS_STORES = {
+  jbhifi: { id: 7, name: "JB Hi-Fi", slug: "jb-hi-fi", color: "#FFDE00" },
+  officeworks: { id: 8, name: "Officeworks", slug: "officeworks", color: "#0072CE" },
+  amazonauElec: { id: 9, name: "Amazon AU", slug: "amazon-au", color: "#FF9900" },
+};
+
+const HOME_STORES = {
+  bunnings: { id: 10, name: "Bunnings", slug: "bunnings", color: "#088A3C" },
+  kmart: { id: 11, name: "Kmart", slug: "kmart", color: "#CC0000" },
+  amazonauHome: { id: 12, name: "Amazon AU", slug: "amazon-au", color: "#FF9900" },
+};
+
+const STORES = { ...GROCERY_STORES, ...HEALTH_STORES, ...ELECTRONICS_STORES, ...HOME_STORES };
 
 // Small seeded PRNG (mulberry32) so the generated catalogue is stable across
 // reloads within a session instead of reshuffling prices/ratings every time.
@@ -46,7 +73,31 @@ const CATEGORY_META = {
   Beverages: { icon: "bottle-soda-classic", color: "#3E7FC7" },
   Frozen: { icon: "snowflake", color: "#3FB6C9" },
   Snacks: { icon: "popcorn", color: "#D98A3D" },
+  "Health & Beauty": { icon: "pill", color: "#8C5FBF" },
+  Electronics: { icon: "headphones", color: "#4E7FE0" },
+  "Home & Garden": { icon: "watering-can", color: "#5C9E4A" },
 };
+
+// Which retailer set each category shops — categories not listed default to
+// the grocery set. This map is also how the Browse screen's category rail
+// filters the live deals list: the eight grocery subcategories all roll up
+// under the deals feed's single "Groceries" category (see dealCategoryFor
+// below), while these three pass straight through unchanged.
+const STORE_SET_BY_CATEGORY = {
+  "Health & Beauty": HEALTH_STORES,
+  Electronics: ELECTRONICS_STORES,
+  "Home & Garden": HOME_STORES,
+};
+
+// The catalogue's category names don't map 1:1 onto the deals feed's four
+// real category feeds (scripts/lib/ozbargain.js) — Dairy/Bakery/Meat/etc.
+// are all shopping-list detail the feed doesn't carry; OzBargain just calls
+// all of it "Groceries". This is the single place that mapping lives, so
+// the Browse screen's category rail can filter both the catalogue and the
+// live deals from the same tap without duplicating the list.
+export function dealCategoryFor(catalogCategory) {
+  return catalogCategory in STORE_SET_BY_CATEGORY ? catalogCategory : "Groceries";
+}
 
 // Keyword → icon overrides, checked before falling back to the category
 // default, so e.g. "Cheddar Cheese" gets a cheese wedge rather than the cow
@@ -112,6 +163,34 @@ const ICON_RULES = [
   [/popcorn/, "popcorn", "#E0C23E"],
   [/cracker/, "cookie-outline", "#D9A441"],
   [/pretzel/, "pretzel", "#B5813A"],
+
+  [/vitamin|magnesium|fish oil|multivitamin|zinc/, "pill", "#8C5FBF"],
+  [/ibuprofen|paracetamol|panadol|nurofen|allergy|antihistamine/, "pill", "#C1443C"],
+  [/sunscreen/, "weather-sunny", "#E0A83E"],
+  [/moisturiser|moisturizer|serum/, "bottle-tonic-outline", "#8C5FBF"],
+  [/shampoo|conditioner/, "bottle-tonic-outline", "#3E7FC7"],
+  [/toothpaste|toothbrush/, "tooth-outline", "#3E7FC7"],
+  [/protein powder|whey|creatine/, "dumbbell", "#C1443C"],
+  [/first aid|bandage/, "medical-bag", "#C1443C"],
+  [/deodorant/, "spray-bottle", "#3E7FC7"],
+
+  [/earbuds|headphones/, "headphones", "#4E7FE0"],
+  [/power bank|battery pack/, "battery-charging", "#4E7FE0"],
+  [/smart\s?watch/, "watch", "#4E7FE0"],
+  [/bluetooth speaker|speaker/, "speaker-bluetooth", "#4E7FE0"],
+  [/hdmi|usb-c cable|charging cable/, "cable-data", "#4E7FE0"],
+  [/webcam/, "webcam", "#4E7FE0"],
+  [/usb hub|usb-c hub/, "usb", "#4E7FE0"],
+  [/wireless charger|charging pad/, "power-plug", "#4E7FE0"],
+
+  [/garden hose|watering can/, "watering-can", "#5C9E4A"],
+  [/storage container|storage box/, "box", "#B5813A"],
+  [/kitchen scale/, "scale-bathroom", "#5C9E4A"],
+  [/led bulb|light bulb/, "lightbulb-outline", "#E0A83E"],
+  [/tool set|screwdriver|wrench set/, "hammer-wrench", "#7A857F"],
+  [/cutting board|knife set/, "silverware-fork-knife", "#B5813A"],
+  [/vacuum/, "vacuum", "#5C9E4A"],
+  [/broom|mop/, "broom", "#5C9E4A"],
 ];
 
 function pickIcon(name, category) {
@@ -243,6 +322,58 @@ const ITEM_DEFS = {
     ["Trail Mix 300g", "Various", "300g", 7.0],
     ["Chocolate Biscuits 250g", "Arnott's", "250g", 3.5],
   ],
+  // Priced across Chemist Warehouse / Priceline / Amazon AU (HEALTH_STORES)
+  // instead of the supermarkets — see the note above STORES.
+  "Health & Beauty": [
+    ["Vitamin C 1000mg 60 Tablets", "Nature's Own", "60 tablets", 12.0],
+    ["Magnesium Glycinate 300 Tablets", "Nature's Own", "300 tablets", 24.0],
+    ["Multivitamin 100 Tablets", "Swisse", "100 tablets", 22.0],
+    ["Fish Oil 1000mg 200 Capsules", "Blackmores", "200 capsules", 28.0],
+    ["Ibuprofen 200mg 96 Tablets", "Nurofen", "96 tablets", 9.0],
+    ["Paracetamol 500mg 100 Tablets", "Panadol", "100 tablets", 8.5],
+    ["Allergy Relief Tablets 30pk", "Zyrtec", "30 tablets", 16.0],
+    ["Sunscreen SPF50+ 200ml", "Cancer Council", "200ml", 14.0],
+    ["Moisturiser 200ml", "Cetaphil", "200ml", 18.0],
+    ["Shampoo 400ml", "Head & Shoulders", "400ml", 9.5],
+    ["Toothpaste 110g", "Colgate", "110g", 5.0],
+    ["Electric Toothbrush Heads 4pk", "Oral-B", "4 pack", 22.0],
+    ["Whey Protein Powder 1kg", "Cyborg Sport", "1kg", 55.0],
+    ["Creatine Monohydrate 1kg", "Cyborg Sport", "1kg", 39.0],
+    ["First Aid Kit", "St John Ambulance", "1 unit", 25.0],
+    ["Deodorant 150ml", "Rexona", "150ml", 6.5],
+  ],
+  // Priced across JB Hi-Fi / Officeworks / Amazon AU (ELECTRONICS_STORES).
+  Electronics: [
+    ["Wireless Earbuds", "JBL", "1 pair", 79.0],
+    ["Over-Ear Headphones", "Sony", "1 unit", 129.0],
+    ["Bluetooth Speaker", "JBL", "1 unit", 89.0],
+    ["20000mAh Power Bank", "Anker", "1 unit", 59.0],
+    ["Smart Watch", "Amazfit", "1 unit", 149.0],
+    ["USB-C Charging Cable 2m", "Belkin", "1 unit", 24.0],
+    ["30W Wireless Charger", "Belkin", "1 unit", 39.0],
+    ["HDMI Cable 2m", "Belkin", "1 unit", 15.0],
+    ["1080p Webcam", "Logitech", "1 unit", 69.0],
+    ["USB-C Hub 7-in-1", "UGREEN", "1 unit", 45.0],
+    ["Wireless Mouse", "Logitech", "1 unit", 35.0],
+    ["Mechanical Keyboard", "Logitech", "1 unit", 99.0],
+    ["Phone Case", "OtterBox", "1 unit", 29.0],
+    ["Screen Protector 2pk", "Various", "2 pack", 12.0],
+  ],
+  // Priced across Bunnings / Kmart / Amazon AU (HOME_STORES).
+  "Home & Garden": [
+    ["Garden Hose 18m", "Nylex", "18m", 39.0],
+    ["Watering Can 9L", "Bosmere", "9L", 18.0],
+    ["Storage Container Set 5pk", "Sistema", "5 pack", 25.0],
+    ["Kitchen Scale", "Salter", "1 unit", 22.0],
+    ["LED Bulb 4pk", "Philips", "4 pack", 16.0],
+    ["Cutting Board Set 3pk", "Various", "3 pack", 19.0],
+    ["Tool Set 39pc", "Stanley", "39 piece", 45.0],
+    ["Extension Cord 10m", "HPM", "10m", 22.0],
+    ["Storage Boxes 3pk", "Decor", "3 pack", 28.0],
+    ["Robot Vacuum", "Kmart", "1 unit", 149.0],
+    ["Broom & Dustpan Set", "Various", "1 set", 14.0],
+    ["Outdoor Cushion 2pk", "Various", "2 pack", 25.0],
+  ],
 };
 
 function withPriceSummary(product) {
@@ -261,10 +392,9 @@ function withPriceSummary(product) {
   };
 }
 
-function makePrices(basePrice) {
-  const allStores = [STORES.woolworths, STORES.coles, STORES.aldi];
-  const count = rand() < 0.75 ? 3 : 2;
-  const chosen = count === 3 ? allStores : shuffle(allStores).slice(0, 2);
+function makePrices(basePrice, storeList) {
+  const count = rand() < 0.75 ? storeList.length : storeList.length - 1;
+  const chosen = count >= storeList.length ? storeList : shuffle(storeList).slice(0, count);
   return chosen.map((store) => {
     const variance = (rand() - 0.5) * 0.3; // ±15%
     const price = Math.max(0.5, basePrice * (1 + variance));
@@ -280,6 +410,7 @@ function generateProducts() {
   let id = 1;
   const products = [];
   for (const [category, items] of Object.entries(ITEM_DEFS)) {
+    const storeList = Object.values(STORE_SET_BY_CATEGORY[category] || GROCERY_STORES);
     for (const [name, brand, size, basePrice] of items) {
       const { icon, color } = pickIcon(name, category);
       products.push(
@@ -293,7 +424,7 @@ function generateProducts() {
           iconColor: color,
           rating: Number((3.8 + rand() * 1.1).toFixed(1)),
           review_count: Math.floor(15 + rand() * 400),
-          prices: makePrices(basePrice),
+          prices: makePrices(basePrice, storeList),
         })
       );
     }

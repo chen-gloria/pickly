@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-17T19:35:42.426Z",
+  "updatedAt": "2026-08-17T22:38:05.918Z",
   "products": {
     "musclechef|chef-delivered-high-muscle-protein-subscription": {
       "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
@@ -2046,6 +2046,762 @@
           "votes": 42,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971536"
+        }
+      ]
+    },
+    "bunnings|160mm-18v-brushless-chainsaw-ozito-pruning-pxc": {
+      "key": "bunnings|160mm-18v-brushless-chainsaw-ozito-pruning-pxc",
+      "store": "bunnings",
+      "storeLabel": "Bunnings",
+      "tokens": [
+        "160mm",
+        "18v",
+        "brushless",
+        "chainsaw",
+        "ozito",
+        "pruning",
+        "pxc"
+      ],
+      "sizes": [],
+      "title": "Ozito PXC 18V 160mm 6¼” Brushless Pruning Chainsaw (Skin Only) $48.92 + Delivery ($0 C&C/ in-Store/ OnePass)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 48.92,
+          "votes": 345,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971340"
+        }
+      ]
+    },
+    "amazonau|18cm-grabbers-maxwell-mini-silicone-stainless-steel-tongs-williams": {
+      "key": "amazonau|18cm-grabbers-maxwell-mini-silicone-stainless-steel-tongs-williams",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "18cm",
+        "grabbers",
+        "maxwell",
+        "mini",
+        "silicone",
+        "stainless",
+        "steel",
+        "tongs",
+        "williams"
+      ],
+      "sizes": [],
+      "title": "Maxwell & Williams Grabbers Mini Tongs 18cm Silicone $1.58, Stainless Steel $1.33 + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 1.58,
+          "votes": 122,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971597"
+        }
+      ]
+    },
+    "target|anko-blanket-electric-heated-heater-throw": {
+      "key": "target|anko-blanket-electric-heated-heater-throw",
+      "store": "target",
+      "storeLabel": "Target",
+      "tokens": [
+        "anko",
+        "blanket",
+        "electric",
+        "heated",
+        "heater",
+        "throw"
+      ],
+      "sizes": [],
+      "title": "Anko Heated Throw from $15, Electric Blanket from $15, Heater from $10 + Delivery ($0 C&C/ $60 Order/ In-Store)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 15,
+          "votes": 301,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970897"
+        }
+      ]
+    },
+    "wolfboxautostorealiexpre|air-au-df60-duster-electric-shipped-stock-us-wolfbox": {
+      "key": "wolfboxautostorealiexpre|air-au-df60-duster-electric-shipped-stock-us-wolfbox",
+      "store": "wolfboxautostorealiexpre",
+      "storeLabel": "WOLFBOX Auto Store AliExpress",
+      "tokens": [
+        "air",
+        "au",
+        "df60",
+        "duster",
+        "electric",
+        "shipped",
+        "stock",
+        "us",
+        "wolfbox"
+      ],
+      "sizes": [],
+      "title": "Wolfbox Electric Air Duster DF60 US$19.06 (~A$26.39) AU Stock Shipped",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 19.06,
+          "votes": 76,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971676"
+        }
+      ]
+    },
+    "taplifesydneymetroonly|installation-installed-licensed-plumber-service-supplied-tap": {
+      "key": "taplifesydneymetroonly|installation-installed-licensed-plumber-service-supplied-tap",
+      "store": "taplifesydneymetroonly",
+      "storeLabel": "TapLife (Sydney Metro Only)",
+      "tokens": [
+        "installation",
+        "installed",
+        "licensed",
+        "plumber",
+        "service",
+        "supplied",
+        "tap"
+      ],
+      "sizes": [],
+      "title": "[NSW] Tap Supplied & Installed by Licensed Plumber from $185 | Tap Installation Service $149",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 185,
+          "votes": 474,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/969768"
+        }
+      ]
+    },
+    "aussieelectronaliexpress|delivered-forerunner-garmin-smartwatch-us": {
+      "key": "aussieelectronaliexpress|delivered-forerunner-garmin-smartwatch-us",
+      "store": "aussieelectronaliexpress",
+      "storeLabel": "Aussie Electron AliExpress",
+      "tokens": [
+        "delivered",
+        "forerunner",
+        "garmin",
+        "smartwatch",
+        "us"
+      ],
+      "sizes": [],
+      "title": "Garmin Forerunner 265 Smartwatch US$230.76 (~A$325), Forerunner 255 US$159.95 (~A$225) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 230.76,
+          "votes": 48,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971667"
+        }
+      ]
+    },
+    "kmart|cam-charger-dash-foldable-hd-powerbank-qi2": {
+      "key": "kmart|cam-charger-dash-foldable-hd-powerbank-qi2",
+      "store": "kmart",
+      "storeLabel": "Kmart",
+      "tokens": [
+        "cam",
+        "charger",
+        "dash",
+        "foldable",
+        "hd",
+        "powerbank",
+        "qi2"
+      ],
+      "sizes": [],
+      "title": "Qi2 3-in-1 Foldable Charger $18, 3-in-1 Powerbank $18, HD Dash Cam $39 + Delivery ($0 OnePass/C&C/in Store)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 18,
+          "votes": 55,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971613"
+        }
+      ]
+    },
+    "amazonau|21cm-cosmopolitan-electric-maxwell-mill-pepper-salt-williams": {
+      "key": "amazonau|21cm-cosmopolitan-electric-maxwell-mill-pepper-salt-williams",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "21cm",
+        "cosmopolitan",
+        "electric",
+        "maxwell",
+        "mill",
+        "pepper",
+        "salt",
+        "williams"
+      ],
+      "sizes": [],
+      "title": "Maxwell & Williams Cosmopolitan Electric Salt/Pepper Mill 21cm $13.48 + Delivery ($0 Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 13.48,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971609"
+        }
+      ]
+    },
+    "iniuauviaamazonau|10000mah-45w-bank-built-cable-iniu-power": {
+      "key": "iniuauviaamazonau|10000mah-45w-bank-built-cable-iniu-power",
+      "store": "iniuauviaamazonau",
+      "storeLabel": "INIU AU via Amazon AU",
+      "tokens": [
+        "10000mah",
+        "45w",
+        "bank",
+        "built",
+        "cable",
+        "iniu",
+        "power"
+      ],
+      "sizes": [],
+      "title": "INIU 45W 10000mAh Power Bank with Built-in Cable $18.20 + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 18.2,
+          "votes": 70,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971588"
+        }
+      ]
+    },
+    "kmart|20mp-4k-bluetooth-camera-del-desk-digital-lamp-pod-speaker-speakers": {
+      "key": "kmart|20mp-4k-bluetooth-camera-del-desk-digital-lamp-pod-speaker-speakers",
+      "store": "kmart",
+      "storeLabel": "Kmart",
+      "tokens": [
+        "20mp",
+        "4k",
+        "bluetooth",
+        "camera",
+        "del",
+        "desk",
+        "digital",
+        "lamp",
+        "pod",
+        "speaker",
+        "speakers"
+      ],
+      "sizes": [],
+      "title": "20MP 4K Digital Camera $15 (Was $79), 2-in-1 Pod Speakers $15, Desk Lamp Bluetooth Speaker $15  + Del ($0 OnePass/ C&C)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 15,
+          "votes": 136,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971039"
+        }
+      ]
+    },
+    "blueantauviaamazonau|120w-blueant-bluetooth-delivered-monitor-soundbar-soundblade-under-usb": {
+      "key": "blueantauviaamazonau|120w-blueant-bluetooth-delivered-monitor-soundbar-soundblade-under-usb",
+      "store": "blueantauviaamazonau",
+      "storeLabel": "BlueAnt AU via Amazon AU",
+      "tokens": [
+        "120w",
+        "blueant",
+        "bluetooth",
+        "delivered",
+        "monitor",
+        "soundbar",
+        "soundblade",
+        "under",
+        "usb"
+      ],
+      "sizes": [],
+      "title": "BlueAnt Soundblade Under-Monitor Soundbar, 120w with USB-C & Bluetooth 5.3 $94 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 94,
+          "votes": 104,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971061"
+        }
+      ]
+    },
+    "kmart|2400w-anko-convection-heater-led-timer": {
+      "key": "kmart|2400w-anko-convection-heater-led-timer",
+      "store": "kmart",
+      "storeLabel": "Kmart",
+      "tokens": [
+        "2400w",
+        "anko",
+        "convection",
+        "heater",
+        "led",
+        "timer"
+      ],
+      "sizes": [],
+      "title": "anko 2400W Convection LED Heater with Timer $29 + Delivery ($0 OnePass/C&C/in Store)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 29,
+          "votes": 99,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971346"
+        }
+      ]
+    },
+    "anker|056wh-anker-c1000-delivered-portable-power-solix-station": {
+      "key": "anker|056wh-anker-c1000-delivered-portable-power-solix-station",
+      "store": "anker",
+      "storeLabel": "Anker",
+      "tokens": [
+        "056wh",
+        "anker",
+        "c1000",
+        "delivered",
+        "portable",
+        "power",
+        "solix",
+        "station"
+      ],
+      "sizes": [],
+      "title": "Anker Solix C1000 (Gen1) Portable Power Station - 1,056Wh $699 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 699,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971638"
+        }
+      ]
+    },
+    "bunningswarehouselimited|australia-coir-door-home-mat": {
+      "key": "bunningswarehouselimited|australia-coir-door-home-mat",
+      "store": "bunningswarehouselimited",
+      "storeLabel": "Bunnings Warehouse (Limited Stores)",
+      "tokens": [
+        "australia",
+        "coir",
+        "door",
+        "home",
+        "mat"
+      ],
+      "sizes": [],
+      "title": "\"Home\" Australia Coir Door Mat $0.50 In-Store",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 0.5,
+          "votes": 51,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971431"
+        }
+      ]
+    },
+    "amazonauexclnt|7l-cooker-delivered-duo-electric-instant-pot-pressure|5700ml": {
+      "key": "amazonauexclnt|7l-cooker-delivered-duo-electric-instant-pot-pressure|5700ml",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "7l",
+        "cooker",
+        "delivered",
+        "duo",
+        "electric",
+        "instant",
+        "pot",
+        "pressure"
+      ],
+      "sizes": [
+        "5700ml"
+      ],
+      "title": "Instant Pot 9-in-1 Duo Plus 5.7L Electric Pressure Cooker $107.61 (RRP $159) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 107.61,
+          "votes": 107,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971259"
+        }
+      ]
+    },
+    "amazonau|delivered-emf-klein-meter-moisture-pinless-technology-tools": {
+      "key": "amazonau|delivered-emf-klein-meter-moisture-pinless-technology-tools",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "emf",
+        "klein",
+        "meter",
+        "moisture",
+        "pinless",
+        "technology",
+        "tools"
+      ],
+      "sizes": [],
+      "title": "Klein Tools Pinless Moisture Meter with EMF Technology $65 (RRP $73.32) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 65,
+          "votes": 34,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971595"
+        }
+      ]
+    },
+    "originenergy|8c-bill-charging-credits-customers-electricity-energy-ev-gas-kwh-moving-night-origin": {
+      "key": "originenergy|8c-bill-charging-credits-customers-electricity-energy-ev-gas-kwh-moving-night-origin",
+      "store": "originenergy",
+      "storeLabel": "Origin Energy",
+      "tokens": [
+        "8c",
+        "bill",
+        "charging",
+        "credits",
+        "customers",
+        "electricity",
+        "energy",
+        "ev",
+        "gas",
+        "kwh",
+        "moving",
+        "night",
+        "origin"
+      ],
+      "sizes": [],
+      "title": "Origin Energy Bill Credits for New/Moving Customers: $200 Electricity, $100 Gas + 8c/kWh EV Night Charging",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 200,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971426"
+        }
+      ]
+    },
+    "coles211more|190g-95g-arnotts-crackers-john-shapes-tuna-west-woolworths|190g+95g": {
+      "key": "coles211more|190g-95g-arnotts-crackers-john-shapes-tuna-west-woolworths|190g+95g",
+      "store": "coles211more",
+      "storeLabel": "Coles + 211 More",
+      "tokens": [
+        "190g",
+        "95g",
+        "arnotts",
+        "crackers",
+        "john",
+        "shapes",
+        "tuna",
+        "west",
+        "woolworths"
+      ],
+      "sizes": [
+        "190g",
+        "95g"
+      ],
+      "title": "½ Price: Arnott’s Shapes Crackers 160-190g $2 @ Woolworths | John West Tuna 95g $1.45",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 2,
+          "votes": 32,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971669"
+        }
+      ]
+    },
+    "nswgovernment|8kg-eligible-front-households-income-lg-load-loader-low-pensioners-series-top-trade|8000g": {
+      "key": "nswgovernment|8kg-eligible-front-households-income-lg-load-loader-low-pensioners-series-top-trade|8000g",
+      "store": "nswgovernment",
+      "storeLabel": "NSW Government",
+      "tokens": [
+        "8kg",
+        "eligible",
+        "front",
+        "households",
+        "income",
+        "lg",
+        "load",
+        "loader",
+        "low",
+        "pensioners",
+        "series",
+        "top",
+        "trade"
+      ],
+      "sizes": [
+        "8000g"
+      ],
+      "title": "[NSW] LG 8kg Series 3 Front Load $250 with Top-Loader Trade-in for Eligible Pensioners/Low Income Households",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 250,
+          "votes": 91,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971101"
+        }
+      ]
+    },
+    "totaltools|47cm-56v-blower-ego-free-kit-lb6150e-lm1903e-mower-propelled-self-sp": {
+      "key": "totaltools|47cm-56v-blower-ego-free-kit-lb6150e-lm1903e-mower-propelled-self-sp",
+      "store": "totaltools",
+      "storeLabel": "Total Tools",
+      "tokens": [
+        "47cm",
+        "56v",
+        "blower",
+        "ego",
+        "free",
+        "kit",
+        "lb6150e",
+        "lm1903e",
+        "mower",
+        "propelled",
+        "self",
+        "sp"
+      ],
+      "sizes": [],
+      "title": "EGO LM1903E-SP 56V 47cm Self-Propelled Mower Kit + Free LB6150E Blower (via Redemption) $899 + Delivery ($0 C&C)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 899,
+          "votes": 37,
+          "kind": "FREE",
+          "url": "https://www.ozbargain.com.au/node/971561"
+        }
+      ]
+    },
+    "bunningswarehouse|0ah-165mm-18v-bosch-brushless-circular-delivered-kit-professional-saw": {
+      "key": "bunningswarehouse|0ah-165mm-18v-bosch-brushless-circular-delivered-kit-professional-saw",
+      "store": "bunningswarehouse",
+      "storeLabel": "Bunnings Warehouse",
+      "tokens": [
+        "0ah",
+        "165mm",
+        "18v",
+        "bosch",
+        "brushless",
+        "circular",
+        "delivered",
+        "kit",
+        "professional",
+        "saw"
+      ],
+      "sizes": [],
+      "title": "Bosch 18V Professional Brushless  165mm Circular Saw 5.0Ah Kit $199 Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 199,
+          "votes": 66,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971145"
+        }
+      ]
+    },
+    "aldi|cabinet-display-glass-sohl": {
+      "key": "aldi|cabinet-display-glass-sohl",
+      "store": "aldi",
+      "storeLabel": "ALDI",
+      "tokens": [
+        "cabinet",
+        "display",
+        "glass",
+        "sohl"
+      ],
+      "sizes": [],
+      "title": "Sohl Glass Display Cabinet $99.99",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 99.99,
+          "votes": 84,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970668"
+        }
+      ]
+    },
+    "bunningsspringvale|16oz-claw-hammer-stanley": {
+      "key": "bunningsspringvale|16oz-claw-hammer-stanley",
+      "store": "bunningsspringvale",
+      "storeLabel": "Bunnings, Springvale",
+      "tokens": [
+        "16oz",
+        "claw",
+        "hammer",
+        "stanley"
+      ],
+      "sizes": [],
+      "title": "[VIC] Stanley 16oz Claw Hammer $4 (in-Store Only)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 4,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971462"
+        }
+      ]
+    },
+    "amazonau|delivered-garmin-graphite-instinct-smart-solar-watch": {
+      "key": "amazonau|delivered-garmin-graphite-instinct-smart-solar-watch",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "garmin",
+        "graphite",
+        "instinct",
+        "smart",
+        "solar",
+        "watch"
+      ],
+      "sizes": [],
+      "title": "Garmin Instinct 2 Solar Smart Watch in Graphite $338.98 (RRP $679) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 338.98,
+          "votes": 75,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970847"
+        }
+      ]
+    },
+    "aldi|46pk-aldi-dishwasher-logix-tablets|46pk": {
+      "key": "aldi|46pk-aldi-dishwasher-logix-tablets|46pk",
+      "store": "aldi",
+      "storeLabel": "ALDI",
+      "tokens": [
+        "46pk",
+        "aldi",
+        "dishwasher",
+        "logix",
+        "tablets"
+      ],
+      "sizes": [
+        "46pk"
+      ],
+      "title": "ALDI Logix Dishwasher Tablets 46pk $10.99 ($0.24 Each)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 10.99,
+          "votes": 91,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970237"
+        }
+      ]
+    },
+    "amazonauexclnt|2l-canesten-disinfectant-laundry-lemon-sanitiser|2000ml": {
+      "key": "amazonauexclnt|2l-canesten-disinfectant-laundry-lemon-sanitiser|2000ml",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "2l",
+        "canesten",
+        "disinfectant",
+        "laundry",
+        "lemon",
+        "sanitiser"
+      ],
+      "sizes": [
+        "2000ml"
+      ],
+      "title": "Canesten Disinfectant and Laundry Sanitiser Lemon 2L $11.87 ($10.68 S&S) + Delivery ($0 Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 11.87,
+          "votes": 46,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970966"
+        }
+      ]
+    },
+    "kmart|bag-bottle-catcher-clip-del-peeler-spout-tomato": {
+      "key": "kmart|bag-bottle-catcher-clip-del-peeler-spout-tomato",
+      "store": "kmart",
+      "storeLabel": "Kmart",
+      "tokens": [
+        "bag",
+        "bottle",
+        "catcher",
+        "clip",
+        "del",
+        "peeler",
+        "spout",
+        "tomato"
+      ],
+      "sizes": [],
+      "title": "Peeler with Catcher $0.50 (Was $1.50), Bag Clip with Spout $0.50 (Was $1.75), Tomato Bottle $0.50 + Del ($0 OnePass/C&C)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 0.5,
+          "votes": 43,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970703"
+        }
+      ]
+    },
+    "toolkitdepot|box-bundle-deep-dewalt-ip54-organiser-tstak": {
+      "key": "toolkitdepot|box-bundle-deep-dewalt-ip54-organiser-tstak",
+      "store": "toolkitdepot",
+      "storeLabel": "Tool Kit Depot",
+      "tokens": [
+        "box",
+        "bundle",
+        "deep",
+        "dewalt",
+        "ip54",
+        "organiser",
+        "tstak"
+      ],
+      "sizes": [],
+      "title": "DeWALT IP54 TSTAK Deep Box & Organiser Bundle $79 + Delivery ($0 C&C/ in-Store/ $99 Order)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 79,
+          "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970518"
+        }
+      ]
+    },
+    "amazonau|good-grips-oxo-peeler-swivel": {
+      "key": "amazonau|good-grips-oxo-peeler-swivel",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "good",
+        "grips",
+        "oxo",
+        "peeler",
+        "swivel"
+      ],
+      "sizes": [],
+      "title": "[Backorder] OXO Good Grips Swivel Peeler $7.19 + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-17",
+          "price": 7.19,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970239"
         }
       ]
     }

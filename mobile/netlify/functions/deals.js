@@ -22,7 +22,7 @@ exports.handler = async () => {
         "Cache-Control": "public, max-age=300, stale-while-revalidate=1800",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({ capturedAt: new Date().toISOString(), deals: deals.slice(0, 40) }),
+      body: JSON.stringify({ capturedAt: new Date().toISOString(), deals: deals.slice(0, 60) }),
     };
   } catch (err) {
     return { statusCode: 502, body: JSON.stringify({ error: String(err) }) };

@@ -1,20 +1,21 @@
 // Decides what the user sees: auth screens when logged out, the main tabs when in.
 import React from "react";
-import { ActivityIndicator, Text, View } from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { NavigationContainer, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
 import { useAuth } from "../context/AuthContext";
 import { colors } from "../theme";
 
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
-import DealsScreen from "../screens/DealsScreen";
-import SearchScreen from "../screens/SearchScreen";
+import BrowseScreen from "../screens/BrowseScreen";
 import ProductDetailScreen from "../screens/ProductDetailScreen";
 import WatchlistScreen from "../screens/WatchlistScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import LeaderboardScreen from "../screens/LeaderboardScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,17 +54,12 @@ function MainTabs() {
       }}
     >
       <Tab.Screen
-        name="Deals"
-        component={DealsScreen}
-        // The feed is the home surface — it draws its own editorial header.
+        name="Browse"
+        component={BrowseScreen}
+        // One home surface for both the live judged deal feed and the
+        // searchable catalog (see BrowseScreen.js for why they're merged).
+        // Draws its own editorial header instead of the default bar.
         options={{ tabBarIcon: tabIcon("🔥"), headerShown: false }}
-      />
-      <Tab.Screen
-        name="Search"
-        component={SearchScreen}
-        // This screen draws its own header (logo + profile/filter/favorite
-        // icons) to match the Figma design instead of the default bar.
-        options={{ title: "Compare", tabBarIcon: tabIcon("🔍"), headerShown: false }}
       />
       <Tab.Screen
         name="Favorites"
@@ -75,7 +71,22 @@ function MainTabs() {
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{ tabBarIcon: tabIcon("👤") }}
+        options={({ navigation }) => ({
+          tabBarIcon: tabIcon("👤"),
+          // Tab roots don't get a back button by default (there's nothing
+          // "under" them to pop to) — but the bottom bar alone wasn't a
+          // clear enough way back for people used to a header control, so
+          // this jumps straight to Browse the same way tapping the tab does.
+          headerLeft: () => (
+            <TouchableOpacity
+              hitSlop={8}
+              onPress={() => navigation.navigate("Browse")}
+              style={{ paddingLeft: 16, paddingRight: 8 }}
+            >
+              <Ionicons name="chevron-back" size={24} color={colors.text} />
+            </TouchableOpacity>
+          ),
+        })}
       />
     </Tab.Navigator>
   );
@@ -120,6 +131,11 @@ export default function RootNavigator() {
               name="ProductDetail"
               component={ProductDetailScreen}
               options={{ title: "Price Comparison" }}
+            />
+            <Stack.Screen
+              name="Leaderboard"
+              component={LeaderboardScreen}
+              options={{ title: "Leaderboard" }}
             />
           </>
         ) : (

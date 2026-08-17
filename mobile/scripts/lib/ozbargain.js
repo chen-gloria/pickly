@@ -6,11 +6,15 @@
 // only those feeds, keep every deal's canonical link back to OzBargain, and
 // never scrape the HTML site.
 
-// Supermarket / household categories only — deliberately narrow while we
-// validate the feed format. Broader categories can be added later.
+// Started supermarket/household-only "while we validate the feed format" —
+// validated, so widened to two more everyday categories. Still a deliberate
+// subset of OzBargain's full category list, not an attempt to mirror the
+// whole site.
 const FEEDS = [
   { url: "https://www.ozbargain.com.au/cat/groceries/feed", category: "Groceries" },
   { url: "https://www.ozbargain.com.au/cat/health-beauty/feed", category: "Health & Beauty" },
+  { url: "https://www.ozbargain.com.au/cat/electrical-electronics/feed", category: "Electronics" },
+  { url: "https://www.ozbargain.com.au/cat/home-garden/feed", category: "Home & Garden" },
 ];
 
 const XML_ENTITIES = {

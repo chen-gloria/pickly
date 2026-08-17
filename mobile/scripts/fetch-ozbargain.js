@@ -16,7 +16,9 @@ const OUT = path.join(__dirname, "..", "src", "api", "dealsSnapshot.json");
     console.error("No deals parsed — leaving the existing snapshot untouched.");
     process.exit(1);
   }
-  const payload = { capturedAt: new Date().toISOString(), deals: deals.slice(0, 40) };
+  // 4 source feeds now (was 2) — raise the cap so the wider category mix
+  // actually shows up instead of getting truncated back down to two.
+  const payload = { capturedAt: new Date().toISOString(), deals: deals.slice(0, 60) };
   fs.writeFileSync(OUT, JSON.stringify(payload, null, 2) + "\n");
   console.log(`Wrote ${payload.deals.length} deals to ${path.relative(process.cwd(), OUT)}`);
   console.log("Top 5 by heat:");
