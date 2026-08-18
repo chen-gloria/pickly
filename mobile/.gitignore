@@ -33,7 +33,8 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env files — .env holds real API keys (SERPAPI_KEY etc.), never commit it
+.env
 .env*.local
 
 # typescript
