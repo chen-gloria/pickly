@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-17T19:35:42.426Z",
+  "updatedAt": "2026-08-18T19:34:53.764Z",
   "products": {
     "musclechef|chef-delivered-high-muscle-protein-subscription": {
       "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
@@ -47,6 +47,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 89.21,
+          "votes": 208,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971003"
+        },
+        {
+          "date": "2026-08-18",
           "price": 89.21,
           "votes": 208,
           "kind": "DEAL",
@@ -259,6 +266,13 @@
           "votes": 63,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971118"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 29.99,
+          "votes": 64,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971118"
         }
       ]
     },
@@ -448,6 +462,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 30.65,
+          "votes": 43,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971014"
+        },
+        {
+          "date": "2026-08-18",
           "price": 30.65,
           "votes": 43,
           "kind": "½ PRICE",
@@ -683,6 +704,13 @@
           "votes": 83,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970023"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 3.3,
+          "votes": 83,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970023"
         }
       ]
     },
@@ -752,6 +780,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 29.99,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970836"
+        },
+        {
+          "date": "2026-08-18",
           "price": 29.99,
           "votes": 42,
           "kind": "DEAL",
@@ -831,6 +866,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 36.99,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970192"
+        },
+        {
+          "date": "2026-08-18",
           "price": 36.99,
           "votes": 52,
           "kind": "DEAL",
@@ -1041,6 +1083,13 @@
           "votes": 34,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970392"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 69.95,
+          "votes": 34,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970392"
         }
       ]
     },
@@ -1095,6 +1144,13 @@
           "votes": 32,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970625"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 4.99,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970625"
         }
       ]
     },
@@ -1143,6 +1199,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 14.45,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968937"
+        },
+        {
+          "date": "2026-08-18",
           "price": 14.45,
           "votes": 45,
           "kind": "DEAL",
@@ -1231,6 +1294,13 @@
         },
         {
           "date": "2026-08-17",
+          "price": 12.99,
+          "votes": 67,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968402"
+        },
+        {
+          "date": "2026-08-18",
           "price": 12.99,
           "votes": 67,
           "kind": "DEAL",
@@ -1809,6 +1879,13 @@
           "votes": 76,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971267"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 8.99,
+          "votes": 76,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971267"
         }
       ]
     },
@@ -1946,6 +2023,13 @@
           "votes": 90,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971466"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 35.9,
+          "votes": 93,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971466"
         }
       ]
     },
@@ -1977,6 +2061,13 @@
           "date": "2026-08-17",
           "price": 19.99,
           "votes": 93,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971577"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 19.99,
+          "votes": 94,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971577"
         }
@@ -2046,6 +2137,91 @@
           "votes": 42,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971536"
+        },
+        {
+          "date": "2026-08-18",
+          "price": 4,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971536"
+        }
+      ]
+    },
+    "autobarnautopro|375ml-can-coca-cola-limited-stores|375ml": {
+      "key": "autobarnautopro|375ml-can-coca-cola-limited-stores|375ml",
+      "store": "autobarnautopro",
+      "storeLabel": "Autobarn & Autopro",
+      "tokens": [
+        "375ml",
+        "can",
+        "coca",
+        "cola",
+        "limited",
+        "stores"
+      ],
+      "sizes": [
+        "375ml"
+      ],
+      "title": "Coca-Cola 375ml Can 24-Pack $2.99 C&C / in Limited Stores Only",
+      "observations": [
+        {
+          "date": "2026-08-18",
+          "price": 2.99,
+          "votes": 101,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971822"
+        }
+      ]
+    },
+    "inglewoodcoffeeroasters|any-bags-coffee-size": {
+      "key": "inglewoodcoffeeroasters|any-bags-coffee-size",
+      "store": "inglewoodcoffeeroasters",
+      "storeLabel": "Inglewood Coffee Roasters",
+      "tokens": [
+        "any",
+        "bags",
+        "coffee",
+        "size"
+      ],
+      "sizes": [],
+      "title": "60% off Any Size Coffee Bags + Delivery ($0 VIC C&C/ $75 Order)",
+      "observations": [
+        {
+          "date": "2026-08-18",
+          "price": 0,
+          "votes": 45,
+          "kind": "60% OFF",
+          "url": "https://www.ozbargain.com.au/node/971820"
+        }
+      ]
+    },
+    "coles211more|190g-95g-arnotts-crackers-john-shapes-tuna-west-woolworths|190g+95g": {
+      "key": "coles211more|190g-95g-arnotts-crackers-john-shapes-tuna-west-woolworths|190g+95g",
+      "store": "coles211more",
+      "storeLabel": "Coles + 211 More",
+      "tokens": [
+        "190g",
+        "95g",
+        "arnotts",
+        "crackers",
+        "john",
+        "shapes",
+        "tuna",
+        "west",
+        "woolworths"
+      ],
+      "sizes": [
+        "190g",
+        "95g"
+      ],
+      "title": "½ Price: Arnott’s Shapes Crackers 160-190g $2 @ Woolworths | John West Tuna 95g $1.45",
+      "observations": [
+        {
+          "date": "2026-08-18",
+          "price": 2,
+          "votes": 41,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971669"
         }
       ]
     }
