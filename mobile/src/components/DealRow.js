@@ -4,16 +4,19 @@
 // countdown, which is what makes people keep scrolling to see what's below.
 // It's also the main thing stopping this from reading as another uniform
 // card grid.
-import React from "react";
+import React, { useMemo } from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Sparkline from "./Sparkline";
 import VerdictBadge from "./VerdictBadge";
-import { colors, radius, spacing, type } from "../theme";
+import { radius, spacing, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 import { dealVoice, compactNumber } from "../utils/dealVoice";
 import { timeAgo, timeLeft } from "../api/deals";
 
 export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   const judgement = deal.judgement;
   const left = timeLeft(deal.expiresAt);
 
@@ -33,7 +36,14 @@ export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
             {deal.store || deal.category}
           </Text>
           {onToggleWatch && (
-            <TouchableOpacity onPress={onToggleWatch} hitSlop={10} style={styles.bookmark}>
+            <TouchableOpacity
+              onPress={(e) => {
+                e?.stopPropagation?.();
+                onToggleWatch();
+              }}
+              hitSlop={10}
+              style={styles.bookmark}
+            >
               <Ionicons
                 name={watched ? "bookmark" : "bookmark-outline"}
                 size={16}
@@ -93,40 +103,42 @@ export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
   );
 }
 
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.md,
-    gap: spacing.sm + 2,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.border,
-  },
-  thumbWrap: {
-    width: 66,
-    height: 66,
-    borderRadius: radius.md,
-    overflow: "hidden",
-    backgroundColor: colors.cardHi,
-  },
-  thumb: { width: "100%", height: "100%" },
-  thumbFallback: { backgroundColor: colors.cardHi },
-  content: { flex: 1 },
-  topRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
-  store: { ...type.micro, color: colors.primary, flex: 1 },
-  bookmark: { paddingHorizontal: spacing.sm },
-  age: { color: colors.textFaint, fontSize: 11 },
-  expiry: { color: colors.textMuted, fontSize: 11, fontWeight: "700", marginLeft: "auto" },
-  expiryUrgent: { color: colors.ember },
-  title: { color: colors.text, ...type.body, lineHeight: 19, marginTop: 3 },
-  voice: { color: colors.accent, fontSize: 12, fontWeight: "600", marginTop: 5, fontStyle: "italic" },
-  judgeRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 7 },
-  reason: { flex: 1, color: colors.textMuted, fontSize: 11.5, fontWeight: "600" },
-  footer: { flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.sm },
-  price: { color: colors.saving, fontSize: 16, fontWeight: "800" },
-  stat: { flexDirection: "row", alignItems: "center", gap: 3 },
-  statArrow: { color: colors.textMuted, fontSize: 9 },
-  statIcon: { fontSize: 10 },
-  statText: { color: colors.textMuted, fontSize: 12, fontWeight: "600" },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    row: {
+      flexDirection: "row",
+      alignItems: "flex-start",
+      paddingVertical: spacing.md,
+      paddingHorizontal: spacing.md,
+      gap: spacing.sm + 2,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+    },
+    thumbWrap: {
+      width: 66,
+      height: 66,
+      borderRadius: radius.md,
+      overflow: "hidden",
+      backgroundColor: colors.cardHi,
+    },
+    thumb: { width: "100%", height: "100%" },
+    thumbFallback: { backgroundColor: colors.cardHi },
+    content: { flex: 1 },
+    topRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+    store: { ...type.micro, color: colors.primary, flex: 1 },
+    bookmark: { paddingHorizontal: spacing.sm },
+    age: { color: colors.textFaint, fontSize: 11 },
+    expiry: { color: colors.textMuted, fontSize: 11, fontWeight: "700", marginLeft: "auto" },
+    expiryUrgent: { color: colors.ember },
+    title: { color: colors.text, ...type.body, lineHeight: 19, marginTop: 3 },
+    voice: { color: colors.accent, fontSize: 12, fontWeight: "600", marginTop: 5, fontStyle: "italic" },
+    judgeRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 7 },
+    reason: { flex: 1, color: colors.textMuted, fontSize: 11.5, fontWeight: "600" },
+    footer: { flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.sm },
+    price: { color: colors.saving, fontSize: 16, fontWeight: "800" },
+    stat: { flexDirection: "row", alignItems: "center", gap: 3 },
+    statArrow: { color: colors.textMuted, fontSize: 9 },
+    statIcon: { fontSize: 10 },
+    statText: { color: colors.textMuted, fontSize: 12, fontWeight: "600" },
+  });
+}

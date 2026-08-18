@@ -14,6 +14,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
+  Image,
   Linking,
   ScrollView,
   Text,
@@ -25,12 +26,22 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { fetchDeals } from "../api/deals";
 import { compactNumber } from "../utils/dealVoice";
-import { colors, radius, spacing, type } from "../theme";
+import { radius, spacing, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 
 function Row({ rank, deal, onPress }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.7}>
       <Text style={styles.rank}>{rank}</Text>
+      <View style={styles.thumbFrame}>
+        {deal.image ? (
+          <Image source={{ uri: deal.image }} style={styles.thumb} resizeMode="contain" />
+        ) : (
+          <Ionicons name="pricetag-outline" size={18} color="#C4C9C6" />
+        )}
+      </View>
       <View style={{ flex: 1 }}>
         <Text style={styles.title} numberOfLines={2}>
           {deal.title}
@@ -47,7 +58,9 @@ function Row({ rank, deal, onPress }) {
   );
 }
 
-export default function LeaderboardScreen() {
+export default function LeaderboardScreen({ navigation }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   const [deals, setDeals] = useState(null);
 
   useEffect(() => {
@@ -71,9 +84,22 @@ export default function LeaderboardScreen() {
     Linking.openURL(deal.url).catch(() => {});
   }
 
+  const header = (
+    <View style={styles.header}>
+      <TouchableOpacity onPress={() => navigation.navigate("Browse")} hitSlop={8}>
+        <Ionicons name="chevron-back" size={22} color={colors.text} />
+      </TouchableOpacity>
+      <Text style={styles.headerTitle}>Leaderboard</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Profile")} hitSlop={8}>
+        <Ionicons name="person-outline" size={22} color={colors.text} />
+      </TouchableOpacity>
+    </View>
+  );
+
   if (!deals) {
     return (
       <SafeAreaView style={styles.container} edges={["top"]}>
+        {header}
         <ActivityIndicator style={{ marginTop: spacing.xl * 2 }} color={colors.primary} />
       </SafeAreaView>
     );
@@ -81,7 +107,8 @@ export default function LeaderboardScreen() {
 
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
-      <ScrollView contentContainerStyle={{ padding: spacing.md, paddingBottom: spacing.xl }}>
+      {header}
+      <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: spacing.xl }}>
         <View style={styles.caveat}>
           <Ionicons name="information-circle-outline" size={15} color={colors.textMuted} />
           <Text style={styles.caveatText}>
@@ -108,39 +135,62 @@ export default function LeaderboardScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.background },
-  caveat: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: spacing.sm,
-    padding: spacing.md,
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-  },
-  caveatText: { flex: 1, color: colors.textMuted, ...type.caption, lineHeight: 18 },
-  section: {
-    ...type.section,
-    color: colors.text,
-    marginTop: spacing.lg,
-    marginBottom: spacing.sm,
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm + 2,
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    padding: spacing.md,
-    marginBottom: spacing.sm,
-  },
-  rank: { width: 22, textAlign: "center", color: colors.textFaint, fontSize: 15, fontWeight: "800" },
-  title: { color: colors.text, ...type.body, lineHeight: 19 },
-  store: { color: colors.primary, ...type.micro, marginTop: 4 },
-  voteBlock: { flexDirection: "row", alignItems: "center", gap: 2 },
-  voteText: { color: colors.text, fontSize: 13, fontWeight: "800" },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    container: { flex: 1, backgroundColor: colors.background },
+    header: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      paddingHorizontal: spacing.lg,
+      paddingTop: spacing.md,
+      paddingBottom: spacing.sm,
+    },
+    headerTitle: { ...type.section, color: colors.text },
+    caveat: {
+      flexDirection: "row",
+      alignItems: "flex-start",
+      gap: spacing.sm,
+      padding: spacing.md,
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    caveatText: { flex: 1, color: colors.textMuted, ...type.caption, lineHeight: 18 },
+    section: {
+      ...type.section,
+      color: colors.text,
+      marginTop: spacing.xl,
+      marginBottom: spacing.md,
+    },
+    row: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.sm + 2,
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: spacing.md,
+      marginBottom: spacing.md,
+    },
+    rank: { width: 22, textAlign: "center", color: colors.textFaint, fontSize: 15, fontWeight: "800" },
+    thumbFrame: {
+      width: 44,
+      height: 44,
+      borderRadius: radius.sm,
+      backgroundColor: "#FFFFFF",
+      borderWidth: 1,
+      borderColor: colors.border,
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 4,
+    },
+    thumb: { width: "100%", height: "100%" },
+    title: { color: colors.text, ...type.body, lineHeight: 19 },
+    store: { color: colors.primary, ...type.micro, marginTop: 4 },
+    voteBlock: { flexDirection: "row", alignItems: "center", gap: 2 },
+    voteText: { color: colors.text, fontSize: 13, fontWeight: "800" },
+  });
+}

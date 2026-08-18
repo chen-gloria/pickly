@@ -1,170 +1,143 @@
-// A tappable card showing a product: icon, price + savings, rating, and
-// cheapest-store badge (used in search/lists). Matches the Figma Compare
-// screen design — icon on the left, everything else left-aligned in a
-// column next to it (not spread across the full card width). Every
-// enriched field (rating/store/savings) is optional — screens hitting the
-// real backend's lightweight /products list endpoint (no prices/rating yet)
-// still render a sensible, simpler card.
-import React, { useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
-import ProductIcon from "./ProductIcon";
-import { colors, radius, spacing } from "../theme";
+// A real search result, as a card — the grid used across the "Search
+// results" section of BrowseScreen.js.
+//
+// The image frame is deliberately fixed white regardless of app theme,
+// always `resizeMode: "contain"` with padding: source photos come from
+// wherever the retailer (or Open Food Facts, for scanned items) happens to
+// host them — wildly inconsistent sizes, aspect ratios, and backgrounds.
+// Rather than trying to actually process/remove backgrounds (a paid,
+// unreliable AI step this project isn't taking on), every photo gets
+// letterboxed into the same clean white square — the same trick real
+// shopping-comparison UIs (Google Shopping included) use to make
+// heterogeneous retailer photos read as one consistent catalogue.
+import React, { useMemo } from "react";
+import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { radius, spacing, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 import { CURRENCY_SYMBOL } from "../config";
 
-// `favorited` + `onFavoritePress`: when a parent passes both, the heart is
-// controlled (its state comes from the parent's own persisted store — see
-// BrowseScreen wiring it to the watchlist). Without them it falls back to
-// local-only state, which is fine for a purely decorative use but never
-// claims to have saved anything.
-export default function ProductCard({
-  product,
-  cheapest,
-  onPress,
-  right,
-  onFavoritePress,
-  favorited: favoritedProp,
-}) {
-  const [localFavorited, setLocalFavorited] = useState(false);
-  const favorited = onFavoritePress ? !!favoritedProp : localFavorited;
+export default function ProductCard({ item, onPress, watched, onToggleWatch, style }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
+  const hasDiscount = item.oldPrice != null && item.oldPrice > item.price;
 
-  const price = cheapest != null ? cheapest : product.cheapest_price;
-  const saveAmount = product.save_amount ?? product.potential_saving ?? 0;
-  const store = product.cheapest_store;
-  const hasRating = product.rating != null;
-
-  function toggleFavorite() {
-    if (onFavoritePress) {
-      onFavoritePress(product);
-    } else {
-      setLocalFavorited((f) => !f);
-    }
+  // Nested TouchableOpacity + react-native-web: a tap on the bookmark
+  // otherwise bubbles up to the card's own onPress (opening the listing) as
+  // well as toggling the bookmark — stopPropagation keeps it to just one.
+  function handleBookmarkPress(e) {
+    e?.stopPropagation?.();
+    onToggleWatch();
   }
 
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
-      {right !== undefined ? (
-        <View style={styles.cornerSlot}>{right}</View>
-      ) : (
-        <TouchableOpacity style={styles.cornerSlot} onPress={toggleFavorite} hitSlop={8}>
-          <Text style={[styles.heart, favorited && styles.heartActive]}>
-            {favorited ? "♥" : "♡"}
-          </Text>
-        </TouchableOpacity>
-      )}
+    <TouchableOpacity style={[styles.card, style]} onPress={onPress} activeOpacity={0.85}>
+      <View style={styles.imageFrame}>
+        {item.image ? (
+          <Image source={{ uri: item.image }} style={styles.image} resizeMode="contain" />
+        ) : (
+          <Ionicons name="image-outline" size={22} color="#C4C9C6" />
+        )}
+        {onToggleWatch && (
+          <TouchableOpacity onPress={handleBookmarkPress} hitSlop={10} style={styles.bookmark}>
+            <Ionicons
+              name={watched ? "bookmark" : "bookmark-outline"}
+              size={14}
+              color={watched ? colors.accent : "#8A948D"}
+            />
+          </TouchableOpacity>
+        )}
+      </View>
 
-      <View style={styles.row}>
-        {/* No background box behind the icon — kept fully transparent so
-            it's just the product glyph, nothing else. */}
-        <View style={styles.iconSlot}>
-          <ProductIcon product={product} size={40} />
+      <View style={styles.body}>
+        <View style={[styles.storePill, { backgroundColor: `${item.store.color}22` }]}>
+          <Text style={[styles.storePillText, { color: item.store.color }]} numberOfLines={1}>
+            {item.store.name}
+          </Text>
         </View>
 
-        <View style={styles.content}>
-          <Text style={styles.name} numberOfLines={1}>
-            {product.name}
-          </Text>
-          <Text style={styles.sub} numberOfLines={1}>
-            {product.brand ? `${product.brand} · ` : ""}
-            {product.size}
-          </Text>
+        <Text style={styles.title} numberOfLines={2}>
+          {item.title}
+        </Text>
 
-          {price != null && (
-            <View style={styles.priceRow}>
-              <Text style={styles.price}>
-                {CURRENCY_SYMBOL}
-                {price.toFixed(2)}
-              </Text>
-              {saveAmount > 0 && (
-                <View style={styles.saveBadge}>
-                  <Text style={styles.saveBadgeText}>
-                    Save {CURRENCY_SYMBOL}
-                    {saveAmount.toFixed(2)}
-                  </Text>
-                </View>
-              )}
-            </View>
-          )}
-
-          {(hasRating || store) && (
-            <View style={styles.metaRow}>
-              {hasRating && (
-                <View style={styles.ratingRow}>
-                  <Text style={styles.star}>★</Text>
-                  <Text style={styles.ratingText}>
-                    {product.rating.toFixed(1)} ({product.review_count ?? 0})
-                  </Text>
-                </View>
-              )}
-              {store && (
-                <View style={[styles.storePill, { backgroundColor: `${store.color}1F` }]}>
-                  <Text style={[styles.storePillText, { color: store.color }]}>
-                    {store.name}
-                  </Text>
-                </View>
-              )}
-            </View>
+        <View style={styles.priceRow}>
+          <Text style={styles.price}>
+            {CURRENCY_SYMBOL}
+            {item.price.toFixed(2)}
+          </Text>
+          {hasDiscount && (
+            <Text style={styles.oldPrice}>
+              {CURRENCY_SYMBOL}
+              {item.oldPrice.toFixed(2)}
+            </Text>
           )}
         </View>
+
+        {item.rating != null && (
+          <View style={styles.ratingRow}>
+            <Ionicons name="star" size={10} color={colors.star} />
+            <Text style={styles.ratingText}>
+              {Number(item.rating).toFixed(1)}
+              {item.reviews ? ` (${item.reviews})` : ""}
+            </Text>
+          </View>
+        )}
       </View>
     </TouchableOpacity>
   );
 }
 
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: colors.card,
-    borderRadius: radius.lg,
-    padding: spacing.lg,
-    marginHorizontal: spacing.md,
-    marginVertical: spacing.sm,
-    borderWidth: 1,
-    borderColor: colors.border,
-  },
-  row: { flexDirection: "row", alignItems: "flex-start" },
-  iconSlot: {
-    width: 52,
-    height: 52,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  content: { flex: 1, alignItems: "flex-start", marginLeft: spacing.md, paddingRight: spacing.lg },
-  cornerSlot: {
-    position: "absolute",
-    top: spacing.md,
-    right: spacing.md,
-    zIndex: 1,
-  },
-  heart: { fontSize: 20, color: colors.textMuted },
-  heartActive: { color: colors.primary },
-  name: { fontSize: 16, fontWeight: "700", color: colors.text, textAlign: "left" },
-  sub: { fontSize: 13, color: colors.textMuted, marginTop: 2, textAlign: "left" },
-  priceRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: spacing.sm,
-    gap: spacing.sm,
-  },
-  price: { fontSize: 20, fontWeight: "800", color: colors.text },
-  saveBadge: {
-    backgroundColor: colors.saveBadgeBg,
-    borderRadius: radius.lg,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 3,
-  },
-  saveBadgeText: { fontSize: 12, fontWeight: "700", color: colors.saveBadgeText },
-  metaRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    marginTop: spacing.sm,
-  },
-  ratingRow: { flexDirection: "row", alignItems: "center" },
-  star: { color: colors.star, fontSize: 14, marginRight: 4 },
-  ratingText: { fontSize: 13, color: colors.textMuted, fontWeight: "600" },
-  storePill: {
-    borderRadius: radius.lg,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 3,
-  },
-  storePillText: { fontSize: 12, fontWeight: "700" },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    // No flex/width here on purpose — the caller sizes it via `style`
+    // (flex:1 to fill a grid row evenly, or a fixed width elsewhere).
+    card: {
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      overflow: "hidden",
+    },
+    imageFrame: {
+      // Always white, on purpose — see file header.
+      backgroundColor: "#FFFFFF",
+      aspectRatio: 1.15,
+      alignItems: "center",
+      justifyContent: "center",
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+      padding: spacing.md,
+    },
+    image: { width: "100%", height: "100%" },
+    bookmark: {
+      position: "absolute",
+      top: 6,
+      right: 6,
+      width: 24,
+      height: 24,
+      borderRadius: 12,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "rgba(255,255,255,0.92)",
+      shadowColor: "#000",
+      shadowOpacity: 0.15,
+      shadowRadius: 3,
+      shadowOffset: { width: 0, height: 1 },
+      elevation: 2,
+    },
+    body: { padding: spacing.md, gap: 6 },
+    storePill: {
+      alignSelf: "flex-start",
+      borderRadius: radius.lg,
+      paddingHorizontal: spacing.sm,
+      paddingVertical: 2,
+    },
+    storePillText: { ...type.micro, fontSize: 9.5 },
+    title: { color: colors.text, fontSize: 12, fontWeight: "600", lineHeight: 15 },
+    priceRow: { flexDirection: "row", alignItems: "baseline", gap: 6 },
+    price: { color: colors.saving, fontSize: 14, fontWeight: "800" },
+    oldPrice: { color: colors.textFaint, fontSize: 11, textDecorationLine: "line-through" },
+    ratingRow: { flexDirection: "row", alignItems: "center", gap: 3 },
+    ratingText: { color: colors.textMuted, fontSize: 10, fontWeight: "600" },
+  });
+}

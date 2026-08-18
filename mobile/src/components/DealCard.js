@@ -1,84 +1,126 @@
-// Medium card for the horizontal "Heating Up" rail — the variable-reward
-// slot. Swiping sideways to see what's next is the cheap, honest version of
-// a slot-machine pull: every flick reveals a different find.
-import React from "react";
+// A real deal, as a uniform card — same shape and sizing as ProductCard.js
+// (search results) on purpose. One consistent card language for "anything
+// you could buy," whether it came from the live deals feed or a search:
+// same white image frame, same bookmark position, same price row. No
+// oversized hero card — every item gets equal weight.
+//
+// `style` lets the caller size it: BrowseScreen.js passes a fixed width for
+// the horizontal-scroll carousels on the home view, and leaves it
+// flex:1-default for the full wrapped grid in a single-category "view all".
+import React, { useMemo } from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
-import { colors, radius, spacing, type } from "../theme";
-import { compactNumber } from "../utils/dealVoice";
-import { timeAgo } from "../api/deals";
+import { Ionicons } from "@expo/vector-icons";
+import VerdictBadge from "./VerdictBadge";
+import { dealVoice } from "../utils/dealVoice";
+import { radius, spacing, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 
-export default function DealCard({ deal, onPress }) {
+export default function DealCard({ deal, onPress, watched, onToggleWatch, style }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
+  const judgement = deal.judgement;
+
+  // Nested TouchableOpacity + react-native-web: a tap on the bookmark
+  // otherwise bubbles up to the card's own onPress (opening the deal link)
+  // as well as toggling the bookmark — stopPropagation keeps it to just one.
+  function handleBookmarkPress(e) {
+    e?.stopPropagation?.();
+    onToggleWatch();
+  }
+
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.85}>
-      <View style={styles.thumbWrap}>
+    <TouchableOpacity style={[styles.card, style]} onPress={onPress} activeOpacity={0.85}>
+      <View style={styles.imageFrame}>
         {deal.image ? (
-          <Image source={{ uri: deal.image }} style={styles.thumb} resizeMode="cover" />
+          <Image source={{ uri: deal.image }} style={styles.image} resizeMode="contain" />
         ) : (
-          <View style={[styles.thumb, styles.thumbFallback]} />
+          <Ionicons name="pricetag-outline" size={20} color="#C4C9C6" />
         )}
-        <View style={styles.votePill}>
-          <Text style={styles.voteArrow}>▲</Text>
-          <Text style={styles.voteText}>{compactNumber(deal.votes)}</Text>
-        </View>
+        {onToggleWatch && (
+          <TouchableOpacity onPress={handleBookmarkPress} hitSlop={10} style={styles.bookmark}>
+            <Ionicons
+              name={watched ? "bookmark" : "bookmark-outline"}
+              size={14}
+              color={watched ? colors.accent : "#8A948D"}
+            />
+          </TouchableOpacity>
+        )}
       </View>
 
       <View style={styles.body}>
         <Text style={styles.store} numberOfLines={1}>
           {deal.store || deal.category}
         </Text>
+
         <Text style={styles.title} numberOfLines={2}>
           {deal.title}
         </Text>
+
+        {judgement?.confident ? (
+          <VerdictBadge verdict={judgement.verdict} small />
+        ) : (
+          <Text style={styles.voice} numberOfLines={1}>
+            {dealVoice(deal)}
+          </Text>
+        )}
+
         <View style={styles.footer}>
-          {deal.price != null ? (
-            <Text style={styles.price}>${deal.price.toFixed(2)}</Text>
-          ) : (
-            <Text style={styles.kind}>{deal.kind}</Text>
-          )}
-          <Text style={styles.age}>{timeAgo(deal.postedAt)}</Text>
+          {deal.price != null && <Text style={styles.price}>${deal.price.toFixed(2)}</Text>}
+          <View style={styles.voteBlock}>
+            <Ionicons name="caret-up" size={10} color={colors.textMuted} />
+            <Text style={styles.voteText}>{deal.votes ?? 0}</Text>
+          </View>
         </View>
       </View>
     </TouchableOpacity>
   );
 }
 
-const styles = StyleSheet.create({
-  card: {
-    width: 190,
-    marginRight: spacing.sm + 2,
-    backgroundColor: colors.card,
-    borderRadius: radius.lg,
-    borderWidth: 1,
-    borderColor: colors.border,
-    overflow: "hidden",
-  },
-  thumbWrap: { height: 112, backgroundColor: colors.cardHi },
-  thumb: { width: "100%", height: "100%" },
-  thumbFallback: { backgroundColor: colors.cardHi },
-  votePill: {
-    position: "absolute",
-    top: spacing.sm,
-    left: spacing.sm,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 3,
-    backgroundColor: "rgba(14,18,16,0.82)",
-    borderRadius: radius.pill,
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-  },
-  voteArrow: { color: colors.accent, fontSize: 9 },
-  voteText: { color: colors.accent, fontSize: 11.5, fontWeight: "800" },
-  body: { padding: spacing.sm + 4 },
-  store: { ...type.micro, color: colors.primary, marginBottom: 3 },
-  title: { color: colors.text, ...type.body, lineHeight: 19, minHeight: 38 },
-  footer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginTop: spacing.sm,
-  },
-  price: { color: colors.saving, fontSize: 17, fontWeight: "800" },
-  kind: { ...type.micro, color: colors.accent },
-  age: { color: colors.textFaint, fontSize: 11 },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    // No flex/width here on purpose — the caller sizes it via `style`
+    // (flex:1 to fill a grid row evenly, or a fixed width for a
+    // horizontal-scroll carousel card).
+    card: {
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      overflow: "hidden",
+    },
+    imageFrame: {
+      backgroundColor: "#FFFFFF",
+      aspectRatio: 1.15,
+      alignItems: "center",
+      justifyContent: "center",
+      borderBottomWidth: 1,
+      borderBottomColor: colors.border,
+      padding: spacing.md,
+    },
+    image: { width: "100%", height: "100%" },
+    bookmark: {
+      position: "absolute",
+      top: 6,
+      right: 6,
+      width: 24,
+      height: 24,
+      borderRadius: 12,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "rgba(255,255,255,0.92)",
+      shadowColor: "#000",
+      shadowOpacity: 0.15,
+      shadowRadius: 3,
+      shadowOffset: { width: 0, height: 1 },
+      elevation: 2,
+    },
+    body: { padding: spacing.md, gap: 6 },
+    store: { ...type.micro, color: colors.primary, fontSize: 9.5 },
+    title: { color: colors.text, fontSize: 12, fontWeight: "600", lineHeight: 15 },
+    voice: { color: colors.accent, fontSize: 10.5, fontWeight: "600", fontStyle: "italic" },
+    footer: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 1 },
+    price: { color: colors.saving, fontSize: 13, fontWeight: "800" },
+    voteBlock: { flexDirection: "row", alignItems: "center", gap: 2, marginLeft: "auto" },
+    voteText: { color: colors.textMuted, fontSize: 10, fontWeight: "600" },
+  });
+}

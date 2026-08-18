@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
@@ -10,10 +10,13 @@ import {
   StyleSheet,
 } from "react-native";
 import { useAuth } from "../context/AuthContext";
-import { colors, radius, spacing } from "../theme";
+import { useTheme } from "../context/ThemeContext";
+import { radius, spacing } from "../theme";
 
-export default function SignupScreen() {
+export default function SignupScreen({ navigation }) {
   const { signup } = useAuth();
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,6 +34,7 @@ export default function SignupScreen() {
     setBusy(true);
     try {
       await signup(email.trim(), name.trim(), password);
+      if (navigation.canGoBack()) navigation.goBack();
     } catch (e) {
       Alert.alert("Sign up failed", e.message);
     } finally {
@@ -74,18 +78,20 @@ export default function SignupScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.background, justifyContent: "center", padding: spacing.lg },
-  input: {
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    padding: spacing.md,
-    fontSize: 16,
-    marginBottom: spacing.md,
-    color: colors.text,
-  },
-  button: { backgroundColor: colors.primary, borderRadius: radius.md, padding: spacing.md, alignItems: "center" },
-  buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    container: { flex: 1, backgroundColor: colors.background, justifyContent: "center", padding: spacing.lg },
+    input: {
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: spacing.md,
+      fontSize: 16,
+      marginBottom: spacing.md,
+      color: colors.text,
+    },
+    button: { backgroundColor: colors.primary, borderRadius: radius.md, padding: spacing.md, alignItems: "center" },
+    buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
+  });
+}

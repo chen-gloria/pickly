@@ -3,7 +3,7 @@
 // Drops go at the top and are stated in the terms the user actually cares
 // about — cheaper than when *they* saved it, not cheaper than some abstract
 // average.
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -24,9 +24,12 @@ import {
   findDrops,
 } from "../utils/watchlist";
 import { shareText } from "../utils/shareText";
-import { colors, radius, spacing, type } from "../theme";
+import { radius, spacing, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 
 export default function WatchlistScreen({ navigation }) {
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   const [items, setItems] = useState([]);
   const [drops, setDrops] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -201,7 +204,8 @@ export default function WatchlistScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
+function makeStyles(colors) {
+  return StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   backRow: {
     flexDirection: "row",
@@ -214,8 +218,8 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "flex-start",
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.md,
     paddingBottom: spacing.md,
   },
   shareBtn: {
@@ -230,7 +234,7 @@ const styles = StyleSheet.create({
   kicker: { ...type.micro, color: colors.textFaint },
   headline: { ...type.display, color: colors.text, marginTop: 2 },
   empty: {
-    margin: spacing.md,
+    margin: spacing.lg,
     padding: spacing.lg,
     alignItems: "center",
     backgroundColor: colors.card,
@@ -247,8 +251,8 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   dropCard: {
-    marginHorizontal: spacing.md,
-    marginBottom: spacing.sm,
+    marginHorizontal: spacing.lg,
+    marginBottom: spacing.md,
     padding: spacing.md,
     backgroundColor: colors.card,
     borderRadius: radius.lg,
@@ -275,15 +279,15 @@ const styles = StyleSheet.create({
   sectionTitle: {
     ...type.section,
     color: colors.text,
-    marginHorizontal: spacing.md,
-    marginTop: spacing.lg,
-    marginBottom: spacing.sm,
+    marginHorizontal: spacing.lg,
+    marginTop: spacing.xl,
+    marginBottom: spacing.md,
   },
   row: {
     flexDirection: "row",
     alignItems: "flex-start",
     gap: spacing.sm + 2,
-    paddingHorizontal: spacing.md,
+    paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
@@ -292,4 +296,5 @@ const styles = StyleSheet.create({
   store: { ...type.micro, color: colors.primary },
   title: { ...type.body, color: colors.text, marginTop: 3, lineHeight: 19 },
   saved: { ...type.caption, color: colors.textMuted, marginTop: 5 },
-});
+  });
+}

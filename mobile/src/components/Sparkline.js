@@ -6,15 +6,18 @@
 import React from "react";
 import { View } from "react-native";
 import Svg, { Polyline, Circle, Line } from "react-native-svg";
-import { colors } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Sparkline({
   series = [],
   width = 64,
   height = 20,
-  color = colors.saving,
+  color,
   showLowMarker = true,
 }) {
+  const { colors } = useTheme();
+  const lineColor = color || colors.saving;
+
   // One point is not a trend — drawing a flat line off a single observation
   // would imply we know more than we do.
   if (!series || series.length < 2) return null;
@@ -53,14 +56,14 @@ export default function Sparkline({
         <Polyline
           points={points.map(([x, y]) => `${x},${y}`).join(" ")}
           fill="none"
-          stroke={color}
+          stroke={lineColor}
           strokeWidth={1.6}
           strokeLinejoin="round"
           strokeLinecap="round"
         />
         {/* Mark the cheapest point and where we are now. */}
         <Circle cx={points[lowIndex][0]} cy={points[lowIndex][1]} r={2} fill={colors.accent} />
-        <Circle cx={lastX} cy={lastY} r={2.4} fill={color} />
+        <Circle cx={lastX} cy={lastY} r={2.4} fill={lineColor} />
       </Svg>
     </View>
   );

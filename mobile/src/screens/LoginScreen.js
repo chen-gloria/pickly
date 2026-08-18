@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
@@ -11,10 +11,13 @@ import {
   StyleSheet,
 } from "react-native";
 import { useAuth } from "../context/AuthContext";
-import { colors, radius, spacing } from "../theme";
+import { useTheme } from "../context/ThemeContext";
+import { radius, spacing } from "../theme";
 
 export default function LoginScreen({ navigation }) {
   const { login } = useAuth();
+  const { colors } = useTheme();
+  const styles = useMemo(() => makeStyles(colors), [colors]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -27,6 +30,9 @@ export default function LoginScreen({ navigation }) {
     setBusy(true);
     try {
       await login(email.trim(), password);
+      // Login is a pushed screen now, not a gate the whole app swaps behind
+      // — go back to wherever this was opened from (usually Profile).
+      if (navigation.canGoBack()) navigation.goBack();
     } catch (e) {
       Alert.alert("Login failed", e.message);
     } finally {
@@ -40,7 +46,7 @@ export default function LoginScreen({ navigation }) {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <Text style={styles.logo}>🛒 Pickly</Text>
-      <Text style={styles.tagline}>Compare grocery prices. Save every shop.</Text>
+      <Text style={styles.tagline}>Compare real prices. Track every deal.</Text>
 
       <TextInput
         style={styles.input}
@@ -77,37 +83,39 @@ export default function LoginScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-    justifyContent: "center",
-    padding: spacing.lg,
-  },
-  logo: { fontSize: 40, fontWeight: "800", textAlign: "center", color: colors.primary },
-  tagline: {
-    textAlign: "center",
-    color: colors.textMuted,
-    marginBottom: spacing.xl,
-    marginTop: spacing.xs,
-  },
-  input: {
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    padding: spacing.md,
-    fontSize: 16,
-    marginBottom: spacing.md,
-    color: colors.text,
-  },
-  button: {
-    backgroundColor: colors.primary,
-    borderRadius: radius.md,
-    padding: spacing.md,
-    alignItems: "center",
-    marginTop: spacing.sm,
-  },
-  buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
-  link: { textAlign: "center", marginTop: spacing.lg, color: colors.text },
-});
+function makeStyles(colors) {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: colors.background,
+      justifyContent: "center",
+      padding: spacing.lg,
+    },
+    logo: { fontSize: 40, fontWeight: "800", textAlign: "center", color: colors.primary },
+    tagline: {
+      textAlign: "center",
+      color: colors.textMuted,
+      marginBottom: spacing.xl,
+      marginTop: spacing.xs,
+    },
+    input: {
+      backgroundColor: colors.card,
+      borderRadius: radius.md,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: spacing.md,
+      fontSize: 16,
+      marginBottom: spacing.md,
+      color: colors.text,
+    },
+    button: {
+      backgroundColor: colors.primary,
+      borderRadius: radius.md,
+      padding: spacing.md,
+      alignItems: "center",
+      marginTop: spacing.sm,
+    },
+    buttonText: { color: colors.onPrimary, fontSize: 16, fontWeight: "700" },
+    link: { textAlign: "center", marginTop: spacing.lg, color: colors.text },
+  });
+}

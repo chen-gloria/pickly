@@ -1,38 +1,31 @@
-// Decides what the user sees: auth screens when logged out, the main tabs when in.
+// The main tabs are always what people see first — there's nothing behind
+// them that requires an account (search, deals, watchlist all work on local
+// device state). Login/Signup are reachable from Profile instead of gating
+// the whole app, so a first-time visitor lands straight on something real
+// instead of a form.
+//
+// Leaderboard sits in the tab bar (a real, standalone piece of the product,
+// same footing as Browse/Watching) — Profile doesn't, since it's already
+// one tap away via the header's person icon on every tab, and doesn't need
+// its own permanent slot in the bar.
 import React from "react";
-import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
-import { NavigationContainer, DarkTheme } from "@react-navigation/native";
+import { ActivityIndicator, Text, View } from "react-native";
+import { NavigationContainer, DarkTheme, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
 
 import { useAuth } from "../context/AuthContext";
-import { colors } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
 import BrowseScreen from "../screens/BrowseScreen";
-import ProductDetailScreen from "../screens/ProductDetailScreen";
 import WatchlistScreen from "../screens/WatchlistScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import LeaderboardScreen from "../screens/LeaderboardScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-// Without this, React Navigation paints its own default background between
-// screens — a white flash on every push in an otherwise dark app.
-const navTheme = {
-  ...DarkTheme,
-  colors: {
-    ...DarkTheme.colors,
-    background: colors.background,
-    card: colors.card,
-    text: colors.text,
-    border: colors.border,
-    primary: colors.primary,
-  },
-};
 
 // Simple emoji icons keep us dependency-free.
 function tabIcon(emoji) {
@@ -41,7 +34,7 @@ function tabIcon(emoji) {
   );
 }
 
-function MainTabs() {
+function MainTabs({ colors }) {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -69,31 +62,17 @@ function MainTabs() {
         options={{ title: "Watching", tabBarIcon: tabIcon("🔖"), headerShown: false }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={({ navigation }) => ({
-          tabBarIcon: tabIcon("👤"),
-          // Tab roots don't get a back button by default (there's nothing
-          // "under" them to pop to) — but the bottom bar alone wasn't a
-          // clear enough way back for people used to a header control, so
-          // this jumps straight to Browse the same way tapping the tab does.
-          headerLeft: () => (
-            <TouchableOpacity
-              hitSlop={8}
-              onPress={() => navigation.navigate("Browse")}
-              style={{ paddingLeft: 16, paddingRight: 8 }}
-            >
-              <Ionicons name="chevron-back" size={24} color={colors.text} />
-            </TouchableOpacity>
-          ),
-        })}
+        name="Leaderboard"
+        component={LeaderboardScreen}
+        options={{ tabBarIcon: tabIcon("🏆"), headerShown: false }}
       />
     </Tab.Navigator>
   );
 }
 
 export default function RootNavigator() {
-  const { token, loading } = useAuth();
+  const { loading } = useAuth();
+  const { colors, scheme } = useTheme();
 
   if (loading) {
     return (
@@ -110,6 +89,20 @@ export default function RootNavigator() {
     );
   }
 
+  // Without this, React Navigation paints its own default background
+  // between screens — a flash of the wrong theme's color on every push.
+  const navTheme = {
+    ...(scheme === "light" ? DefaultTheme : DarkTheme),
+    colors: {
+      ...(scheme === "light" ? DefaultTheme.colors : DarkTheme.colors),
+      background: colors.background,
+      card: colors.card,
+      text: colors.text,
+      border: colors.border,
+      primary: colors.primary,
+    },
+  };
+
   return (
     <NavigationContainer theme={navTheme}>
       <Stack.Navigator
@@ -120,38 +113,19 @@ export default function RootNavigator() {
           contentStyle: { backgroundColor: colors.background },
         }}
       >
-        {token ? (
-          <>
-            <Stack.Screen
-              name="Tabs"
-              component={MainTabs}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ProductDetail"
-              component={ProductDetailScreen}
-              options={{ title: "Price Comparison" }}
-            />
-            <Stack.Screen
-              name="Leaderboard"
-              component={LeaderboardScreen}
-              options={{ title: "Leaderboard" }}
-            />
-          </>
-        ) : (
-          <>
-            <Stack.Screen
-              name="Login"
-              component={LoginScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Signup"
-              component={SignupScreen}
-              options={{ title: "Create account" }}
-            />
-          </>
-        )}
+        <Stack.Screen name="Tabs" options={{ headerShown: false }}>
+          {() => <MainTabs colors={colors} />}
+        </Stack.Screen>
+        {/* Pushed, not a tab — reached via the person icon in each tab's
+            header. Gets a native back button for free since it's a normal
+            stack push now. */}
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: "Profile" }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: "Log in" }} />
+        <Stack.Screen
+          name="Signup"
+          component={SignupScreen}
+          options={{ title: "Create account" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

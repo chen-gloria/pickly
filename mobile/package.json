@@ -5,11 +5,13 @@
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
     "@expo/vector-icons": "^15.0.3",
+    "@netlify/blobs": "^10.7.13",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-navigation/bottom-tabs": "^7.18.2",
     "@react-navigation/native": "^7.3.3",
     "@react-navigation/native-stack": "^7.17.5",
     "expo": "^54",
+    "expo-camera": "~17.0.10",
     "expo-linear-gradient": "~15.0.8",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",

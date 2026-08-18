@@ -5,17 +5,18 @@
 // glance for a recommendation.
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { colors, radius, type } from "../theme";
+import { radius, type } from "../theme";
+import { useTheme } from "../context/ThemeContext";
 import { VERDICT } from "../utils/priceHistory";
 
-const STYLES = {
-  [VERDICT.BUY]: { bg: "rgba(74,222,128,0.15)", fg: colors.saving, label: "BUY" },
-  [VERDICT.WAIT]: { bg: "rgba(242,193,78,0.15)", fg: colors.accent, label: "WAIT" },
-  [VERDICT.SKIP]: { bg: "rgba(255,107,74,0.14)", fg: colors.ember, label: "SKIP" },
-  [VERDICT.TRACKING]: { bg: "rgba(139,151,143,0.12)", fg: colors.textMuted, label: "TRACKING" },
-};
-
 export default function VerdictBadge({ verdict, small = false }) {
+  const { colors } = useTheme();
+  const STYLES = {
+    [VERDICT.BUY]: { bg: "rgba(74,222,128,0.15)", fg: colors.saving, label: "BUY" },
+    [VERDICT.WAIT]: { bg: "rgba(242,193,78,0.15)", fg: colors.accent, label: "WAIT" },
+    [VERDICT.SKIP]: { bg: "rgba(255,107,74,0.14)", fg: colors.ember, label: "SKIP" },
+    [VERDICT.TRACKING]: { bg: "rgba(139,151,143,0.12)", fg: colors.textMuted, label: "TRACKING" },
+  };
   const s = STYLES[verdict] || STYLES[VERDICT.TRACKING];
   return (
     <View style={[styles.badge, { backgroundColor: s.bg }, small && styles.small]}>

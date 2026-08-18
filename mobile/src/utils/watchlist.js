@@ -56,16 +56,16 @@ export async function toggleWatch(deal) {
     : addToWatchlist(deal);
 }
 
-// Lets the catalogue side of the app (search results, product detail — which
-// have their own id space, shape, and no external URL/photo) share the same
+// Lets search results (netlify/functions/search-products.js) share the same
 // saved list as deal-feed items instead of duplicating the storage/toggle
-// logic. The "product-" prefix keeps a saved product from ever colliding
-// with a deal that happens to have the same numeric id, which matters
+// logic. The "product-" prefix keeps a saved search result from ever
+// colliding with a deal that happens to have the same id, which matters
 // because findDrops() looks entries up in the live deals feed by id — a
 // collision there would compare a product's price against an unrelated
 // deal's. Prefixed ids simply never match, so saved products always sit in
 // the "still watching" list rather than the price-drop one, which is
-// correct: there's no live feed price to compare them against.
+// correct: there's no live deals-feed price to compare a search result
+// against, only whatever price it had when it was searched.
 export function productWatchId(productId) {
   return `product-${productId}`;
 }
@@ -73,12 +73,12 @@ export function productWatchId(productId) {
 export function productToWatchItem(product) {
   return {
     id: productWatchId(product.id),
-    title: product.name,
-    rawTitle: product.name,
-    store: product.cheapest_store?.name ?? null,
-    image: null,
-    url: null,
-    price: product.cheapest_price ?? null,
+    title: product.title,
+    rawTitle: product.title,
+    store: product.store?.name ?? null,
+    image: product.image ?? null,
+    url: product.link ?? null,
+    price: product.price ?? null,
   };
 }
 
