@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-18T19:34:53.764Z",
+  "updatedAt": "2026-08-19T19:33:55.665Z",
   "products": {
     "musclechef|chef-delivered-high-muscle-protein-subscription": {
       "key": "musclechef|chef-delivered-high-muscle-protein-subscription",
@@ -56,6 +56,13 @@
           "date": "2026-08-18",
           "price": 89.21,
           "votes": 208,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971003"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 89.21,
+          "votes": 209,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971003"
         }
@@ -273,6 +280,13 @@
           "votes": 64,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971118"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 29.99,
+          "votes": 64,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971118"
         }
       ]
     },
@@ -469,6 +483,13 @@
         },
         {
           "date": "2026-08-18",
+          "price": 30.65,
+          "votes": 43,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971014"
+        },
+        {
+          "date": "2026-08-19",
           "price": 30.65,
           "votes": 43,
           "kind": "½ PRICE",
@@ -707,6 +728,13 @@
         },
         {
           "date": "2026-08-18",
+          "price": 3.3,
+          "votes": 83,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970023"
+        },
+        {
+          "date": "2026-08-19",
           "price": 3.3,
           "votes": 83,
           "kind": "DEAL",
@@ -1151,6 +1179,13 @@
           "votes": 32,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970625"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 4.99,
+          "votes": 32,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/970625"
         }
       ]
     },
@@ -1206,6 +1241,13 @@
         },
         {
           "date": "2026-08-18",
+          "price": 14.45,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968937"
+        },
+        {
+          "date": "2026-08-19",
           "price": 14.45,
           "votes": 45,
           "kind": "DEAL",
@@ -1301,6 +1343,13 @@
         },
         {
           "date": "2026-08-18",
+          "price": 12.99,
+          "votes": 67,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/968402"
+        },
+        {
+          "date": "2026-08-19",
           "price": 12.99,
           "votes": 67,
           "kind": "DEAL",
@@ -1886,6 +1935,13 @@
           "votes": 76,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971267"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 8.99,
+          "votes": 77,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971267"
         }
       ]
     },
@@ -2030,6 +2086,13 @@
           "votes": 93,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971466"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 35.9,
+          "votes": 94,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971466"
         }
       ]
     },
@@ -2068,6 +2131,13 @@
           "date": "2026-08-18",
           "price": 19.99,
           "votes": 94,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971577"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 19.99,
+          "votes": 95,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971577"
         }
@@ -2144,6 +2214,13 @@
           "votes": 42,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/971536"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 4,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971536"
         }
       ]
     },
@@ -2192,6 +2269,13 @@
           "votes": 45,
           "kind": "60% OFF",
           "url": "https://www.ozbargain.com.au/node/971820"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 0,
+          "votes": 75,
+          "kind": "60% OFF",
+          "url": "https://www.ozbargain.com.au/node/971820"
         }
       ]
     },
@@ -2222,6 +2306,142 @@
           "votes": 41,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/971669"
+        },
+        {
+          "date": "2026-08-19",
+          "price": 2,
+          "votes": 43,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971669"
+        }
+      ]
+    },
+    "coles|350g-core-frozen-meal-powerfoods|350g": {
+      "key": "coles|350g-core-frozen-meal-powerfoods|350g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "350g",
+        "core",
+        "frozen",
+        "meal",
+        "powerfoods"
+      ],
+      "sizes": [
+        "350g"
+      ],
+      "title": "½ Price Core Powerfoods Frozen Meal 350g $4.75",
+      "observations": [
+        {
+          "date": "2026-08-19",
+          "price": 4.75,
+          "votes": 140,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/971860"
+        }
+      ]
+    },
+    "blackbeltproteinamazonau|1kg-creatine-monohydrate-pure|1000g": {
+      "key": "blackbeltproteinamazonau|1kg-creatine-monohydrate-pure|1000g",
+      "store": "blackbeltproteinamazonau",
+      "storeLabel": "BlackBelt Protein Amazon AU",
+      "tokens": [
+        "1kg",
+        "creatine",
+        "monohydrate",
+        "pure"
+      ],
+      "sizes": [
+        "1000g"
+      ],
+      "title": "Pure Creatine Monohydrate 1kg (Micronized) $29.99 (RRP $59) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-19",
+          "price": 29.99,
+          "votes": 139,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971856"
+        }
+      ]
+    },
+    "woolworths|approved-breast-chicken-fillet-kg-rspca-woolworths": {
+      "key": "woolworths|approved-breast-chicken-fillet-kg-rspca-woolworths",
+      "store": "woolworths",
+      "storeLabel": "Woolworths",
+      "tokens": [
+        "approved",
+        "breast",
+        "chicken",
+        "fillet",
+        "kg",
+        "rspca",
+        "woolworths"
+      ],
+      "sizes": [],
+      "title": "Woolworths RSPCA Approved Chicken Breast Fillet $8.00/kg",
+      "observations": [
+        {
+          "date": "2026-08-19",
+          "price": 8,
+          "votes": 96,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971937"
+        }
+      ]
+    },
+    "woolworths|500g-chicken-louisiana-nashville-outs-take-tegel-tenders|500g": {
+      "key": "woolworths|500g-chicken-louisiana-nashville-outs-take-tegel-tenders|500g",
+      "store": "woolworths",
+      "storeLabel": "Woolworths",
+      "tokens": [
+        "500g",
+        "chicken",
+        "louisiana",
+        "nashville",
+        "outs",
+        "take",
+        "tegel",
+        "tenders"
+      ],
+      "sizes": [
+        "500g"
+      ],
+      "title": "Tegel Take Outs Nashville or Louisiana Chicken Tenders 500g $8.40",
+      "observations": [
+        {
+          "date": "2026-08-19",
+          "price": 8.4,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971867"
+        }
+      ]
+    },
+    "amex|amex-credit-offer-spend-statement-transaction-woolworths|50cap": {
+      "key": "amex|amex-credit-offer-spend-statement-transaction-woolworths|50cap",
+      "store": "amex",
+      "storeLabel": "AmEx",
+      "tokens": [
+        "amex",
+        "credit",
+        "offer",
+        "spend",
+        "statement",
+        "transaction",
+        "woolworths"
+      ],
+      "sizes": [
+        "50cap"
+      ],
+      "title": "[Capped] AmEx Statement Offer: Spend $170 or More at Woolworths (Online or App) in 1 Transaction, Get 3% Credit ($50 Cap)",
+      "observations": [
+        {
+          "date": "2026-08-19",
+          "price": 50,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971733"
         }
       ]
     }
