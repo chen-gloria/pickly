@@ -1,11 +1,11 @@
 // Holds the logged-in user + token for the whole app, and persists the token
 // on the device so you stay logged in between app launches.
 import React, { createContext, useContext, useEffect, useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api } from "../api/client";
+import { getToken, setToken as persistToken, clearToken } from "../utils/authToken";
+import { migrateLocalWatchlistToServer } from "../utils/watchlist";
 
 const AuthContext = createContext(null);
-const TOKEN_KEY = "pickly_token";
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
@@ -16,14 +16,14 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     (async () => {
       try {
-        const saved = await AsyncStorage.getItem(TOKEN_KEY);
+        const saved = await getToken();
         if (saved) {
           const me = await api.me(saved);
           setToken(saved);
           setUser(me);
         }
       } catch (_) {
-        await AsyncStorage.removeItem(TOKEN_KEY);
+        await clearToken();
       } finally {
         setLoading(false);
       }
@@ -31,10 +31,14 @@ export function AuthProvider({ children }) {
   }, []);
 
   async function saveSession(accessToken) {
-    await AsyncStorage.setItem(TOKEN_KEY, accessToken);
+    await persistToken(accessToken);
     const me = await api.me(accessToken);
     setToken(accessToken);
     setUser(me);
+    // Only on an actual login/signup (not the silent startup restore below),
+    // since that's the moment anonymous, device-local watchlist data could
+    // otherwise just disappear the instant reads switch to the server.
+    await migrateLocalWatchlistToServer(accessToken).catch(() => {});
   }
 
   async function login(email, password) {
@@ -48,7 +52,7 @@ export function AuthProvider({ children }) {
   }
 
   async function logout() {
-    await AsyncStorage.removeItem(TOKEN_KEY);
+    await clearToken();
     setToken(null);
     setUser(null);
   }

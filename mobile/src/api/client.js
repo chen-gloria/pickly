@@ -1,8 +1,27 @@
 // Tiny wrapper around fetch() so every screen calls the backend the same way.
 import { API_URL, MOCK_MODE } from "../config";
-import { MOCK_USER } from "./mockData";
 
 const SEARCH_ENDPOINT = "/.netlify/functions/search-products";
+const AUTH_SIGNUP_ENDPOINT = "/.netlify/functions/auth-signup";
+const AUTH_LOGIN_ENDPOINT = "/.netlify/functions/auth-login";
+const AUTH_ME_ENDPOINT = "/.netlify/functions/auth-me";
+
+// Real accounts, not gated behind MOCK_MODE — same reasoning as search and
+// the deals feed always hitting their live functions: a "mock login" that
+// accepts any email/password isn't a smaller version of real auth, it's a
+// different, incompatible thing, and it's what stood between "watchlist
+// syncs across your devices" actually being true (see
+// netlify/functions/auth-*.js and utils/watchlist.js).
+async function authRequest(endpoint, body) {
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+  return data;
+}
 
 // Real product search — not gated behind MOCK_MODE, same reasoning as the
 // deals feed (api/deals.js) always hitting the live/snapshot source: there's
@@ -48,18 +67,25 @@ async function request(path, { method = "GET", body, token } = {}) {
 }
 
 export const api = {
-  // Auth
-  signup: (email, name, password) => MOCK_MODE
-    ? Promise.resolve({ access_token: "mock-token" })
-    : request("/auth/signup", { method: "POST", body: { email, name, password } }),
+  // Auth. Response shapes are adapted to what AuthContext.js already
+  // expects ({access_token} from signup/login, the bare user object from
+  // me) so that contract didn't need to change along with the backend.
+  signup: async (email, name, password) => {
+    const { token } = await authRequest(AUTH_SIGNUP_ENDPOINT, { email, name, password });
+    return { access_token: token };
+  },
 
-  login: (email, password) => MOCK_MODE
-    ? Promise.resolve({ access_token: "mock-token" })
-    : request("/auth/login", { method: "POST", body: { email, password } }),
+  login: async (email, password) => {
+    const { token } = await authRequest(AUTH_LOGIN_ENDPOINT, { email, password });
+    return { access_token: token };
+  },
 
-  me: (token) => MOCK_MODE
-    ? Promise.resolve(MOCK_USER)
-    : request("/auth/me", { token }),
+  me: async (token) => {
+    const res = await fetch(AUTH_ME_ENDPOINT, { headers: { Authorization: `Bearer ${token}` } });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+    return data.user;
+  },
 
   // Real search across a known retailer allow-list (see
   // netlify/functions/search-products.js) — always live, never mock data.

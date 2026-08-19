@@ -27,8 +27,11 @@ export default function SignupScreen({ navigation }) {
       Alert.alert("Missing details", "Please fill in every field.");
       return;
     }
-    if (password.length < 6) {
-      Alert.alert("Weak password", "Use at least 6 characters.");
+    if (password.length < 8) {
+      // Matches the real minimum the backend enforces (netlify/functions/
+      // auth-signup.js) — catching it here saves a round trip, but the
+      // server is the actual source of truth for this rule.
+      Alert.alert("Weak password", "Use at least 8 characters.");
       return;
     }
     setBusy(true);
