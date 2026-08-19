@@ -27,10 +27,19 @@ jobs:
         with:
           node-version: "20"
 
-      # No install step: the recorder and its parser are dependency-free by
-      # design, so this can't break on a bad transitive dependency.
+      # The recorder's own matching/judging logic is still dependency-free —
+      # this installs only `pg`, needed for the database write (see
+      # scripts/record-prices.js's writeToDatabase). `npm ci` here, not
+      # `npm install`, so a lockfile drift fails loudly instead of silently
+      # installing something different from what's tested locally.
+      - name: Install dependencies
+        working-directory: mobile
+        run: npm ci
+
       - name: Record today's prices
         working-directory: mobile
+        env:
+          NETLIFY_DB_URL: ${{ secrets.NETLIFY_DB_URL }}
         run: node scripts/record-prices.js
 
       - name: Refresh the bundled deals snapshot
