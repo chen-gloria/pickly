@@ -18,7 +18,11 @@
 
     <!-- Same for Android/Chrome's "Add to Home Screen". -->
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#1FAB5B" />
+    <!-- Tints the browser's own UI (status bar/toolbar) — was the old bright
+         brand green from before the dark editorial redesign; now matches
+         the actual default background. -->
+    <meta name="theme-color" content="#16181a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f8f7" media="(prefers-color-scheme: light)" />
 
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
@@ -26,6 +30,22 @@
       html,
       body {
         height: 100%;
+        /* iOS Safari reveals whatever is behind #root — its own toolbar
+           collapsing on scroll changes the viewport height, and rubber-band
+           overscroll shows past the content entirely — both expose raw
+           html/body. Left unset that's browser-default white, which shows
+           as a stray white patch at the bottom of an otherwise dark app.
+           App default is dark (ThemeContext.js), so that's the static
+           default here too; prefers-color-scheme covers a light OS setting
+           before the real theme (which also respects an explicit in-app
+           override, not just OS setting) has booted. */
+        background-color: #16181a;
+      }
+      @media (prefers-color-scheme: light) {
+        html,
+        body {
+          background-color: #f6f8f7;
+        }
       }
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {

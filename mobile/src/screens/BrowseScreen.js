@@ -46,6 +46,7 @@ import DealCard from "../components/DealCard";
 import DealRow from "../components/DealRow";
 import ProductCard from "../components/ProductCard";
 import BarcodeScanner from "../components/BarcodeScanner";
+import WebBarcodeScanner from "../components/WebBarcodeScanner";
 import AboutSheet from "../components/AboutSheet";
 import { groupByVerdict, trackingDays as getTrackingDays } from "../utils/priceHistory";
 import {
@@ -438,7 +439,15 @@ export default function BrowseScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       {scanning && (
-        <BarcodeScanner onScan={onBarcodeScanned} onClose={() => setScanning(false)} />
+        // expo-camera's web path only ever decodes QR codes (see
+        // WebBarcodeScanner.js) — real retail barcode formats need ZXing on
+        // web. Native builds keep using expo-camera's actual platform
+        // scanner, which does support these formats.
+        Platform.OS === "web" ? (
+          <WebBarcodeScanner onScan={onBarcodeScanned} onClose={() => setScanning(false)} />
+        ) : (
+          <BarcodeScanner onScan={onBarcodeScanned} onClose={() => setScanning(false)} />
+        )
       )}
       {showAbout && <AboutSheet onClose={() => setShowAbout(false)} />}
       <FlatList
