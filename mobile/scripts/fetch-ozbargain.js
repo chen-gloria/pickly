@@ -1,4 +1,5 @@
-// Writes a snapshot of the current deals feed into the app bundle.
+// Writes a snapshot of the current deals feed, plus Alpha Fresh's full
+// searchable catalogue, into the app bundle.
 //
 // The app prefers the live Netlify function (netlify/functions/deals.js), but
 // that can be cold, rate-limited, or unreachable — this committed snapshot
@@ -7,18 +8,27 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchAllDeals } = require("./lib/ozbargain");
-const { fetchAlphaFreshDeals } = require("../netlify/functions/lib/alphafresh");
+const { fetchAllProducts, toDeals, toSearchableProducts } = require("../netlify/functions/lib/alphafresh");
 const { fetchSaleFinderDeals, OFFLINE_MAX_PAGES } = require("../netlify/functions/lib/salefinder");
 
-const OUT = path.join(__dirname, "..", "src", "api", "dealsSnapshot.json");
+const DEALS_OUT = path.join(__dirname, "..", "src", "api", "dealsSnapshot.json");
+const CATALOGUE_OUT = path.join(__dirname, "..", "src", "api", "alphaFreshCatalog.json");
 
 (async () => {
-  const [ozbargainDeals, alphaFreshDeals, colesDeals, woolworthsDeals] = await Promise.all([
+  const [ozbargainDeals, alphaFreshProducts, colesDeals, woolworthsDeals] = await Promise.all([
     fetchAllDeals(),
-    fetchAlphaFreshDeals(),
+    fetchAllProducts(),
     fetchSaleFinderDeals("Coles", fetch, OFFLINE_MAX_PAGES),
     fetchSaleFinderDeals("Woolworths", fetch, OFFLINE_MAX_PAGES),
   ]);
+  // One raw fetch, two derived shapes — toDeals() for the on-sale-only
+  // deals feed, toSearchableProducts() for netlify/functions/
+  // search-products.js's full-catalogue local search (see that file and
+  // alphafresh.js's toSearchableProducts comment for why the deals feed
+  // alone isn't enough for search: a regular-priced or differently-worded
+  // Alpha Fresh product was previously invisible everywhere).
+  const alphaFreshDeals = toDeals(alphaFreshProducts).filter((d) => d.status !== "out of stock");
+
   if (!ozbargainDeals.length && !alphaFreshDeals.length && !colesDeals.length && !woolworthsDeals.length) {
     console.error("No deals parsed — leaving the existing snapshot untouched.");
     process.exit(1);
@@ -38,11 +48,20 @@ const OUT = path.join(__dirname, "..", "src", "api", "dealsSnapshot.json");
     ...woolworthsDeals.slice(0, 40),
   ];
   const payload = { capturedAt: new Date().toISOString(), deals };
-  fs.writeFileSync(OUT, JSON.stringify(payload, null, 2) + "\n");
-  console.log(`Wrote ${payload.deals.length} deals to ${path.relative(process.cwd(), OUT)}`);
+  fs.writeFileSync(DEALS_OUT, JSON.stringify(payload, null, 2) + "\n");
+  console.log(`Wrote ${payload.deals.length} deals to ${path.relative(process.cwd(), DEALS_OUT)}`);
   console.log(`  OzBargain ${ozbargainDeals.length} · Alpha Fresh ${alphaFreshDeals.length} · Coles ${colesDeals.length} · Woolworths ${woolworthsDeals.length}`);
   console.log("Top 5 by heat:");
   for (const d of payload.deals.slice(0, 5)) {
     console.log(`  ${String(d.heat).padStart(7)}  ▲${String(d.votes).padStart(4)}  ${d.kind.padEnd(9)} ${d.store || "?"} — ${d.title.slice(0, 60)}`);
   }
+
+  const searchableProducts = toSearchableProducts(alphaFreshProducts);
+  fs.writeFileSync(
+    CATALOGUE_OUT,
+    JSON.stringify({ capturedAt: new Date().toISOString(), products: searchableProducts }, null, 2) + "\n"
+  );
+  console.log(
+    `Wrote ${searchableProducts.length} searchable Alpha Fresh products to ${path.relative(process.cwd(), CATALOGUE_OUT)}`
+  );
 })();

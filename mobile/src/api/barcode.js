@@ -1,32 +1,58 @@
 // Barcode → product identity. A single database was never going to cover
 // "scan literally anything" — a barcode's own digits don't say what kind of
-// product it is, so this tries three real, free, no-key databases in order,
+// product it is, so this tries four real, free, no-key databases in order,
 // each covering a different slice, and returns the first real hit:
 //
 //   1. Open Food Facts — packaged groceries. Checked first since this is
-//      still primarily a grocery app; best AU coverage of the three.
+//      still primarily a grocery app; best AU coverage of the four.
 //   2. Open Library — books, via ISBN (a 978/979-prefixed EAN-13 IS an
 //      ISBN-13, so no separate barcode format to handle). Backed by the
-//      Internet Archive; occasionally down as a whole service, which is
-//      exactly why this is a fallback chain and not a single call.
-//   3. UPCitemdb's free trial lookup — general merchandise catch-all
-//      (electronics, homewares, toys, whatever doesn't fit the two above).
-//      No key required, but genuinely rate-limited (~100 lookups/day
-//      shared across every Pickly user) — it's the last resort in the
-//      chain on purpose, not the first, so grocery/book scans (the
-//      common case) never burn through that quota.
+//      Internet Archive, and observed genuinely slow/unreachable during
+//      testing — see TIMEOUT_MS below for why every source here is
+//      time-boxed rather than left to hang.
+//   3. Google Books — a second, independent ISBN source. Real gaps in one
+//      book database and not the other are normal (a specific edition, a
+//      niche/devotional publisher...); trying two is what turns "one
+//      database missed it" into an actual result. Unauthenticated calls
+//      share a global, unkeyed daily quota across every caller of this
+//      endpoint worldwide (observed 429 "quota exceeded" during testing,
+//      unrelated to Pickly's own traffic) — real, and outside this app's
+//      control without registering a paid/keyed project, which would also
+//      mean proxying through a server function to keep the key secret
+//      (this file runs client-side). Kept anyway since it still works
+//      plenty of the time and costs nothing when it doesn't.
+//   4. UPCitemdb's free trial lookup — general merchandise catch-all
+//      (electronics, homewares, toys, whatever doesn't fit the above).
+//      Rejects ISBN-13-shaped codes outright ("INVALID_UPC" — confirmed by
+//      testing), so it's genuinely only useful past this point for
+//      non-book barcodes; also rate-limited (~100 lookups/day shared
+//      across every Pickly user), which is the other reason it's last.
 //
 // Every branch fails soft (null) rather than throwing — one database being
-// down or rate-limited should degrade to "keep trying the next one", not
-// break the whole scan.
+// down, rate-limited, or just slow should degrade to "keep trying the next
+// one" within a bounded total wait, not stall the whole scan indefinitely.
 //
 // Same honesty rule regardless of which database answered: this only
 // resolves *what the product is* (name/brand/photo), never a price — the
 // actual price still comes from feeding that name into the existing real
 // search (api/client.js's searchProducts).
+const TIMEOUT_MS = 5000;
+
+async function fetchWithTimeout(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function lookupOpenFoodFacts(code) {
   try {
-    const res = await fetch(`https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(code)}.json`);
+    const res = await fetchWithTimeout(
+      `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(code)}.json`
+    );
     if (!res.ok) return null;
     const data = await res.json();
     if (data.status !== 1 || !data.product) return null;
@@ -52,11 +78,9 @@ function isbnFromBarcode(code) {
   return /^97[89]\d{10}$/.test(code) ? code : null;
 }
 
-async function lookupOpenLibrary(code) {
-  const isbn = isbnFromBarcode(code);
-  if (!isbn) return null;
+async function lookupOpenLibrary(isbn) {
   try {
-    const res = await fetch(
+    const res = await fetchWithTimeout(
       `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`
     );
     if (!res.ok) return null;
@@ -75,9 +99,30 @@ async function lookupOpenLibrary(code) {
   }
 }
 
+async function lookupGoogleBooks(isbn) {
+  try {
+    const res = await fetchWithTimeout(
+      `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`
+    );
+    if (!res.ok) return null; // includes the shared quota's 429
+    const data = await res.json();
+    const book = data.items?.[0]?.volumeInfo;
+    if (!book?.title) return null;
+
+    return {
+      name: book.subtitle ? `${book.title}: ${book.subtitle}` : book.title,
+      brand: book.publisher || book.authors?.[0] || null,
+      image: book.imageLinks?.thumbnail || book.imageLinks?.smallThumbnail || null,
+      source: "Google Books",
+    };
+  } catch (_) {
+    return null;
+  }
+}
+
 async function lookupUpcItemDb(code) {
   try {
-    const res = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${encodeURIComponent(code)}`);
+    const res = await fetchWithTimeout(`https://api.upcitemdb.com/prod/trial/lookup?upc=${encodeURIComponent(code)}`);
     if (!res.ok) return null; // includes the trial tier's own rate-limit response
     const data = await res.json();
     const item = data.items?.[0];
@@ -95,9 +140,21 @@ async function lookupUpcItemDb(code) {
 }
 
 export async function lookupBarcode(code) {
-  return (
-    (await lookupOpenFoodFacts(code)) ||
-    (await lookupOpenLibrary(code)) ||
-    (await lookupUpcItemDb(code))
-  );
+  const grocery = await lookupOpenFoodFacts(code);
+  if (grocery) return grocery;
+
+  const isbn = isbnFromBarcode(code);
+  if (isbn) {
+    // Two independent book databases, in parallel rather than sequential —
+    // no reason to wait out one's full timeout before trying the other,
+    // and a book missing from one is a real, normal gap, not evidence the
+    // other will miss it too.
+    const [openLibrary, googleBooks] = await Promise.all([
+      lookupOpenLibrary(isbn),
+      lookupGoogleBooks(isbn),
+    ]);
+    if (openLibrary || googleBooks) return openLibrary || googleBooks;
+  }
+
+  return await lookupUpcItemDb(code);
 }

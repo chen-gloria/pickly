@@ -68,6 +68,7 @@ import { radius, spacing, type } from "../theme";
 import { getStoreFilters, applyStoreFilter, normalizeStore, normalizeDealStore } from "../utils/storeFilter";
 import { hoursSince } from "../utils/dealVoice";
 import { groceryCategoryFor } from "../utils/groceryCategory";
+import { matchesQuery } from "../../scripts/lib/fuzzySearch";
 
 // The deals feed only ever carries these four real category values (one per
 // scripts/lib/ozbargain.js FEEDS entry).
@@ -307,6 +308,7 @@ export default function BrowseScreen({ navigation }) {
   const [searchError, setSearchError] = useState(null);
 
   const [scanning, setScanning] = useState(false);
+  const [scanLookupLoading, setScanLookupLoading] = useState(false);
   const [scanNotice, setScanNotice] = useState(null);
   const [showAbout, setShowAbout] = useState(false);
 
@@ -436,15 +438,24 @@ export default function BrowseScreen({ navigation }) {
   }
 
   async function onBarcodeScanned(code) {
-    setScanning(false);
+    // Camera stays open (see the {scanning && ...} render below, which
+    // layers a "Looking it up…" overlay on top rather than unmounting the
+    // scanner here) for the whole lookup — closing instantly used to leave
+    // a dead gap with zero feedback while lookupBarcode() ran (now up to a
+    // few seconds, timing out multiple real databases in sequence/parallel
+    // — see api/barcode.js), which read as the scan randomly failing or
+    // the app "not knowing where to go".
+    setScanLookupLoading(true);
     const info = await lookupBarcode(code);
+    setScanLookupLoading(false);
+    setScanning(false);
     if (info) {
       setScanNotice(null);
       setQuery(info.name);
       recordSearch(info.name);
     } else {
       setScanNotice(
-        "Barcode not recognized — Open Food Facts covers packaged groceries best. Try searching by name instead."
+        "Barcode not recognized — Open Food Facts, Open Library, Google Books and UPCitemdb all missed it. Try searching by name instead."
       );
     }
   }
@@ -461,9 +472,14 @@ export default function BrowseScreen({ navigation }) {
   // recommendation feed above.
   const matchingDeals = useMemo(() => {
     if (!searching) return [];
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
+    // matchesQuery, not a plain substring check — per-word (stemmed)
+    // matching so "Strawberry" finds a deal titled "Strawberries", the
+    // same fix applied to netlify/functions/search-products.js (see
+    // scripts/lib/fuzzySearch.js's header comment for why this isn't a
+    // bigger "semantic search" problem than it looks).
     return applyStoreFilter(deals, searchStores, (d) => normalizeDealStore(d.store))
-      .filter((d) => d.title.toLowerCase().includes(q))
+      .filter((d) => matchesQuery(q, d.title))
       .sort((a, b) => (b.votes ?? 0) - (a.votes ?? 0))
       .slice(0, 5);
   }, [searching, query, deals, searchStores]);
@@ -667,6 +683,20 @@ export default function BrowseScreen({ navigation }) {
         ) : (
           <BarcodeScanner onScan={onBarcodeScanned} onClose={() => setScanning(false)} />
         )
+      )}
+      {/* Layered on top of the still-mounted scanner rather than replacing
+          it — the camera view staying up (even though it's no longer
+          actively decoding) reads as continuous feedback instead of the
+          scan abruptly vanishing into a blank gap while lookupBarcode()
+          runs (up to a few seconds now that it tries multiple real
+          databases — see api/barcode.js). */}
+      {scanning && scanLookupLoading && (
+        <View style={styles.scanLookupOverlay} pointerEvents="none">
+          <View style={styles.scanLookupCard}>
+            <ActivityIndicator color="#FFFFFF" />
+            <Text style={styles.scanLookupText}>Looking up that barcode…</Text>
+          </View>
+        </View>
       )}
       {showAbout && <AboutSheet onClose={() => setShowAbout(false)} />}
       <FlatList
@@ -1103,6 +1133,22 @@ function makeStyles(colors) {
     borderColor: colors.border,
   },
   scanNoticeText: { flex: 1, color: colors.textMuted, ...type.caption, lineHeight: 18 },
+  scanLookupOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 101, // above the scanner's own overlay (zIndex 100)
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  scanLookupCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    backgroundColor: "rgba(0,0,0,0.75)",
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    borderRadius: radius.pill,
+  },
+  scanLookupText: { color: "#FFFFFF", fontWeight: "600", fontSize: 14 },
   breadcrumbRow: {
     flexDirection: "row",
     alignItems: "center",

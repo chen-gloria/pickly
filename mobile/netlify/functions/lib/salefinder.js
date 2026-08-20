@@ -41,6 +41,21 @@ const CATALOGUE_PATHS = {
   Woolworths: "/Woolworths-catalogue",
 };
 
+// Deliberately NOT a link to salefinder.com.au's own product page — a real
+// person tapping a deal card expects to land on the actual retailer, not on
+// the third-party site this data was scraped from (which they've never
+// heard of and have no reason to trust). This is also the only place a
+// user's own browser ever touches salefinder.com.au or coles.com.au/
+// woolworths.com.au directly — everything upstream of this is server-side
+// scraping/proxying; a human clicking their own link to search a real
+// retailer's site is just... browsing it, not automation, so none of the
+// bot-detection concerns documented at the top of this file apply here.
+const RETAILER_SEARCH_URL = {
+  Coles: (name) => `https://www.coles.com.au/search?q=${encodeURIComponent(name)}`,
+  Woolworths: (name) =>
+    `https://www.woolworths.com.au/shop/search/products?searchTerm=${encodeURIComponent(name)}`,
+};
+
 async function fetchPage(path, page, fetchImpl) {
   const url = page === 1 ? `${BASE}${path}` : `${BASE}${path}?qs=${page},,,,`;
   const res = await fetchImpl(url, {
@@ -162,7 +177,7 @@ function parseItems(html, store) {
       id: `sf-${store.toLowerCase()}-${itemId}`,
       title: name,
       rawTitle: saveText ? `${name} $${price}${unit ? "/" + unit : ""} — ${saveText}` : `${name} $${price}${unit ? "/" + unit : ""}`,
-      url: `${BASE}${detailPath}`,
+      url: RETAILER_SEARCH_URL[store] ? RETAILER_SEARCH_URL[store](name) : `${BASE}${detailPath}`,
       image,
       store,
       price,
