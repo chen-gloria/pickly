@@ -13,6 +13,7 @@ const RETAILERS = [
   { name: "Woolworths", pattern: /woolworths/i, color: "#1E7A34" },
   { name: "Coles", pattern: /coles/i, color: "#E2231A" },
   { name: "ALDI", pattern: /aldi/i, color: "#0060A9" },
+  { name: "Alpha Fresh", pattern: /alpha\s*fresh/i, color: "#2E7D32" },
   { name: "Amazon AU", pattern: /amazon/i, color: "#FF9900" },
   { name: "Chemist Warehouse", pattern: /chemist\s*warehouse/i, color: "#E4002B" },
   { name: "Priceline", pattern: /priceline/i, color: "#E4007C" },

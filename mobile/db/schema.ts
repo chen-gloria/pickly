@@ -17,6 +17,7 @@ import {
   timestamp,
   unique,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
@@ -100,4 +101,33 @@ export const alertsSent = pgTable("alerts_sent", {
   priceAtSend: doublePrecision("price_at_send").notNull(),
   notified: boolean("notified").notNull().default(false), // true once actually pushed/emailed, not just detected
   sentAt: timestamp("sent_at").notNull().defaultNow(),
+});
+
+// One row per signed-in user, holding which of the five filterable sources
+// (Coles/Woolworths/ALDI/Alpha Fresh/OzBargain — see utils/storeFilter.js)
+// they want applied. Three independent lists on purpose: someone might want
+// the recommendation feed narrowed to just what's near them, while still
+// searching or checking the leaderboard across everything. Empty array
+// means "no filter, show all sources" in every case — there's no separate
+// "All" value to keep in sync (the Profile screen's "All" chip is just what
+// an empty array renders as).
+//
+// Mirrors watchlist_items' dual-backed pattern (utils/watchlist.js):
+// signed-in reads/writes hit this table so the choice follows the account
+// across devices; a signed-out user keeps the same preference in
+// AsyncStorage only, since there's no account to attach it to yet.
+export const storeFilters = pgTable("store_filters", {
+  userId: integer("user_id")
+    .primaryKey()
+    .references(() => users.id, { onDelete: "cascade" }),
+  recommendationStores: text("recommendation_stores")
+    .array()
+    .notNull()
+    .default(sql`'{}'::text[]`),
+  searchStores: text("search_stores").array().notNull().default(sql`'{}'::text[]`),
+  leaderboardStores: text("leaderboard_stores")
+    .array()
+    .notNull()
+    .default(sql`'{}'::text[]`),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });

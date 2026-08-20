@@ -1,0 +1,1 @@
+ALTER TABLE "store_filters" ADD COLUMN "leaderboard_stores" text[] DEFAULT '{}'::text[] NOT NULL;

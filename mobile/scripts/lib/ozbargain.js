@@ -182,7 +182,17 @@ async function fetchAllDeals(fetchImpl = fetch) {
       }
     })
   );
-  return rankDeals(results.flat());
+  // A post that fits more than one FEEDS category (a grocery deal tagged
+  // both "Groceries" and "Health & Beauty", say) comes back once per feed
+  // it's in, same id, same votes — deduped here by id (first feed wins) so
+  // it doesn't render as two cards with the same vote count.
+  const seen = new Set();
+  const deduped = results.flat().filter((d) => {
+    if (seen.has(d.id)) return false;
+    seen.add(d.id);
+    return true;
+  });
+  return rankDeals(deduped);
 }
 
 module.exports = {

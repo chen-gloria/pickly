@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../api/client";
 import { getToken, setToken as persistToken, clearToken } from "../utils/authToken";
 import { migrateLocalWatchlistToServer } from "../utils/watchlist";
+import { migrateLocalStoreFiltersToServer } from "../utils/storeFilter";
 
 const AuthContext = createContext(null);
 
@@ -39,6 +40,7 @@ export function AuthProvider({ children }) {
     // since that's the moment anonymous, device-local watchlist data could
     // otherwise just disappear the instant reads switch to the server.
     await migrateLocalWatchlistToServer(accessToken).catch(() => {});
+    await migrateLocalStoreFiltersToServer(accessToken).catch(() => {});
   }
 
   async function login(email, password) {

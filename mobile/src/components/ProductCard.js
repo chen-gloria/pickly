@@ -16,6 +16,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { radius, spacing, type } from "../theme";
 import { useTheme } from "../context/ThemeContext";
 import { CURRENCY_SYMBOL } from "../config";
+import StoreBadge from "./StoreBadge";
+import { STORE_COLORS } from "../utils/storeFilter";
 
 export default function ProductCard({ item, onPress, watched, onToggleWatch, style }) {
   const { colors } = useTheme();
@@ -50,10 +52,13 @@ export default function ProductCard({ item, onPress, watched, onToggleWatch, sty
       </View>
 
       <View style={styles.body}>
-        <View style={[styles.storePill, { backgroundColor: `${item.store.color}22` }]}>
-          <Text style={[styles.storePillText, { color: item.store.color }]} numberOfLines={1}>
-            {item.store.name}
-          </Text>
+        <View style={styles.storeRow}>
+          <StoreBadge name={item.store.name} color={STORE_COLORS[item.store.name]} size={13} />
+          <View style={[styles.storePill, { backgroundColor: `${item.store.color}22` }]}>
+            <Text style={[styles.storePillText, { color: item.store.color }]} numberOfLines={1}>
+              {item.store.name}
+            </Text>
+          </View>
         </View>
 
         <Text style={styles.title} numberOfLines={2}>
@@ -126,6 +131,7 @@ function makeStyles(colors) {
       elevation: 2,
     },
     body: { padding: spacing.md, gap: 6 },
+    storeRow: { flexDirection: "row", alignItems: "center", gap: 5 },
     storePill: {
       alignSelf: "flex-start",
       borderRadius: radius.lg,

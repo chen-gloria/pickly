@@ -48,6 +48,13 @@ export default function WebBarcodeScanner({ onScan, onClose }) {
 
     const hints = new Map();
     hints.set(DecodeHintType.POSSIBLE_FORMATS, FORMATS);
+    // Without this, ZXing optimizes for a clean, flat, well-lit scan (a
+    // warehouse label) and gives up fast on anything less ideal — a curved
+    // book cover, glare, a slightly off angle. TRY_HARDER spends more time
+    // per frame trying alternate decode strategies, which is exactly the
+    // gap between "reads a fresh print flyer" and "reads whatever's actually
+    // held up to a phone camera by hand".
+    hints.set(DecodeHintType.TRY_HARDER, true);
     const reader = new BrowserMultiFormatReader(hints);
     readerRef.current = reader;
     let cancelled = false;

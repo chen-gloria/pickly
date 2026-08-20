@@ -5,7 +5,7 @@
 // a recommendation. Every phrase below is still driven by the real numbers —
 // we're changing the register, not inventing claims.
 
-function hoursSince(dateString) {
+export function hoursSince(dateString) {
   const then = new Date(dateString).getTime();
   if (!Number.isFinite(then)) return Infinity;
   return (Date.now() - then) / 36e5;

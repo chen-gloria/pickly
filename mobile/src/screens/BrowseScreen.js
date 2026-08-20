@@ -39,6 +39,7 @@ import {
 } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useFocusEffect } from "@react-navigation/native";
 import { api } from "../api/client";
 import { fetchDeals, timeAgo, DEAL_SOURCE } from "../api/deals";
 import { lookupBarcode } from "../api/barcode";
@@ -61,8 +62,12 @@ import {
   productToWatchItem,
   productWatchId,
 } from "../utils/watchlist";
+import InfoTip from "../components/InfoTip";
 import { useTheme } from "../context/ThemeContext";
 import { radius, spacing, type } from "../theme";
+import { getStoreFilters, applyStoreFilter, normalizeStore, normalizeDealStore } from "../utils/storeFilter";
+import { hoursSince } from "../utils/dealVoice";
+import { groceryCategoryFor } from "../utils/groceryCategory";
 
 // The deals feed only ever carries these four real category values (one per
 // scripts/lib/ozbargain.js FEEDS entry).
@@ -72,6 +77,107 @@ const DEAL_CATEGORY_ICONS = {
   Electronics: "headphones",
   "Home & Garden": "watering-can",
 };
+
+// Icons for groceryCategory.js's subcategories, shown once the
+// Recommendation filter is narrowed to grocery-selling brands — see
+// isGroceryOnlyFilter below.
+// Two naming schemes land here: utils/groceryCategory.js's own keyword
+// buckets (used for ALDI, and for OzBargain-sourced Coles/Woolworths posts
+// that have no SaleFinder-derived category), and SaleFinder's own real
+// category-path segments for Coles/Woolworths deals (humanized by
+// netlify/functions/lib/salefinder.js's categoryFromPath — e.g. "Meat",
+// "Biscuits And Snacks", "Fruit And Vegetables"). Both are covered here
+// rather than trying to force one naming scheme onto the other, since
+// forcing SaleFinder's real "Meat" to render as my guessed "Meat & Seafood"
+// would just be relabelling an actual retailer category with a worse one.
+// Anything not listed falls back to "tag-outline" — a missing icon is
+// cosmetic, never worth blocking on.
+const GROCERY_SUBCATEGORY_ICONS = {
+  // utils/groceryCategory.js keyword buckets
+  "Meat & Seafood": "food-drumstick-outline",
+  "Dairy & Eggs": "cheese",
+  "Fruit & Veg": "food-apple-outline",
+  Bakery: "bread-slice-outline",
+  Frozen: "snowflake",
+  Beverages: "cup-outline",
+  "Snacks & Confectionery": "cookie-outline",
+  Pantry: "basket-outline",
+  "Household & Personal Care": "spray-bottle",
+  "Other Groceries": "tag-outline",
+  // SaleFinder's own real category names (Coles/Woolworths) — collected
+  // from actual catalogue pages, plus the common supermarket-aisle names
+  // most likely to appear alongside them.
+  Meat: "food-drumstick-outline",
+  Seafood: "fish",
+  "Meat, Seafood And Deli": "food-drumstick-outline",
+  Deli: "food-turkey",
+  "Fruit And Vegetables": "food-apple-outline",
+  "Fruit And Veg": "food-apple-outline",
+  "Dairy, Eggs And Fridge": "cheese",
+  "Dairy Eggs And Fridge": "cheese",
+  "Bakery And Bread": "bread-slice-outline",
+  "Frozen Food": "snowflake",
+  Drinks: "cup-outline",
+  "Drinks And Cordials": "cup-outline",
+  "Cooking Seasoning And Gravy": "shaker-outline",
+  Confectionery: "candy-outline",
+  "Biscuits And Snacks": "cookie-outline",
+  "Breakfast Foods": "bowl-mix-outline",
+  "Health And Wellbeing": "pill",
+  "Personal Care": "bottle-tonic-outline",
+  "Cleaning And Household": "spray-bottle",
+  "Home And Outdoor": "sofa-outline",
+  "Baby And Toddler": "baby-face-outline",
+  "Pet Care": "paw-outline",
+  Liquor: "bottle-wine-outline",
+  "International Foods": "earth",
+};
+
+// The store options that actually sell groceries — see storeFilter.js's
+// STORES. "OzBargain" deliberately isn't in this list: it stands for the
+// whole community feed (every category, not just supermarkets), so a
+// selection that includes it is no longer "grocery-only".
+const GROCERY_BRANDS = ["Coles", "Woolworths", "ALDI", "Alpha Fresh"];
+
+// The three real signals promoted to their own explained home-view
+// sections, replacing the vague per-card captions (see DealCard.js/
+// DealRow.js) that used to say "Community favourite"/"Solid find" with no
+// explanation anywhere. Order matters — matches how notable the signal is,
+// most notable first, same spirit as utils/dealVoice.js's priority chain
+// (though these three are independent checks, not mutually exclusive with
+// each other — a fresh runaway hit can genuinely be both).
+const SIGNAL_SECTIONS = [
+  {
+    key: "community",
+    label: "Community favourite",
+    icon: "account-group-outline",
+    info: {
+      title: "Community favourite",
+      body: "150 or more people have upvoted this on OzBargain — the community's clearest real signal that it's worth it.",
+    },
+    match: (d) => (d.votes ?? 0) >= 150,
+  },
+  {
+    key: "takingOff",
+    label: "Taking off right now",
+    icon: "trending-up",
+    info: {
+      title: "Taking off right now",
+      body: "Posted in the last few hours and already picking up votes fast — early momentum, not a proven top result yet.",
+    },
+    match: (d) => hoursSince(d.postedAt) <= 4 && (d.votes ?? 0) >= 25,
+  },
+  {
+    key: "solid",
+    label: "Solid find",
+    icon: "thumb-up-outline",
+    info: {
+      title: "Solid find",
+      body: "Not (yet) a runaway hit, but a meaningful number of upvotes — 50 to 149 — from the OzBargain community.",
+    },
+    match: (d) => (d.votes ?? 0) >= 50 && (d.votes ?? 0) < 150,
+  },
+];
 
 // Minimum characters before firing a real (paid, rate-limited) search call —
 // avoids a network round trip for every single keystroke on a 1-letter query.
@@ -210,6 +316,22 @@ export default function BrowseScreen({ navigation }) {
   // immediately.
   const [watchedIds, setWatchedIds] = useState(new Set());
 
+  // The two store filters set on the Profile page (see utils/storeFilter.js)
+  // — recommendationStores narrows the Browse feed below, searchStores
+  // narrows search results. Reloaded on every focus (not just mount) so
+  // changing a chip on Profile and tabbing back here takes effect
+  // immediately, without needing a manual refresh.
+  const [recommendationStores, setRecommendationStores] = useState([]);
+  const [searchStores, setSearchStores] = useState([]);
+  useFocusEffect(
+    useCallback(() => {
+      getStoreFilters().then((f) => {
+        setRecommendationStores(f.recommendationStores);
+        setSearchStores(f.searchStores);
+      });
+    }, [])
+  );
+
   const loadDeals = useCallback(async () => {
     const res = await fetchDeals();
     setDeals(res.deals);
@@ -279,6 +401,12 @@ export default function BrowseScreen({ navigation }) {
     setShowRecent(text.trim().length === 0);
     setScanNotice(null);
   }
+  function onClearQuery() {
+    setQuery("");
+    setShowRecent(false);
+    setScanNotice(null);
+    inputRef.current?.focus();
+  }
   function onFocusSearch() {
     if (query.trim().length === 0) setShowRecent(true);
   }
@@ -327,40 +455,90 @@ export default function BrowseScreen({ navigation }) {
 
   const searching = query.trim().length >= MIN_QUERY_LENGTH;
 
+  // Under the search section, so this follows the "Search filter" group,
+  // not "Recommendation filter" — a store excluded from search shouldn't
+  // show up here even though it's still in the (differently-filtered)
+  // recommendation feed above.
   const matchingDeals = useMemo(() => {
     if (!searching) return [];
     const q = query.trim().toLowerCase();
-    return deals
+    return applyStoreFilter(deals, searchStores, (d) => normalizeDealStore(d.store))
       .filter((d) => d.title.toLowerCase().includes(q))
       .sort((a, b) => (b.votes ?? 0) - (a.votes ?? 0))
       .slice(0, 5);
-  }, [searching, query, deals]);
+  }, [searching, query, deals, searchStores]);
 
-  // Always computed against the full feed, unfiltered — the home view's
+  // api.searchProducts() results carry a clean store.name (see
+  // netlify/functions/search-products.js) rather than free text, but
+  // normalizeStore() handles a clean name fine too — it just matches on the
+  // first pattern hit.
+  const filteredProducts = useMemo(
+    () => applyStoreFilter(products, searchStores, (p) => normalizeStore(p.store?.name)),
+    [products, searchStores]
+  );
+
+  // The Profile page's "Recommendation filter" (see utils/storeFilter.js)
+  // narrows the feed right here, before verdicts get grouped — everything
+  // downstream (carousels, "We'd buy these", category rows, the search
+  // section's "Live deals matching your search") only ever sees the
+  // filtered set, same as if the un-selected stores' deals didn't exist.
+  const recommendedDeals = useMemo(
+    () => applyStoreFilter(deals, recommendationStores, (d) => normalizeDealStore(d.store)),
+    [deals, recommendationStores]
+  );
+
+  // Always computed against the full (filtered) feed — the home view's
   // carousels and each category/buy "View all" both read from this, so
   // switching viewMode never re-fetches or re-judges anything.
-  const buckets = useMemo(() => groupByVerdict(deals), [deals]);
+  const buckets = useMemo(() => groupByVerdict(recommendedDeals), [recommendedDeals]);
   const trackingDays = useMemo(() => getTrackingDays(), []);
 
+  // True once the Recommendation filter is narrowed down to only
+  // grocery-selling brands (never empty/"All", never including OzBargain,
+  // which stands for the whole community feed — see GROCERY_BRANDS above).
+  // At that point browsing by aisle (Meat/Dairy/Bakery/...) is more useful
+  // than one lumped "Groceries" carousel — see utils/groceryCategory.js.
+  const isGroceryOnlyFilter =
+    recommendationStores.length > 0 && recommendationStores.every((s) => GROCERY_BRANDS.includes(s));
+
   // Everything that isn't a confident SKIP, grouped by each deal's real
-  // category, biggest group first — the source for both the home view's
-  // per-category carousel and that category's "View all" full list.
+  // category (or grocery subcategory, once isGroceryOnlyFilter), biggest
+  // group first — the source for both the home view's per-category
+  // carousel and that category's "View all" full list.
   const worthBuyingByCategory = useMemo(() => {
     const map = new Map();
     for (const d of [...buckets.buy, ...buckets.wait, ...buckets.tracking]) {
-      const cat = d.category || "Other";
+      const cat = isGroceryOnlyFilter ? groceryCategoryFor(d) : d.category || "Other";
       if (!map.has(cat)) map.set(cat, []);
       map.get(cat).push(d);
     }
     for (const items of map.values()) items.sort((a, b) => (b.votes ?? 0) - (a.votes ?? 0));
     return [...map.entries()].sort((a, b) => b[1].length - a[1].length);
-  }, [buckets]);
+  }, [buckets, isGroceryOnlyFilter]);
 
   const categoryDeals = useMemo(() => {
     if (viewMode.type !== "category") return [];
     const found = worthBuyingByCategory.find(([cat]) => cat === viewMode.name);
     return found ? found[1] : [];
   }, [viewMode, worthBuyingByCategory]);
+
+  // The three explained signal carousels (see SIGNAL_SECTIONS above) that
+  // open the home view, regardless of which store filter is active — only
+  // built from whichever deals actually match, so an empty signal never
+  // renders an empty section.
+  const signalSections = useMemo(
+    () =>
+      SIGNAL_SECTIONS.map((def) => ({ ...def, items: recommendedDeals.filter(def.match) })).filter(
+        (s) => s.items.length > 0
+      ),
+    [recommendedDeals]
+  );
+
+  const signalViewItems = useMemo(() => {
+    if (viewMode.type !== "signal") return [];
+    const sec = signalSections.find((s) => s.key === viewMode.key);
+    return sec ? sec.items : [];
+  }, [viewMode, signalSections]);
 
   // One flattened list of heterogeneous rows.
   const rows = useMemo(() => {
@@ -382,10 +560,10 @@ export default function BrowseScreen({ navigation }) {
         out.push({ type: "resultsLoading", key: "results-loading" });
       } else if (searchError) {
         out.push({ type: "resultsError", key: "results-error", error: searchError });
-      } else if (products.length === 0) {
+      } else if (filteredProducts.length === 0) {
         out.push({ type: "resultsEmpty", key: "results-empty" });
       } else {
-        for (const group of chunk(products, columns)) {
+        for (const group of chunk(filteredProducts, columns)) {
           out.push({ type: "resultGrid", key: `g-${group[0].id}`, items: group });
         }
       }
@@ -393,9 +571,33 @@ export default function BrowseScreen({ navigation }) {
       pushGrid("buy", buckets.buy);
     } else if (viewMode.type === "category") {
       pushGrid("cat", categoryDeals);
+    } else if (viewMode.type === "signal") {
+      pushGrid("signal", signalViewItems);
     } else {
       // Home ("All"): one carousel per section, each its own visually
       // distinct block — not everything spread flat on the page.
+      //
+      // The three explained signal carousels open the view, ahead of
+      // anything category-specific — same idea regardless of which store
+      // filter is active, and each carries its own info icon (see
+      // InfoTip.js) instead of leaving the label unexplained the way the
+      // old per-card captions did.
+      for (const sec of signalSections) {
+        out.push({
+          type: "carouselHeader",
+          key: `h-signal-${sec.key}`,
+          label: sec.label,
+          icon: sec.icon,
+          info: sec.info,
+          onViewAll: () => setViewMode({ type: "signal", key: sec.key }),
+        });
+        out.push({
+          type: "carouselStrip",
+          key: `s-signal-${sec.key}`,
+          items: sec.items.slice(0, CAROUSEL_PREVIEW_COUNT),
+        });
+      }
+
       if (buckets.buy.length) {
         out.push({
           type: "carouselHeader",
@@ -411,7 +613,9 @@ export default function BrowseScreen({ navigation }) {
           type: "carouselHeader",
           key: `h-cat-${cat}`,
           label: cat,
-          icon: DEAL_CATEGORY_ICONS[cat] || "tag-outline",
+          icon: isGroceryOnlyFilter
+            ? GROCERY_SUBCATEGORY_ICONS[cat] || "tag-outline"
+            : DEAL_CATEGORY_ICONS[cat] || "tag-outline",
           onViewAll: () => setViewMode({ type: "category", name: cat }),
         });
         out.push({ type: "carouselStrip", key: `s-cat-${cat}`, items: items.slice(0, CAROUSEL_PREVIEW_COUNT) });
@@ -434,7 +638,22 @@ export default function BrowseScreen({ navigation }) {
     }
 
     return out;
-  }, [searching, matchingDeals, viewMode, buckets, worthBuyingByCategory, categoryDeals, expanded, products, productsLoading, searchError, columns]);
+  }, [
+    searching,
+    matchingDeals,
+    viewMode,
+    buckets,
+    worthBuyingByCategory,
+    categoryDeals,
+    signalSections,
+    signalViewItems,
+    isGroceryOnlyFilter,
+    expanded,
+    filteredProducts,
+    productsLoading,
+    searchError,
+    columns,
+  ]);
 
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
@@ -478,6 +697,7 @@ export default function BrowseScreen({ navigation }) {
                     <MaterialCommunityIcons name={item.icon} size={16} color={colors.primary} />
                   )}
                   <Text style={styles.carouselHeadText}>{item.label}</Text>
+                  {item.info && <InfoTip title={item.info.title} body={item.info.body} />}
                 </View>
                 <TouchableOpacity onPress={item.onViewAll} hitSlop={8} style={styles.viewAllBtn}>
                   <Text style={styles.viewAllText}>View all</Text>
@@ -642,6 +862,11 @@ export default function BrowseScreen({ navigation }) {
                     returnKeyType="search"
                     autoCapitalize="none"
                   />
+                  {query.length > 0 && (
+                    <TouchableOpacity style={styles.clearButton} hitSlop={8} onPress={onClearQuery}>
+                      <Ionicons name="close-circle" size={18} color={colors.textFaint} />
+                    </TouchableOpacity>
+                  )}
                   <TouchableOpacity
                     style={styles.scanButton}
                     hitSlop={8}
@@ -703,7 +928,11 @@ export default function BrowseScreen({ navigation }) {
                 </TouchableOpacity>
                 <Text style={styles.breadcrumbSep}>›</Text>
                 <Text style={[styles.breadcrumbText, styles.breadcrumbActive]}>
-                  {viewMode.type === "buy" ? "We'd buy these today" : viewMode.name}
+                  {viewMode.type === "buy"
+                    ? "We'd buy these today"
+                    : viewMode.type === "signal"
+                    ? signalSections.find((s) => s.key === viewMode.key)?.label
+                    : viewMode.name}
                 </Text>
               </View>
             )}
@@ -827,6 +1056,11 @@ function makeStyles(colors) {
     fontSize: 16,
     color: colors.text,
     ...(Platform.OS === "web" ? { outlineStyle: "none" } : null),
+  },
+  clearButton: {
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 2,
   },
   scanButton: {
     width: 36,

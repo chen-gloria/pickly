@@ -30,6 +30,16 @@
       html,
       body {
         height: 100%;
+        /* Standalone PWA on iOS (Add to Home Screen): `100%`/`100vh` here
+           resolves against the *layout* viewport, which is shorter than the
+           real visual viewport once the home-indicator safe area is
+           counted — the gap below is native WKWebView chrome (black),
+           not this document, so no background-color on html/body can ever
+           paint over it. `100dvh` (dynamic viewport height) is measured
+           against the actual visual viewport instead and closes that gap.
+           Kept as a second declaration, not a replacement — a browser that
+           doesn't understand `dvh` just ignores the line and keeps `100%`. */
+        height: 100dvh;
         /* iOS Safari reveals whatever is behind #root — its own toolbar
            collapsing on scroll changes the viewport height, and rubber-band
            overscroll shows past the content entirely — both expose raw
@@ -55,6 +65,7 @@
       #root {
         display: flex;
         height: 100%;
+        height: 100dvh; /* see the html/body rule above */
         flex: 1;
       }
     </style>

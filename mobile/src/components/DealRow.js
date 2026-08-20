@@ -9,16 +9,20 @@ import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Sparkline from "./Sparkline";
 import VerdictBadge from "./VerdictBadge";
+import StoreBadge from "./StoreBadge";
 import { radius, spacing, type } from "../theme";
 import { useTheme } from "../context/ThemeContext";
-import { dealVoice, compactNumber } from "../utils/dealVoice";
+import { compactNumber } from "../utils/dealVoice";
 import { timeAgo, timeLeft } from "../api/deals";
+import { normalizeDealStore, STORE_COLORS } from "../utils/storeFilter";
 
 export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
   const { colors } = useTheme();
   const styles = useMemo(() => makeStyles(colors), [colors]);
   const judgement = deal.judgement;
   const left = timeLeft(deal.expiresAt);
+  const storeName = deal.store || deal.category;
+  const badgeColor = STORE_COLORS[normalizeDealStore(deal.store)];
 
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.85}>
@@ -32,9 +36,12 @@ export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
 
       <View style={styles.content}>
         <View style={styles.topRow}>
-          <Text style={styles.store} numberOfLines={1}>
-            {deal.store || deal.category}
-          </Text>
+          <View style={styles.storeRow}>
+            <StoreBadge name={storeName} color={badgeColor} size={12} />
+            <Text style={styles.store} numberOfLines={1}>
+              {storeName}
+            </Text>
+          </View>
           {onToggleWatch && (
             <TouchableOpacity
               onPress={(e) => {
@@ -62,8 +69,11 @@ export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
             "TRACKING" on nearly every row would put our data-collection
             status where the user's benefit should be, and repeated forty
             times it just reads as "this app isn't ready yet". Unjudged rows
-            instead show what IS true and useful today — the community's
-            read, or the retailer's own claim, attributed. */}
+            instead show the honest tracking-status line from
+            scripts/lib/verdict.js ("Claimed X% off", "First sighting",
+            "Only N sightings so far") — not a vague "Community favourite"/
+            "Solid find"-style caption; those got promoted into their own
+            explained sections on BrowseScreen.js's home view instead. */}
         {judgement?.confident ? (
           <View style={styles.judgeRow}>
             <VerdictBadge verdict={judgement.verdict} small />
@@ -73,11 +83,11 @@ export default function DealRow({ deal, onPress, watched, onToggleWatch }) {
             <Sparkline series={judgement.series} width={52} height={18} />
           </View>
         ) : (
-          <Text style={styles.voice} numberOfLines={1}>
-            {judgement?.detail?.startsWith("Claimed")
-              ? judgement.detail
-              : dealVoice(deal)}
-          </Text>
+          judgement?.detail && (
+            <Text style={styles.voice} numberOfLines={1}>
+              {judgement.detail}
+            </Text>
+          )
         )}
 
         <View style={styles.footer}>
@@ -125,6 +135,7 @@ function makeStyles(colors) {
     thumbFallback: { backgroundColor: colors.cardHi },
     content: { flex: 1 },
     topRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+    storeRow: { flexDirection: "row", alignItems: "center", gap: 4, flex: 1 },
     store: { ...type.micro, color: colors.primary, flex: 1 },
     bookmark: { paddingHorizontal: spacing.sm },
     age: { color: colors.textFaint, fontSize: 11 },

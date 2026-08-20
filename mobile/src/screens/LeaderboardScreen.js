@@ -11,7 +11,7 @@
 // utils/recentSearches.js), and presenting one person's search history as
 // "most searched" would be the same kind of dishonest the original leaderboard
 // idea was cut for.
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -24,14 +24,19 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useFocusEffect } from "@react-navigation/native";
 import { fetchDeals } from "../api/deals";
 import { compactNumber } from "../utils/dealVoice";
 import { radius, spacing, type } from "../theme";
 import { useTheme } from "../context/ThemeContext";
+import StoreBadge from "../components/StoreBadge";
+import { getStoreFilters, applyStoreFilter, normalizeDealStore, STORE_COLORS } from "../utils/storeFilter";
 
 function Row({ rank, deal, onPress }) {
   const { colors } = useTheme();
   const styles = useMemo(() => makeStyles(colors), [colors]);
+  const storeName = deal.store || deal.category;
+  const badgeColor = STORE_COLORS[normalizeDealStore(deal.store)];
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.7}>
       <Text style={styles.rank}>{rank}</Text>
@@ -46,9 +51,12 @@ function Row({ rank, deal, onPress }) {
         <Text style={styles.title} numberOfLines={2}>
           {deal.title}
         </Text>
-        <Text style={styles.store} numberOfLines={1}>
-          {deal.store || deal.category}
-        </Text>
+        <View style={styles.storeRow}>
+          <StoreBadge name={storeName} color={badgeColor} size={12} />
+          <Text style={styles.store} numberOfLines={1}>
+            {storeName}
+          </Text>
+        </View>
       </View>
       <View style={styles.voteBlock}>
         <Ionicons name="caret-up" size={13} color={colors.primary} />
@@ -62,14 +70,28 @@ export default function LeaderboardScreen({ navigation }) {
   const { colors } = useTheme();
   const styles = useMemo(() => makeStyles(colors), [colors]);
   const [deals, setDeals] = useState(null);
+  const [leaderboardStores, setLeaderboardStores] = useState([]);
 
   useEffect(() => {
     fetchDeals().then((res) => setDeals(res.deals));
   }, []);
 
+  // Reloaded on every focus, same as BrowseScreen — a chip changed on
+  // Profile and tabbed back to here should apply immediately.
+  useFocusEffect(
+    useCallback(() => {
+      getStoreFilters().then((f) => setLeaderboardStores(f.leaderboardStores));
+    }, [])
+  );
+
+  const filteredDeals = useMemo(
+    () => (deals ? applyStoreFilter(deals, leaderboardStores, (d) => normalizeDealStore(d.store)) : deals),
+    [deals, leaderboardStores]
+  );
+
   const { overall, byCategory } = useMemo(() => {
-    if (!deals) return { overall: [], byCategory: [] };
-    const ranked = [...deals].sort((a, b) => (b.votes ?? 0) - (a.votes ?? 0));
+    if (!filteredDeals) return { overall: [], byCategory: [] };
+    const ranked = [...filteredDeals].sort((a, b) => (b.votes ?? 0) - (a.votes ?? 0));
     const cats = [...new Set(ranked.map((d) => d.category).filter(Boolean))];
     return {
       overall: ranked.slice(0, 5),
@@ -78,7 +100,7 @@ export default function LeaderboardScreen({ navigation }) {
         deals: ranked.filter((d) => d.category === cat).slice(0, 3),
       })),
     };
-  }, [deals]);
+  }, [filteredDeals]);
 
   function open(deal) {
     Linking.openURL(deal.url).catch(() => {});
@@ -189,7 +211,8 @@ function makeStyles(colors) {
     },
     thumb: { width: "100%", height: "100%" },
     title: { color: colors.text, ...type.body, lineHeight: 19 },
-    store: { color: colors.primary, ...type.micro, marginTop: 4 },
+    storeRow: { flexDirection: "row", alignItems: "center", gap: 4, marginTop: 4 },
+    store: { color: colors.primary, ...type.micro },
     voteBlock: { flexDirection: "row", alignItems: "center", gap: 2 },
     voteText: { color: colors.text, fontSize: 13, fontWeight: "800" },
   });
