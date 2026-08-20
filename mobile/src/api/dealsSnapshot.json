@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-20T12:52:06.963Z",
+  "capturedAt": "2026-08-20T13:00:46.571Z",
   "deals": [
     {
       "id": "972079",
@@ -19,7 +19,7 @@
       "startsAt": "2026-08-17T17:00:00+10:00",
       "status": null,
       "category": "Electronics",
-      "heat": 35.62
+      "heat": 35.21
     },
     {
       "id": "972009",
@@ -39,7 +39,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 34.58
+      "heat": 34.37
     },
     {
       "id": "971860",
@@ -59,7 +59,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 33.63
+      "heat": 33.56
     },
     {
       "id": "971937",
@@ -79,7 +79,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 26.6
+      "heat": 26.53
     },
     {
       "id": "971735",
@@ -99,7 +99,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 26.34
+      "heat": 26.3
     },
     {
       "id": "971979",
@@ -119,7 +119,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 23.76
+      "heat": 23.64
     },
     {
       "id": "971850",
@@ -139,7 +139,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 18.69
+      "heat": 18.65
     },
     {
       "id": "971966",
@@ -159,7 +159,7 @@
       "startsAt": "2026-08-17T17:00:00+10:00",
       "status": null,
       "category": "Electronics",
-      "heat": 18.62
+      "heat": 18.56
     },
     {
       "id": "971830",
@@ -179,7 +179,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 18.08
+      "heat": 18.05
     },
     {
       "id": "971003",
@@ -199,7 +199,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 17.93
+      "heat": 17.92
     },
     {
       "id": "971522",
@@ -219,7 +219,7 @@
       "startsAt": "2026-08-16T00:00:00+10:00",
       "status": "targeted",
       "category": "Home & Garden",
-      "heat": 17.06
+      "heat": 17.05
     },
     {
       "id": "971676",
@@ -239,7 +239,7 @@
       "startsAt": "2026-08-17T17:00:00+10:00",
       "status": null,
       "category": "Electronics",
-      "heat": 16.77
+      "heat": 16.75
     },
     {
       "id": "971894",
@@ -259,7 +259,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 16.5
+      "heat": 16.46
     },
     {
       "id": "971597",
@@ -279,7 +279,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 15.59
+      "heat": 15.58
     },
     {
       "id": "971820",
@@ -299,7 +299,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 15.21
+      "heat": 15.18
     },
     {
       "id": "971823",
@@ -319,7 +319,7 @@
       "startsAt": "2026-08-17T17:00:00+10:00",
       "status": null,
       "category": "Electronics",
-      "heat": 14.31
+      "heat": 14.29
     },
     {
       "id": "971173",
@@ -399,7 +399,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 11.48
+      "heat": 11.47
     },
     {
       "id": "971875",
@@ -419,7 +419,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 11.31
+      "heat": 11.28
     },
     {
       "id": "971613",
@@ -439,7 +439,7 @@
       "startsAt": "2026-08-17T00:00:00+10:00",
       "status": null,
       "category": "Electronics",
-      "heat": 11.23
+      "heat": 11.22
     },
     {
       "id": "971609",
@@ -459,7 +459,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 10.29
+      "heat": 10.28
     },
     {
       "id": "971577",
@@ -499,7 +499,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 9.56
+      "heat": 9.54
     },
     {
       "id": "971431",
@@ -519,7 +519,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 9.48
+      "heat": 9.47
     },
     {
       "id": "971638",
@@ -539,7 +539,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 8.78
+      "heat": 8.77
     },
     {
       "id": "970668",
@@ -559,7 +559,7 @@
       "startsAt": "2026-08-22T00:00:00+10:00",
       "status": "in 2 days",
       "category": "Home & Garden",
-      "heat": 7.61
+      "heat": 7.6
     },
     {
       "id": "969822",
@@ -599,7 +599,7 @@
       "startsAt": "2026-08-18T00:00:00+10:00",
       "status": "targeted",
       "category": "Electronics",
-      "heat": 7.37
+      "heat": 7.36
     },
     {
       "id": "971426",
@@ -639,7 +639,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 7.04
+      "heat": 7.03
     },
     {
       "id": "971595",
@@ -659,7 +659,7 @@
       "startsAt": null,
       "status": null,
       "category": "Electronics",
-      "heat": 6.88
+      "heat": 6.87
     },
     {
       "id": "971401",
@@ -679,7 +679,7 @@
       "startsAt": null,
       "status": null,
       "category": "Groceries",
-      "heat": 6.21
+      "heat": 6.2
     },
     {
       "id": "971462",
@@ -699,7 +699,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 6.19
+      "heat": 6.18
     },
     {
       "id": "970237",
@@ -739,7 +739,7 @@
       "startsAt": "2026-08-14T00:00:00+10:00",
       "status": "targeted",
       "category": "Electronics",
-      "heat": 6.05
+      "heat": 6.04
     },
     {
       "id": "971287",
@@ -779,7 +779,7 @@
       "startsAt": "2026-08-01T00:00:00+10:00",
       "status": null,
       "category": "Home & Garden",
-      "heat": 5.74
+      "heat": 5.73
     },
     {
       "id": "971064",
@@ -819,7 +819,7 @@
       "startsAt": "2026-08-19T00:00:00+10:00",
       "status": null,
       "category": "Groceries",
-      "heat": 5.59
+      "heat": 5.58
     },
     {
       "id": "971733",
@@ -839,7 +839,7 @@
       "startsAt": "2026-08-18T00:00:00+10:00",
       "status": "targeted",
       "category": "Groceries",
-      "heat": 5.27
+      "heat": 5.26
     },
     {
       "id": "971267",
@@ -919,7 +919,7 @@
       "startsAt": null,
       "status": null,
       "category": "Health & Beauty",
-      "heat": 4.49
+      "heat": 4.48
     },
     {
       "id": "970966",
@@ -939,7 +939,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 4.39
+      "heat": 4.38
     },
     {
       "id": "970703",
@@ -959,7 +959,7 @@
       "startsAt": null,
       "status": null,
       "category": "Home & Garden",
-      "heat": 4.29
+      "heat": 4.28
     },
     {
       "id": "970518",
@@ -1039,7 +1039,7 @@
       "startsAt": null,
       "status": null,
       "category": "Health & Beauty",
-      "heat": 2.66
+      "heat": 2.65
     },
     {
       "id": "968402",
@@ -1684,9 +1684,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Frozen Food"
     },
@@ -1703,9 +1703,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Confectionery"
     },
@@ -1722,9 +1722,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -1741,9 +1741,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Seafood"
     },
@@ -1760,9 +1760,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -1779,9 +1779,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Dairy"
     },
@@ -1798,9 +1798,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -1817,9 +1817,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -1836,9 +1836,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Desserts"
     },
@@ -1855,9 +1855,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Baby"
     },
@@ -1874,9 +1874,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Household Cleaning"
     },
@@ -1893,9 +1893,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:47.423Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:30.465Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Fruit And Vegetables"
     },
@@ -1912,9 +1912,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -1931,9 +1931,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -1950,9 +1950,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -1969,9 +1969,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -1988,9 +1988,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -2007,9 +2007,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.021Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Seafood"
     },
@@ -2026,9 +2026,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -2045,9 +2045,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2064,9 +2064,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2083,9 +2083,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2102,9 +2102,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2121,9 +2121,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:52.022Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:35.213Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2140,9 +2140,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.249Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2159,9 +2159,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.249Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2178,9 +2178,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.249Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2197,9 +2197,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.249Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2216,9 +2216,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.249Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Bakery"
     },
@@ -2235,9 +2235,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Bakery"
     },
@@ -2254,9 +2254,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -2273,9 +2273,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Bakery"
     },
@@ -2292,9 +2292,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Dairy"
     },
@@ -2311,9 +2311,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Fruit And Vegetables"
     },
@@ -2330,9 +2330,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Fruit And Vegetables"
     },
@@ -2349,9 +2349,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.250Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:40.281Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Fruit And Vegetables"
     },
@@ -2368,9 +2368,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:02.605Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:45.323Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Fruit And Vegetables"
     },
@@ -2387,9 +2387,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:02.605Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:45.323Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -2406,9 +2406,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:02.605Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:45.323Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2425,9 +2425,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:02.605Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:45.323Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2444,9 +2444,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.750Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Meat"
     },
@@ -2463,9 +2463,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.750Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Cooking Seasoning And Gravy"
     },
@@ -2482,9 +2482,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2501,9 +2501,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Confectionery"
     },
@@ -2520,9 +2520,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Frozen Food"
     },
@@ -2539,9 +2539,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Drinks"
     },
@@ -2558,9 +2558,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Health And Wellbeing"
     },
@@ -2577,9 +2577,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Health And Wellbeing"
     },
@@ -2596,9 +2596,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Breakfast Foods"
     },
@@ -2615,9 +2615,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Health And Wellbeing"
     },
@@ -2634,9 +2634,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Health And Wellbeing"
     },
@@ -2653,9 +2653,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:48:57.150Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:39.751Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Home And Outdoor"
     },
@@ -2672,9 +2672,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Dairy"
     },
@@ -2691,9 +2691,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Dairy"
     },
@@ -2710,9 +2710,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Papergoods Wraps And Bags"
     },
@@ -2729,9 +2729,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Deli And Chilled"
     },
@@ -2748,9 +2748,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2767,9 +2767,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Cooking Seasoning And Gravy"
     },
@@ -2786,9 +2786,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Frozen Food"
     },
@@ -2805,9 +2805,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -2824,9 +2824,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Confectionery"
     },
@@ -2843,9 +2843,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Drinks"
     },
@@ -2862,9 +2862,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2881,9 +2881,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:12.131Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:57:52.567Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2900,9 +2900,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2919,9 +2919,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2938,9 +2938,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Confectionery"
     },
@@ -2957,9 +2957,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Confectionery"
     },
@@ -2976,9 +2976,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -2995,9 +2995,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Drinks"
     },
@@ -3014,9 +3014,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Breakfast Foods"
     },
@@ -3033,9 +3033,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Bakery"
     },
@@ -3052,9 +3052,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Breakfast Foods"
     },
@@ -3071,9 +3071,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.843Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Biscuits And Snacks"
     },
@@ -3090,9 +3090,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.844Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Drinks"
     },
@@ -3109,9 +3109,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:25.844Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:06.703Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Drinks"
     },
@@ -3128,9 +3128,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:40.691Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:20.849Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -3147,9 +3147,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:40.691Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:20.849Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -3166,9 +3166,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:40.691Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:20.849Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Canned And Packet Food"
     },
@@ -3185,9 +3185,9 @@
       "votesPos": 0,
       "comments": 0,
       "clicks": 0,
-      "postedAt": "2026-08-20T12:49:40.691Z",
-      "expiresAt": "2026-08-25T13:59:59.999Z",
-      "startsAt": "2026-08-18T14:00:00.000Z",
+      "postedAt": "2026-08-20T12:58:20.849Z",
+      "expiresAt": "2026-08-25T23:59:59.999Z",
+      "startsAt": "2026-08-19T00:00:00.000Z",
       "status": null,
       "category": "Cooking Seasoning And Gravy"
     }
