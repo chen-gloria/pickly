@@ -20,19 +20,29 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { fetchDeals, timeLeft } from "../api/deals";
 import {
   getWatchlist,
+  getCachedWatchlist,
   removeFromWatchlist,
   findDrops,
 } from "../utils/watchlist";
 import { shareText } from "../utils/shareText";
 import { radius, spacing, type } from "../theme";
 import { useTheme } from "../context/ThemeContext";
+import { useToast } from "../context/ToastContext";
 
 export default function WatchlistScreen({ navigation }) {
   const { colors } = useTheme();
+  const toast = useToast();
   const styles = useMemo(() => makeStyles(colors), [colors]);
-  const [items, setItems] = useState([]);
+  // Seeded from the cache toggleWatch()/getWatchlist() already populated
+  // elsewhere (BrowseScreen.js) — a cached list means this paints the real
+  // items instantly on tab switch instead of a spinner every time, since
+  // the cache is already exactly what a fresh getWatchlist() would return
+  // in the common case (nothing changed since the last read/write). Empty
+  // only on a genuinely first ever load of the app.
+  const cached = getCachedWatchlist();
+  const [items, setItems] = useState(cached ?? []);
   const [drops, setDrops] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(cached === null);
 
   const load = useCallback(async () => {
     const list = await getWatchlist();
@@ -48,14 +58,22 @@ export default function WatchlistScreen({ navigation }) {
 
   useFocusEffect(
     useCallback(() => {
+      // Still revalidates against the server every focus (a second device
+      // could have changed the list) — just no longer blocks the screen
+      // from showing something real first.
       load();
     }, [load])
   );
 
-  async function remove(id) {
-    const next = await removeFromWatchlist(id);
+  function remove(id) {
+    // Optimistic, same reasoning as utils/watchlist.js's toggleWatch — the
+    // list to remove from is already on screen, no need to wait on the
+    // network to update what's shown.
+    const next = items.filter((w) => w.id !== id);
     setItems(next);
     setDrops((prev) => prev.filter((d) => d.id !== id));
+    toast.show("Removed from Watching", { icon: "bookmark-outline" });
+    removeFromWatchlist(id).catch(() => {});
   }
 
   // Stands in for the "friends" social loop from the original plan — no

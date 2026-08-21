@@ -33,6 +33,23 @@ async function saveLocalList(list) {
   return list;
 }
 
+// In-memory only, cleared on a full reload — that's fine, since the first
+// real getWatchlist() of a session always does a proper fetch anyway. Its
+// entire job is letting toggleWatch() below answer "what does the list
+// look like right now" from memory instead of over the network, and
+// letting screens (WatchlistScreen.js) paint instantly on revisit instead
+// of showing a spinner for a list they already know.
+let cachedList = null;
+
+export function getCachedWatchlist() {
+  return cachedList;
+}
+
+function setCache(list) {
+  cachedList = list;
+  return list;
+}
+
 function toEntry(deal) {
   return {
     id: deal.id,
@@ -83,11 +100,11 @@ async function serverRemove(token, id) {
 
 export async function getWatchlist() {
   const token = await getToken();
-  if (!token) return getLocalList();
+  if (!token) return setCache(await getLocalList());
   try {
-    return await serverList(token);
+    return setCache(await serverList(token));
   } catch (_) {
-    return getLocalList();
+    return setCache(await getLocalList());
   }
 }
 
@@ -100,7 +117,7 @@ export async function addToWatchlist(deal) {
   const token = await getToken();
   if (token) {
     try {
-      return await serverAdd(token, deal);
+      return setCache(await serverAdd(token, deal));
     } catch (_) {
       // Fall through to local so the tap isn't silently lost on a bad
       // connection — worst case it syncs up next time addToWatchlist
@@ -108,28 +125,52 @@ export async function addToWatchlist(deal) {
     }
   }
   const list = await getLocalList();
-  if (list.some((w) => w.id === deal.id)) return list;
-  return saveLocalList([toEntry(deal), ...list]);
+  if (list.some((w) => w.id === deal.id)) return setCache(list);
+  return setCache(await saveLocalList([toEntry(deal), ...list]));
 }
 
 export async function removeFromWatchlist(id) {
   const token = await getToken();
   if (token) {
     try {
-      return await serverRemove(token, id);
+      return setCache(await serverRemove(token, id));
     } catch (_) {
       // same reasoning as addToWatchlist's fallback
     }
   }
   const next = (await getLocalList()).filter((w) => w.id !== id);
-  return saveLocalList(next);
+  return setCache(await saveLocalList(next));
 }
 
-export async function toggleWatch(deal) {
-  const list = await getWatchlist();
-  return list.some((w) => w.id === deal.id)
-    ? removeFromWatchlist(deal.id)
-    : addToWatchlist(deal);
+// Optimistic on purpose — this used to call getWatchlist() to check current
+// status (one network round trip) and THEN addToWatchlist/
+// removeFromWatchlist (a second one), so every tap paid for two sequential
+// server calls before the UI was allowed to update: the actual cause of the
+// multi-second bookmark lag. The caller already knows whether something is
+// currently watched (every call site tracks its own watchedIds/isWatched
+// state to render the icon) — passing it in means this never needs to ask
+// the server first. It updates the local cache + AsyncStorage synchronously
+// and returns immediately; the real server write happens in the background
+// and is allowed to fail without the tap having to wait for it (same
+// fall-back-to-local safety net as before, just no longer on the critical
+// path of "does the icon change").
+export function toggleWatch(deal, isWatched) {
+  const current = cachedList ?? [];
+  const watched = isWatched ?? current.some((w) => w.id === deal.id);
+
+  if (watched) {
+    const optimistic = current.filter((w) => w.id !== deal.id);
+    setCache(optimistic);
+    saveLocalList(optimistic);
+    removeFromWatchlist(deal.id).catch(() => {});
+    return optimistic;
+  }
+
+  const optimistic = [toEntry(deal), ...current.filter((w) => w.id !== deal.id)];
+  setCache(optimistic);
+  saveLocalList(optimistic);
+  addToWatchlist(deal).catch(() => {});
+  return optimistic;
 }
 
 // Called once right after a successful login/signup (see AuthContext.js).

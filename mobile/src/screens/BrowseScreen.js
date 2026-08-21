@@ -64,6 +64,7 @@ import {
 } from "../utils/watchlist";
 import InfoTip from "../components/InfoTip";
 import { useTheme } from "../context/ThemeContext";
+import { useToast } from "../context/ToastContext";
 import { radius, spacing, type } from "../theme";
 import { getStoreFilters, applyStoreFilter, normalizeStore, normalizeDealStore } from "../utils/storeFilter";
 import { hoursSince } from "../utils/dealVoice";
@@ -271,6 +272,7 @@ function chunk(arr, size) {
 
 export default function BrowseScreen({ navigation }) {
   const { colors } = useTheme();
+  const toast = useToast();
   const styles = useMemo(() => makeStyles(colors), [colors]);
   const { width } = useWindowDimensions();
   const columns = gridColumns(width);
@@ -388,14 +390,26 @@ export default function BrowseScreen({ navigation }) {
     if (item.link) Linking.openURL(item.link).catch(() => {});
   }
 
-  async function onToggleWatchDeal(deal) {
-    const next = await toggleWatch(deal);
+  function onToggleWatchDeal(deal) {
+    const wasWatched = watchedIds.has(deal.id);
+    // toggleWatch() is optimistic — updates local state and returns
+    // immediately, server sync happens in the background (see
+    // utils/watchlist.js's header comment on why this used to be slow).
+    const next = toggleWatch(deal, wasWatched);
     setWatchedIds(new Set(next.map((w) => w.id)));
+    toast.show(wasWatched ? "Removed from Watching" : "Saved to Watching", {
+      icon: wasWatched ? "bookmark-outline" : "bookmark",
+    });
   }
 
-  async function onToggleWatchProduct(product) {
-    const next = await toggleWatch(productToWatchItem(product));
+  function onToggleWatchProduct(product) {
+    const id = productWatchId(product.id);
+    const wasWatched = watchedIds.has(id);
+    const next = toggleWatch(productToWatchItem(product), wasWatched);
     setWatchedIds(new Set(next.map((w) => w.id)));
+    toast.show(wasWatched ? "Removed from Watching" : "Saved to Watching", {
+      icon: wasWatched ? "bookmark-outline" : "bookmark",
+    });
   }
 
   function onChangeQuery(text) {
