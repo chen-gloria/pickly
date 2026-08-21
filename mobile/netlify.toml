@@ -7,3 +7,19 @@
   # The parser lives outside netlify/functions so the snapshot script can
   # share it; esbuild needs to be told to follow that include.
   included_files = ["scripts/lib/**"]
+
+# index.html itself is deliberately NOT listed here — it already gets
+# Netlify's default `must-revalidate`, which is exactly right: it's the one
+# file that has to always be re-checked, since it's what points at whichever
+# JS bundle hash is current. Every _expo/static/* file, by contrast, has its
+# real content hash baked into its own filename (Metro/Expo's build output —
+# a new build produces a new filename, never overwrites an old one), so it
+# can never go stale under this rule: caching it for a year doesn't risk
+# serving outdated content, it just skips a network round-trip for
+# something that was never going to change. (A backgrounded PWA silently
+# outliving a deploy entirely — the actual bug reported — isn't a caching
+# problem this can fix; see src/utils/versionCheck.js for that.)
+[[headers]]
+  for = "/_expo/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
