@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-08-29T02:05:47.931Z",
+  "updatedAt": "2026-08-29T21:40:20.544Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -7448,6 +7448,155 @@
           "votes": 47,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/973094"
+        }
+      ]
+    },
+    "specsavers|glasses-pairs": {
+      "key": "specsavers|glasses-pairs",
+      "store": "specsavers",
+      "storeLabel": "Specsavers",
+      "tokens": [
+        "glasses",
+        "pairs"
+      ],
+      "sizes": [],
+      "title": "Get 2 Pairs of Glasses for $199 (Exclusions Apply)",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 199,
+          "votes": 76,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973155"
+        }
+      ]
+    },
+    "bigw|200g-250g-block-chocolate-whittakers|200g+250g": {
+      "key": "bigw|200g-250g-block-chocolate-whittakers|200g+250g",
+      "store": "bigw",
+      "storeLabel": "BIG W",
+      "tokens": [
+        "200g",
+        "250g",
+        "block",
+        "chocolate",
+        "whittakers"
+      ],
+      "sizes": [
+        "200g",
+        "250g"
+      ],
+      "title": "Whittaker's Chocolate Block Varieties 200g-250g $7.00",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 7,
+          "votes": 51,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973179"
+        }
+      ]
+    },
+    "myer|delivered-est-experts-lauder-nighttime-set-skincare": {
+      "key": "myer|delivered-est-experts-lauder-nighttime-set-skincare",
+      "store": "myer",
+      "storeLabel": "MYER",
+      "tokens": [
+        "delivered",
+        "est",
+        "experts",
+        "lauder",
+        "nighttime",
+        "set",
+        "skincare"
+      ],
+      "sizes": [],
+      "title": "Estée Lauder Nighttime Experts Skincare Set $158 (+ Bonus 6pc Gift Pack) Delivered",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 158,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973157"
+        }
+      ]
+    },
+    "thegoodguys|c7l-led-mini-premium-sqd-tcl": {
+      "key": "thegoodguys|c7l-led-mini-premium-sqd-tcl",
+      "store": "thegoodguys",
+      "storeLabel": "The Good Guys",
+      "tokens": [
+        "c7l",
+        "led",
+        "mini",
+        "premium",
+        "sqd",
+        "tcl"
+      ],
+      "sizes": [],
+      "title": "TCL 75\" C7L Premium SQD-Mini LED $1818 (via Price Check)",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 1818,
+          "votes": 39,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973182"
+        }
+      ]
+    },
+    "amazonau|light-matter-meross-mmwave-motion-pir-presence-radar-sensor": {
+      "key": "amazonau|light-matter-meross-mmwave-motion-pir-presence-radar-sensor",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "light",
+        "matter",
+        "meross",
+        "mmwave",
+        "motion",
+        "pir",
+        "presence",
+        "radar",
+        "sensor"
+      ],
+      "sizes": [],
+      "title": "meross Matter Presence Sensor, mmWave Radar & PIR & Light Motion… $39.99 (RRP $69.99) +Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 39.99,
+          "votes": 36,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973141"
+        }
+      ]
+    },
+    "amazonauexclnt|235g-box-chocolate-gift-lindor-lindt-milk|235g": {
+      "key": "amazonauexclnt|235g-box-chocolate-gift-lindor-lindt-milk|235g",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "235g",
+        "box",
+        "chocolate",
+        "gift",
+        "lindor",
+        "lindt",
+        "milk"
+      ],
+      "sizes": [
+        "235g"
+      ],
+      "title": "Lindt LINDOR Milk Chocolate Gift Box 235g $13.95 + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-08-29",
+          "price": 13.95,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973078"
         }
       ]
     }
