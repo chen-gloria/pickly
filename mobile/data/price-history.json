@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-09-25T22:13:33.578Z",
+  "updatedAt": "2026-09-26T21:56:30.098Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -1154,6 +1154,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 8.99,
+          "votes": 83,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/971267"
+        },
+        {
+          "date": "2026-09-26",
           "price": 8.99,
           "votes": 83,
           "kind": "DEAL",
@@ -3512,6 +3519,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 12.99,
+          "votes": 66,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/972874"
+        },
+        {
+          "date": "2026-09-26",
           "price": 12.99,
           "votes": 66,
           "kind": "DEAL",
@@ -7776,6 +7790,13 @@
           "votes": 50,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/972411"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 9.99,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/972411"
         }
       ]
     },
@@ -10375,6 +10396,13 @@
           "votes": 53,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/973157"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 158,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973157"
         }
       ]
     },
@@ -11754,6 +11782,13 @@
           "votes": 63,
           "kind": "REWARDS",
           "url": "https://www.ozbargain.com.au/node/973344"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 120,
+          "votes": 63,
+          "kind": "REWARDS",
+          "url": "https://www.ozbargain.com.au/node/973344"
         }
       ]
     },
@@ -12028,6 +12063,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 3.5,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973203"
+        },
+        {
+          "date": "2026-09-26",
           "price": 3.5,
           "votes": 50,
           "kind": "DEAL",
@@ -14675,6 +14717,13 @@
           "votes": 215,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/974353"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 84,
+          "votes": 215,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974353"
         }
       ]
     },
@@ -14875,6 +14924,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 49,
+          "votes": 36,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974352"
+        },
+        {
+          "date": "2026-09-26",
           "price": 49,
           "votes": 36,
           "kind": "DEAL",
@@ -15210,6 +15266,13 @@
           "votes": 96,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/974580"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 1.99,
+          "votes": 96,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974580"
         }
       ]
     },
@@ -15368,6 +15431,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 22.65,
+          "votes": 190,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974596"
+        },
+        {
+          "date": "2026-09-26",
           "price": 22.65,
           "votes": 190,
           "kind": "DEAL",
@@ -15720,6 +15790,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 29.98,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974489"
+        },
+        {
+          "date": "2026-09-26",
           "price": 29.98,
           "votes": 33,
           "kind": "DEAL",
@@ -16751,6 +16828,13 @@
           "votes": 176,
           "kind": "10% OFF",
           "url": "https://www.ozbargain.com.au/node/974905"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 7,
+          "votes": 176,
+          "kind": "10% OFF",
+          "url": "https://www.ozbargain.com.au/node/974905"
         }
       ]
     },
@@ -17094,6 +17178,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 12,
+          "votes": 102,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/974995"
+        },
+        {
+          "date": "2026-09-26",
           "price": 12,
           "votes": 102,
           "kind": "DEAL",
@@ -17529,6 +17620,13 @@
           "votes": 82,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975182"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 199,
+          "votes": 82,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975182"
         }
       ]
     },
@@ -17674,6 +17772,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 30,
+          "votes": 81,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975183"
+        },
+        {
+          "date": "2026-09-26",
           "price": 30,
           "votes": 81,
           "kind": "DEAL",
@@ -17886,6 +17991,13 @@
           "votes": 45,
           "kind": "FREE",
           "url": "https://www.ozbargain.com.au/node/975100"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 39.99,
+          "votes": 45,
+          "kind": "FREE",
+          "url": "https://www.ozbargain.com.au/node/975100"
         }
       ]
     },
@@ -17971,6 +18083,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 199,
+          "votes": 91,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975208"
+        },
+        {
+          "date": "2026-09-26",
           "price": 199,
           "votes": 91,
           "kind": "DEAL",
@@ -18357,6 +18476,13 @@
           "votes": 47,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975333"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 19.99,
+          "votes": 48,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975333"
         }
       ]
     },
@@ -18603,6 +18729,13 @@
           "votes": 34,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/975210"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 29.16,
+          "votes": 34,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/975210"
         }
       ]
     },
@@ -18738,6 +18871,13 @@
           "date": "2026-09-25",
           "price": 199,
           "votes": 87,
+          "kind": "20% OFF",
+          "url": "https://www.ozbargain.com.au/node/973155"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 199,
+          "votes": 88,
           "kind": "20% OFF",
           "url": "https://www.ozbargain.com.au/node/973155"
         }
@@ -18893,6 +19033,13 @@
           "votes": 52,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975662"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 149,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975662"
         }
       ]
     },
@@ -18955,6 +19102,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 87500,
+          "votes": 35,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975532"
+        },
+        {
+          "date": "2026-09-26",
           "price": 87500,
           "votes": 35,
           "kind": "DEAL",
@@ -19163,6 +19317,13 @@
           "votes": 33,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975779"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 89,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975779"
         }
       ]
     },
@@ -19339,6 +19500,13 @@
           "votes": 94,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975863"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 144.99,
+          "votes": 94,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975863"
         }
       ]
     },
@@ -19394,6 +19562,13 @@
           "votes": 93,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/975906"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 6,
+          "votes": 94,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/975906"
         }
       ]
     },
@@ -19442,6 +19617,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 6.45,
+          "votes": 65,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975919"
+        },
+        {
+          "date": "2026-09-26",
           "price": 6.45,
           "votes": 65,
           "kind": "DEAL",
@@ -19863,6 +20045,13 @@
           "votes": 76,
           "kind": "20% OFF",
           "url": "https://www.ozbargain.com.au/node/976166"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 0,
+          "votes": 77,
+          "kind": "20% OFF",
+          "url": "https://www.ozbargain.com.au/node/976166"
         }
       ]
     },
@@ -19894,6 +20083,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 219,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976152"
+        },
+        {
+          "date": "2026-09-26",
           "price": 219,
           "votes": 60,
           "kind": "DEAL",
@@ -19946,6 +20142,13 @@
           "votes": 73,
           "kind": "40% OFF",
           "url": "https://www.ozbargain.com.au/node/976058"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 8.4,
+          "votes": 74,
+          "kind": "40% OFF",
+          "url": "https://www.ozbargain.com.au/node/976058"
         }
       ]
     },
@@ -19982,6 +20185,13 @@
         },
         {
           "date": "2026-09-25",
+          "price": 4752.8,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976171"
+        },
+        {
+          "date": "2026-09-26",
           "price": 4752.8,
           "votes": 60,
           "kind": "DEAL",
@@ -20023,6 +20233,13 @@
           "date": "2026-09-25",
           "price": 12,
           "votes": 69,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976126"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 12,
+          "votes": 71,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976126"
         }
@@ -20067,6 +20284,13 @@
           "votes": 37,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976124"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 5.9,
+          "votes": 38,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976124"
         }
       ]
     },
@@ -20108,6 +20332,13 @@
           "votes": 42,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976043"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 807.02,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976043"
         }
       ]
     },
@@ -20139,6 +20370,13 @@
           "date": "2026-09-25",
           "price": 799.2,
           "votes": 67,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976305"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 799.2,
+          "votes": 69,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976305"
         }
@@ -20195,6 +20433,13 @@
           "votes": 63,
           "kind": "40% OFF",
           "url": "https://www.ozbargain.com.au/node/976215"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 0,
+          "votes": 67,
+          "kind": "40% OFF",
+          "url": "https://www.ozbargain.com.au/node/976215"
         }
       ]
     },
@@ -20222,6 +20467,13 @@
           "date": "2026-09-25",
           "price": 32.5,
           "votes": 44,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976265"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 32.5,
+          "votes": 45,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976265"
         }
@@ -20256,6 +20508,13 @@
           "votes": 72,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976198"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 6,
+          "votes": 73,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976198"
         }
       ]
     },
@@ -20288,6 +20547,13 @@
           "date": "2026-09-25",
           "price": 2150,
           "votes": 57,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976312"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 2150,
+          "votes": 62,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976312"
         }
@@ -20326,6 +20592,13 @@
           "votes": 43,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/976231"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 8.47,
+          "votes": 46,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/976231"
         }
       ]
     },
@@ -20360,6 +20633,13 @@
           "votes": 45,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976264"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 3297.6,
+          "votes": 47,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976264"
         }
       ]
     },
@@ -20382,6 +20662,13 @@
           "date": "2026-09-25",
           "price": 48,
           "votes": 49,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976368"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 48,
+          "votes": 51,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976368"
         }
@@ -20409,6 +20696,13 @@
           "votes": 41,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976411"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 319.2,
+          "votes": 50,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976411"
         }
       ]
     },
@@ -20427,6 +20721,13 @@
       "observations": [
         {
           "date": "2026-09-25",
+          "price": 74.1,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976365"
+        },
+        {
+          "date": "2026-09-26",
           "price": 74.1,
           "votes": 33,
           "kind": "DEAL",
@@ -20457,6 +20758,13 @@
           "votes": 34,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976278"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 7,
+          "votes": 35,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976278"
         }
       ]
     },
@@ -20477,6 +20785,13 @@
           "date": "2026-09-25",
           "price": 5.89,
           "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976315"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 5.89,
+          "votes": 38,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976315"
         }
@@ -20506,6 +20821,274 @@
           "votes": 30,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976190"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 3357.6,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976190"
+        }
+      ]
+    },
+    "harveynorman|hw-q930h-rear-samsung-soundbar-speakers-subwoofer": {
+      "key": "harveynorman|hw-q930h-rear-samsung-soundbar-speakers-subwoofer",
+      "store": "harveynorman",
+      "storeLabel": "Harvey Norman",
+      "tokens": [
+        "hw",
+        "q930h",
+        "rear",
+        "samsung",
+        "soundbar",
+        "speakers",
+        "subwoofer"
+      ],
+      "sizes": [],
+      "title": "Samsung HW-Q930H Soundbar with Subwoofer & Rear Speakers $638.40 + Delivery ($0 C&C)",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 638.4,
+          "votes": 133,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976550"
+        }
+      ]
+    },
+    "thegoodguys|beat-button-frames-jbl-round-soundgear-square-via": {
+      "key": "thegoodguys|beat-button-frames-jbl-round-soundgear-square-via",
+      "store": "thegoodguys",
+      "storeLabel": "The Good Guys",
+      "tokens": [
+        "beat",
+        "button",
+        "frames",
+        "jbl",
+        "round",
+        "soundgear",
+        "square",
+        "via"
+      ],
+      "sizes": [],
+      "title": "JBL Soundgear Frames Round/Square $79 via Price Beat Button (RRP $169.95) + Delivery",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 79,
+          "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976528"
+        }
+      ]
+    },
+    "costcowholesalemembershi|4k-65c7l-c7l-delivered-google-inch-led-mini-sqd-tcl-tv-uhd": {
+      "key": "costcowholesalemembershi|4k-65c7l-c7l-delivered-google-inch-led-mini-sqd-tcl-tv-uhd",
+      "store": "costcowholesalemembershi",
+      "storeLabel": "Costco Wholesale (Membership Required)",
+      "tokens": [
+        "4k",
+        "65c7l",
+        "c7l",
+        "delivered",
+        "google",
+        "inch",
+        "led",
+        "mini",
+        "sqd",
+        "tcl",
+        "tv",
+        "uhd"
+      ],
+      "sizes": [],
+      "title": "TCL 65 Inch C7L SQD-Mini LED Google 4K UHD TV 65C7L $1,099.99 Delivered",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 1099.99,
+          "votes": 92,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976489"
+        }
+      ]
+    },
+    "amazonau|delivered-frames-jbl-round-soundgear-square": {
+      "key": "amazonau|delivered-frames-jbl-round-soundgear-square",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "delivered",
+        "frames",
+        "jbl",
+        "round",
+        "soundgear",
+        "square"
+      ],
+      "sizes": [],
+      "title": "JBL Soundgear Frames Round/Square,  $84 (RRP $169.95) Delivered",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 84,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976525"
+        }
+      ]
+    },
+    "amazonau|1l-island-oil-olive-red-virgin-woolworths|1000ml": {
+      "key": "amazonau|1l-island-oil-olive-red-virgin-woolworths|1000ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "1l",
+        "island",
+        "oil",
+        "olive",
+        "red",
+        "virgin",
+        "woolworths"
+      ],
+      "sizes": [
+        "1000ml"
+      ],
+      "title": "Red Island Extra Virgin Olive Oil 1L $15 (Was $25) @ Woolworths / + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 15,
+          "votes": 62,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976514"
+        }
+      ]
+    },
+    "colesviaubereats|200g-250g-block-chocolate-fee-service-whittakers|200g+250g": {
+      "key": "colesviaubereats|200g-250g-block-chocolate-fee-service-whittakers|200g+250g",
+      "store": "colesviaubereats",
+      "storeLabel": "Coles via Uber Eats",
+      "tokens": [
+        "200g",
+        "250g",
+        "block",
+        "chocolate",
+        "fee",
+        "service",
+        "whittakers"
+      ],
+      "sizes": [
+        "200g",
+        "250g"
+      ],
+      "title": "Whittaker's Chocolate Block Varieties 200g-250g $6.21 + Delivery ($0 Uber One) + Service Fee",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 6.21,
+          "votes": 64,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976470"
+        }
+      ]
+    },
+    "betta|4k-hisense-q6sau-qled-smart-tv": {
+      "key": "betta|4k-hisense-q6sau-qled-smart-tv",
+      "store": "betta",
+      "storeLabel": "Betta",
+      "tokens": [
+        "4k",
+        "hisense",
+        "q6sau",
+        "qled",
+        "smart",
+        "tv"
+      ],
+      "sizes": [],
+      "title": "Hisense 85\" Q6SAU Smart 4K QLED TV (2026) $1196 + Delivery ($0 C&C)",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 1196,
+          "votes": 44,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976502"
+        }
+      ]
+    },
+    "lgpartnerhub|evo-g6-lg-oled-tv": {
+      "key": "lgpartnerhub|evo-g6-lg-oled-tv",
+      "store": "lgpartnerhub",
+      "storeLabel": "LG Partner Hub",
+      "tokens": [
+        "evo",
+        "g6",
+        "lg",
+        "oled",
+        "tv"
+      ],
+      "sizes": [],
+      "title": "LG 65\" G6 OLED Evo TV (2026) $2876.40 + Delivery ($0 w/ Mylg Account), 77\" $4316.40, 83\" $7196.40",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 2876.4,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976513"
+        }
+      ]
+    },
+    "retravision|4k-ai-evo-g6-lg-oled-smart-tv": {
+      "key": "retravision|4k-ai-evo-g6-lg-oled-smart-tv",
+      "store": "retravision",
+      "storeLabel": "Retravision",
+      "tokens": [
+        "4k",
+        "ai",
+        "evo",
+        "g6",
+        "lg",
+        "oled",
+        "smart",
+        "tv"
+      ],
+      "sizes": [],
+      "title": "LG 77\" G6 OLED evo AI 4K Smart TV (2026) $4780 ($4541 RAC) + Delivery ($0 within 25km of Selected Stores/ C&C)",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 4780,
+          "votes": 46,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976458"
+        }
+      ]
+    },
+    "amazonauexcltasnt|100ml-boss-bottled-de-eau-hugo-men-toilette|100ml": {
+      "key": "amazonauexcltasnt|100ml-boss-bottled-de-eau-hugo-men-toilette|100ml",
+      "store": "amazonauexcltasnt",
+      "storeLabel": "Amazon AU (Excl. TAS, NT)",
+      "tokens": [
+        "100ml",
+        "boss",
+        "bottled",
+        "de",
+        "eau",
+        "hugo",
+        "men",
+        "toilette"
+      ],
+      "sizes": [
+        "100ml"
+      ],
+      "title": "Hugo Boss Bottled Eau de Toilette for Men 100ml $54.99 (RRP $155) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-09-26",
+          "price": 54.99,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976449"
         }
       ]
     }
