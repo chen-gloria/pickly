@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-10-02T22:56:24.636Z",
+  "updatedAt": "2026-10-04T22:18:17.477Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -2074,6 +2074,13 @@
           "votes": 135,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/970736"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 16.62,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977697"
         }
       ]
     },
@@ -3892,6 +3899,13 @@
           "votes": 51,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/970726"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 6.5,
+          "votes": 31,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/977679"
         }
       ]
     },
@@ -5538,6 +5552,13 @@
           "votes": 137,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977293"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 24.99,
+          "votes": 142,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977293"
         }
       ]
     },
@@ -5752,6 +5773,13 @@
           "date": "2026-10-02",
           "price": 46.5,
           "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977111"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 46.5,
+          "votes": 42,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977111"
         }
@@ -6373,6 +6401,13 @@
           "date": "2026-10-02",
           "price": 28,
           "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977458"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 28,
+          "votes": 34,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977458"
         }
@@ -10543,6 +10578,13 @@
           "votes": 53,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/973157"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 158,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/973157"
         }
       ]
     },
@@ -11967,6 +12009,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 120,
+          "votes": 63,
+          "kind": "REWARDS",
+          "url": "https://www.ozbargain.com.au/node/973344"
+        },
+        {
+          "date": "2026-10-04",
           "price": 120,
           "votes": 63,
           "kind": "REWARDS",
@@ -13566,6 +13615,13 @@
           "date": "2026-10-02",
           "price": 136,
           "votes": 48,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977499"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 136,
+          "votes": 71,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977499"
         }
@@ -18140,6 +18196,13 @@
           "votes": 82,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975183"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 30,
+          "votes": 82,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975183"
         }
       ]
     },
@@ -19586,6 +19649,13 @@
           "votes": 52,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975662"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 149,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975662"
         }
       ]
     },
@@ -19929,6 +19999,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 89,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975779"
+        },
+        {
+          "date": "2026-10-04",
           "price": 89,
           "votes": 33,
           "kind": "DEAL",
@@ -20331,6 +20408,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 6.45,
+          "votes": 65,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975919"
+        },
+        {
+          "date": "2026-10-04",
           "price": 6.45,
           "votes": 65,
           "kind": "DEAL",
@@ -21082,6 +21166,13 @@
           "votes": 40,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976124"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 5.9,
+          "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976124"
         }
       ]
     },
@@ -21774,6 +21865,13 @@
           "votes": 38,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976315"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 5.89,
+          "votes": 38,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976315"
         }
       ]
     },
@@ -22256,6 +22354,13 @@
           "votes": 172,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976617"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 229,
+          "votes": 177,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976617"
         }
       ]
     },
@@ -22379,6 +22484,13 @@
           "votes": 56,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976624"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 28.99,
+          "votes": 58,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976624"
         }
       ]
     },
@@ -22459,6 +22571,13 @@
           "votes": 243,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976760"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 18.5,
+          "votes": 253,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976760"
         }
       ]
     },
@@ -22507,6 +22626,13 @@
           "date": "2026-10-02",
           "price": 49.99,
           "votes": 93,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976641"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 49.99,
+          "votes": 94,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976641"
         }
@@ -22595,6 +22721,13 @@
           "votes": 62,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976678"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 1,
+          "votes": 63,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976678"
         }
       ]
     },
@@ -22650,6 +22783,13 @@
           "date": "2026-10-02",
           "price": 2.5,
           "votes": 60,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/976711"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 2.5,
+          "votes": 61,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/976711"
         }
@@ -22778,6 +22918,13 @@
           "votes": 281,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976781"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 15.2,
+          "votes": 289,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976781"
         }
       ]
     },
@@ -22888,6 +23035,13 @@
           "votes": 136,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976993"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 6.95,
+          "votes": 138,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976993"
         }
       ]
     },
@@ -22933,6 +23087,13 @@
           "date": "2026-10-02",
           "price": 22,
           "votes": 49,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976857"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 22,
+          "votes": 50,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976857"
         }
@@ -23054,6 +23215,13 @@
           "date": "2026-10-02",
           "price": 19.99,
           "votes": 39,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976821"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 19.99,
+          "votes": 41,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976821"
         }
@@ -23183,6 +23351,13 @@
           "votes": 83,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977138"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 239,
+          "votes": 85,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977138"
         }
       ]
     },
@@ -23223,6 +23398,13 @@
           "votes": 83,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977167"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 19.99,
+          "votes": 84,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977167"
         }
       ]
     },
@@ -23260,6 +23442,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 3.25,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977146"
+        },
+        {
+          "date": "2026-10-04",
           "price": 3.25,
           "votes": 60,
           "kind": "DEAL",
@@ -23343,6 +23532,13 @@
           "votes": 40,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977058"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 77.99,
+          "votes": 42,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977058"
         }
       ]
     },
@@ -23379,6 +23575,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 249,
+          "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977145"
+        },
+        {
+          "date": "2026-10-04",
           "price": 249,
           "votes": 40,
           "kind": "DEAL",
@@ -23422,6 +23625,13 @@
           "votes": 37,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977135"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 236.55,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977135"
         }
       ]
     },
@@ -23458,6 +23668,13 @@
         },
         {
           "date": "2026-10-02",
+          "price": 159,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976985"
+        },
+        {
+          "date": "2026-10-04",
           "price": 159,
           "votes": 54,
           "kind": "DEAL",
@@ -23521,6 +23738,13 @@
           "votes": 86,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977321"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 12.92,
+          "votes": 93,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977321"
         }
       ]
     },
@@ -23578,6 +23802,13 @@
           "votes": 62,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977257"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 13.2,
+          "votes": 64,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977257"
         }
       ]
     },
@@ -23608,6 +23839,13 @@
           "date": "2026-10-02",
           "price": 240,
           "votes": 43,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977284"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 240,
+          "votes": 45,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977284"
         }
@@ -23642,6 +23880,13 @@
           "date": "2026-10-02",
           "price": 1997,
           "votes": 40,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977279"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 1997,
+          "votes": 43,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977279"
         }
@@ -23689,6 +23934,13 @@
           "date": "2026-10-02",
           "price": 0.01,
           "votes": 82,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977410"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 0.01,
+          "votes": 84,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977410"
         }
@@ -23768,6 +24020,13 @@
           "votes": 64,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977404"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 14.27,
+          "votes": 68,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977404"
         }
       ]
     },
@@ -23793,6 +24052,13 @@
           "date": "2026-10-02",
           "price": 4,
           "votes": 80,
+          "kind": "FREE",
+          "url": "https://www.ozbargain.com.au/node/977408"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 4,
+          "votes": 84,
           "kind": "FREE",
           "url": "https://www.ozbargain.com.au/node/977408"
         }
@@ -23821,6 +24087,459 @@
           "votes": 51,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977383"
+        },
+        {
+          "date": "2026-10-04",
+          "price": 79,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977383"
+        }
+      ]
+    },
+    "linsoulaudioviaamazon|5mm-7hz-crinacle-delivered-earphones-iem-linsoul-mic-usb-zero": {
+      "key": "linsoulaudioviaamazon|5mm-7hz-crinacle-delivered-earphones-iem-linsoul-mic-usb-zero",
+      "store": "linsoulaudioviaamazon",
+      "storeLabel": "LinsoulAudio via Amazon",
+      "tokens": [
+        "5mm",
+        "7hz",
+        "crinacle",
+        "delivered",
+        "earphones",
+        "iem",
+        "linsoul",
+        "mic",
+        "usb",
+        "zero"
+      ],
+      "sizes": [],
+      "title": "[Prime] Linsoul 7Hz X Crinacle Zero:2 IEM Earphones with Mic 3.5mm $35.99 / USB-C $39.99 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 35.99,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977703"
+        }
+      ]
+    },
+    "myer|5cm-carbon-collective-cooks-natural-steel-wok": {
+      "key": "myer|5cm-carbon-collective-cooks-natural-steel-wok",
+      "store": "myer",
+      "storeLabel": "MYER",
+      "tokens": [
+        "5cm",
+        "carbon",
+        "collective",
+        "cooks",
+        "natural",
+        "steel",
+        "wok"
+      ],
+      "sizes": [],
+      "title": "The Cooks Collective Natural Carbon Steel Wok 35.5cm $27.47 + $9.95 Delivery ($0 C&C/ In-Store)",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 27.47,
+          "votes": 75,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977629"
+        }
+      ]
+    },
+    "amazonau|daily-delivered-doses-fibre-metamucil-orange-smooth-supplement": {
+      "key": "amazonau|daily-delivered-doses-fibre-metamucil-orange-smooth-supplement",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "daily",
+        "delivered",
+        "doses",
+        "fibre",
+        "metamucil",
+        "orange",
+        "smooth",
+        "supplement"
+      ],
+      "sizes": [],
+      "title": "[Prime] Metamucil Daily Fibre Supplement Smooth Orange, 114 Doses $25.99 (Sub & Save $23.39) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 25.99,
+          "votes": 72,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977572"
+        }
+      ]
+    },
+    "amazonau|crimper-delivered-ferrule-hex-klein-ratcheting-set-tools": {
+      "key": "amazonau|crimper-delivered-ferrule-hex-klein-ratcheting-set-tools",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "crimper",
+        "delivered",
+        "ferrule",
+        "hex",
+        "klein",
+        "ratcheting",
+        "set",
+        "tools"
+      ],
+      "sizes": [],
+      "title": "[Prime] Klein Tools Ratcheting Ferrule Hex Crimper Set $66.90 (RRP $119.99) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 66.9,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977656"
+        }
+      ]
+    },
+    "amazonauexclnt|brother-delivered-function-l2880dw-laser-mfc-mono-multi-printer-wireless": {
+      "key": "amazonauexclnt|brother-delivered-function-l2880dw-laser-mfc-mono-multi-printer-wireless",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "brother",
+        "delivered",
+        "function",
+        "l2880dw",
+        "laser",
+        "mfc",
+        "mono",
+        "multi",
+        "printer",
+        "wireless"
+      ],
+      "sizes": [],
+      "title": "[Prime] Brother MFC-L2880DW, Wireless Mono Laser Multi-Function Printer (Duplex) $246.00 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 246,
+          "votes": 55,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977581"
+        }
+      ]
+    },
+    "amazonau|aa-alkaline-amazon-basics-batteries-delivered-high-performance": {
+      "key": "amazonau|aa-alkaline-amazon-basics-batteries-delivered-high-performance",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "aa",
+        "alkaline",
+        "amazon",
+        "basics",
+        "batteries",
+        "delivered",
+        "high",
+        "performance"
+      ],
+      "sizes": [],
+      "title": "[Prime] Amazon Basics 100-Pack AA High Performance Alkaline Batteries $22.57 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 22.57,
+          "votes": 62,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977520"
+        }
+      ]
+    },
+    "bunningswarehouse|akorn-char-grill-griller-jr-kamado-portable-smoker": {
+      "key": "bunningswarehouse|akorn-char-grill-griller-jr-kamado-portable-smoker",
+      "store": "bunningswarehouse",
+      "storeLabel": "Bunnings Warehouse",
+      "tokens": [
+        "akorn",
+        "char",
+        "grill",
+        "griller",
+        "jr",
+        "kamado",
+        "portable",
+        "smoker"
+      ],
+      "sizes": [],
+      "title": "Char-Griller Akorn Jr Kamado Portable Grill & Smoker $148 (Was $248)",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 148,
+          "votes": 36,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977561"
+        }
+      ]
+    },
+    "merosshometechviaamazona|bedside-delivered-lamp-meross-smart-table": {
+      "key": "merosshometechviaamazona|bedside-delivered-lamp-meross-smart-table",
+      "store": "merosshometechviaamazona",
+      "storeLabel": "Meross Home Tech via Amazon AU",
+      "tokens": [
+        "bedside",
+        "delivered",
+        "lamp",
+        "meross",
+        "smart",
+        "table"
+      ],
+      "sizes": [],
+      "title": "[Prime] Meross Smart Bedside Table Lamp $48.99 (RRP $69.99) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 48.99,
+          "votes": 43,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977515"
+        }
+      ]
+    },
+    "coles|4kg-bbq-beads-briquettes-heat|4000g": {
+      "key": "coles|4kg-bbq-beads-briquettes-heat|4000g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "4kg",
+        "bbq",
+        "beads",
+        "briquettes",
+        "heat"
+      ],
+      "sizes": [
+        "4000g"
+      ],
+      "title": "Heat Beads BBQ Briquettes | 4Kg $6.60",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 6.6,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977659"
+        }
+      ]
+    },
+    "costcomembershiprequired|delivered-fan-pedestal-remote-woozoo": {
+      "key": "costcomembershiprequired|delivered-fan-pedestal-remote-woozoo",
+      "store": "costcomembershiprequired",
+      "storeLabel": "Costco (Membership Required)",
+      "tokens": [
+        "delivered",
+        "fan",
+        "pedestal",
+        "remote",
+        "woozoo"
+      ],
+      "sizes": [],
+      "title": "Woozoo 360 Pedestal Fan With Remote $89.99 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 89.99,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977538"
+        }
+      ]
+    },
+    "amazonauexclnt|4l-advanced-clean-cold-delivered-detergent-laundry-liquid-power|4000ml": {
+      "key": "amazonauexclnt|4l-advanced-clean-cold-delivered-detergent-laundry-liquid-power|4000ml",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "4l",
+        "advanced",
+        "clean",
+        "cold",
+        "delivered",
+        "detergent",
+        "laundry",
+        "liquid",
+        "power"
+      ],
+      "sizes": [
+        "4000ml"
+      ],
+      "title": "[Prime] Cold Power Advanced Clean Liquid Laundry Detergent 4L $18.50 ($16.65 S&S) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 18.5,
+          "votes": 48,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977606"
+        }
+      ]
+    },
+    "amazonau|butter-caramel-cheddar-cobs-delivered-popcorn-salted": {
+      "key": "amazonau|butter-caramel-cheddar-cobs-delivered-popcorn-salted",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "butter",
+        "caramel",
+        "cheddar",
+        "cobs",
+        "delivered",
+        "popcorn",
+        "salted"
+      ],
+      "sizes": [],
+      "title": "[Prime] Cobs Popcorn Varieties: Salted Caramel $1.75, Cheddar $1.85, Butter 3-Pack $5.25 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 1.75,
+          "votes": 46,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977582"
+        }
+      ]
+    },
+    "amazonauexclnt|40mm-apple-delivered-gps-se-watch": {
+      "key": "amazonauexclnt|40mm-apple-delivered-gps-se-watch",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "40mm",
+        "apple",
+        "delivered",
+        "gps",
+        "se",
+        "watch"
+      ],
+      "sizes": [],
+      "title": "Apple Watch SE 3 GPS 40mm $299 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 299,
+          "votes": 34,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977626"
+        }
+      ]
+    },
+    "amazonau|bit-bits-bosch-concrete-delivered-drill-driver-impact-piece-professional-set-steel": {
+      "key": "amazonau|bit-bits-bosch-concrete-delivered-drill-driver-impact-piece-professional-set-steel",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "bit",
+        "bits",
+        "bosch",
+        "concrete",
+        "delivered",
+        "drill",
+        "driver",
+        "impact",
+        "piece",
+        "professional",
+        "set",
+        "steel"
+      ],
+      "sizes": [],
+      "title": "[Prime] Bosch Professional 35-Piece Impact Driver Bit Set + Concrete/Steel Drill Bits $36 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 36,
+          "votes": 44,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977326"
+        }
+      ]
+    },
+    "amazonau|800mm-canon-delivered-f6-is-lens-rf-usm": {
+      "key": "amazonau|800mm-canon-delivered-f6-is-lens-rf-usm",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "800mm",
+        "canon",
+        "delivered",
+        "f6",
+        "is",
+        "lens",
+        "rf",
+        "usm"
+      ],
+      "sizes": [],
+      "title": "Canon RF 200-800mm F6.3-9 IS USM Lens $2,419.96 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 2419.96,
+          "votes": 34,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977602"
+        }
+      ]
+    },
+    "amazonauexclnt|bit-bosch-delivered-drill-hard-masonry-piece-professional-screwdriver-set": {
+      "key": "amazonauexclnt|bit-bosch-delivered-drill-hard-masonry-piece-professional-screwdriver-set",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "bit",
+        "bosch",
+        "delivered",
+        "drill",
+        "hard",
+        "masonry",
+        "piece",
+        "professional",
+        "screwdriver",
+        "set"
+      ],
+      "sizes": [],
+      "title": "[Prime] Bosch Professional 35-Piece Extra Hard Masonry Drill Bit + Screwdriver Bit Set $20 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 20,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976958"
+        }
+      ]
+    },
+    "amazonauexclnt|2kg-classic-delivered-gravy-maggi-mix-rich|2000g": {
+      "key": "amazonauexclnt|2kg-classic-delivered-gravy-maggi-mix-rich|2000g",
+      "store": "amazonauexclnt",
+      "storeLabel": "Amazon AU (Excl. NT)",
+      "tokens": [
+        "2kg",
+        "classic",
+        "delivered",
+        "gravy",
+        "maggi",
+        "mix",
+        "rich"
+      ],
+      "sizes": [
+        "2000g"
+      ],
+      "title": "[Prime] Maggi Classic Rich Gravy Mix 2kg $24.79 ($22.31 Subscribe & Save) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-04",
+          "price": 24.79,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977004"
         }
       ]
     }
