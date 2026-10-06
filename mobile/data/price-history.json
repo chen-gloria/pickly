@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-10-06T00:45:02.603Z",
+  "updatedAt": "2026-10-06T22:58:23.899Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -24273,6 +24273,13 @@
           "votes": 75,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977629"
+        },
+        {
+          "date": "2026-10-06",
+          "price": 27.47,
+          "votes": 79,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977629"
         }
       ]
     },
@@ -24741,6 +24748,80 @@
           "votes": 49,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/977785"
+        }
+      ]
+    },
+    "telstra|centralhub-delivered-h500-link-tapo-tp": {
+      "key": "telstra|centralhub-delivered-h500-link-tapo-tp",
+      "store": "telstra",
+      "storeLabel": "Telstra",
+      "tokens": [
+        "centralhub",
+        "delivered",
+        "h500",
+        "link",
+        "tapo",
+        "tp"
+      ],
+      "sizes": [],
+      "title": "TP-Link Tapo TP-Link Centralhub H500 $149 (RRP $299) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-06",
+          "price": 149,
+          "votes": 61,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977869"
+        }
+      ]
+    },
+    "jbhifi|500watt-home-logitech-system-theatre-z906": {
+      "key": "jbhifi|500watt-home-logitech-system-theatre-z906",
+      "store": "jbhifi",
+      "storeLabel": "JB Hi-Fi",
+      "tokens": [
+        "500watt",
+        "home",
+        "logitech",
+        "system",
+        "theatre",
+        "z906"
+      ],
+      "sizes": [],
+      "title": "Logitech Z906 500Watt 5.1 Home Theatre System $399 + Delivery ($0 C&C/In-Store)",
+      "observations": [
+        {
+          "date": "2026-10-06",
+          "price": 399,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977862"
+        }
+      ]
+    },
+    "bunnings|18v-250c-5ah-battery-charger-ozito-pxbc-pxc": {
+      "key": "bunnings|18v-250c-5ah-battery-charger-ozito-pxbc-pxc",
+      "store": "bunnings",
+      "storeLabel": "Bunnings",
+      "tokens": [
+        "18v",
+        "250c",
+        "5ah",
+        "battery",
+        "charger",
+        "ozito",
+        "pxbc",
+        "pxc"
+      ],
+      "sizes": [],
+      "title": "Ozito PXC 18V 2.5Ah Battery And Charger Pack PXBC-250C $24.98 + Delivery ($0 C&C / in-Store/ OnePass)",
+      "observations": [
+        {
+          "date": "2026-10-06",
+          "price": 24.98,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977858"
         }
       ]
     }
