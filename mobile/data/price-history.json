@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-10-06T22:58:23.899Z",
+  "updatedAt": "2026-10-07T23:33:05.104Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -3911,6 +3911,13 @@
           "date": "2026-10-06",
           "price": 6.5,
           "votes": 37,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/977679"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 6.5,
+          "votes": 38,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/977679"
         }
@@ -12041,6 +12048,13 @@
           "votes": 63,
           "kind": "REWARDS",
           "url": "https://www.ozbargain.com.au/node/973344"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 120,
+          "votes": 63,
+          "kind": "REWARDS",
+          "url": "https://www.ozbargain.com.au/node/973344"
         }
       ]
     },
@@ -18231,6 +18245,13 @@
           "votes": 82,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/975183"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 30,
+          "votes": 82,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/975183"
         }
       ]
     },
@@ -22431,6 +22452,13 @@
           "votes": 178,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976617"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 229,
+          "votes": 179,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976617"
         }
       ]
     },
@@ -22564,6 +22592,13 @@
         },
         {
           "date": "2026-10-06",
+          "price": 28.99,
+          "votes": 58,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976624"
+        },
+        {
+          "date": "2026-10-07",
           "price": 28.99,
           "votes": 58,
           "kind": "DEAL",
@@ -22719,6 +22754,13 @@
           "votes": 94,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976641"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 49.99,
+          "votes": 94,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976641"
         }
       ]
     },
@@ -22817,6 +22859,13 @@
           "date": "2026-10-06",
           "price": 1,
           "votes": 63,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/976678"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 1,
+          "votes": 64,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/976678"
         }
@@ -23994,6 +24043,13 @@
           "votes": 43,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977279"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 1997,
+          "votes": 44,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977279"
         }
       ]
     },
@@ -24053,6 +24109,13 @@
           "date": "2026-10-06",
           "price": 0.01,
           "votes": 85,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977410"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 0.01,
+          "votes": 86,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977410"
         }
@@ -24220,6 +24283,13 @@
           "votes": 53,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977383"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 79,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977383"
         }
       ]
     },
@@ -24276,6 +24346,13 @@
         },
         {
           "date": "2026-10-06",
+          "price": 27.47,
+          "votes": 79,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977629"
+        },
+        {
+          "date": "2026-10-07",
           "price": 27.47,
           "votes": 79,
           "kind": "DEAL",
@@ -24419,6 +24496,13 @@
           "votes": 37,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977561"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 148,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977561"
         }
       ]
     },
@@ -24501,6 +24585,13 @@
         },
         {
           "date": "2026-10-06",
+          "price": 89.99,
+          "votes": 38,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977538"
+        },
+        {
+          "date": "2026-10-07",
           "price": 89.99,
           "votes": 38,
           "kind": "DEAL",
@@ -24722,6 +24813,13 @@
           "votes": 122,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977517"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 19.99,
+          "votes": 125,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977517"
         }
       ]
     },
@@ -24748,6 +24846,13 @@
           "votes": 49,
           "kind": "½ PRICE",
           "url": "https://www.ozbargain.com.au/node/977785"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 5.5,
+          "votes": 58,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/977785"
         }
       ]
     },
@@ -24772,6 +24877,13 @@
           "votes": 61,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977869"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 149,
+          "votes": 70,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977869"
         }
       ]
     },
@@ -24794,6 +24906,13 @@
           "date": "2026-10-06",
           "price": 399,
           "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977862"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 399,
+          "votes": 44,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977862"
         }
@@ -24822,6 +24941,224 @@
           "votes": 52,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/977858"
+        },
+        {
+          "date": "2026-10-07",
+          "price": 24.98,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977858"
+        }
+      ]
+    },
+    "amazonaujbhificcdelivery|bluetooth-charge-delivered-jbl-speaker": {
+      "key": "amazonaujbhificcdelivery|bluetooth-charge-delivered-jbl-speaker",
+      "store": "amazonaujbhificcdelivery",
+      "storeLabel": "Amazon AU / JB Hi-Fi (C&C/+ Delivery)",
+      "tokens": [
+        "bluetooth",
+        "charge",
+        "delivered",
+        "jbl",
+        "speaker"
+      ],
+      "sizes": [],
+      "title": "JBL Charge 5 Bluetooth Speaker (Black/Blue) $99 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 99,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978113"
+        }
+      ]
+    },
+    "amazonauexpiredbigwcc|650ml-cook-decor-glass-jug-lid-measuring|650ml": {
+      "key": "amazonauexpiredbigwcc|650ml-cook-decor-glass-jug-lid-measuring|650ml",
+      "store": "amazonauexpiredbigwcc",
+      "storeLabel": "Amazon AU (Expired) / Big W (C&C)",
+      "tokens": [
+        "650ml",
+        "cook",
+        "decor",
+        "glass",
+        "jug",
+        "lid",
+        "measuring"
+      ],
+      "sizes": [
+        "650ml"
+      ],
+      "title": "Decor Cook Glass Measuring Jug with Lid 650mL $7 + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 7,
+          "votes": 91,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977986"
+        }
+      ]
+    },
+    "bunningswarehouse|4kg-absorber-damprid-moisture-refill-super|3400g": {
+      "key": "bunningswarehouse|4kg-absorber-damprid-moisture-refill-super|3400g",
+      "store": "bunningswarehouse",
+      "storeLabel": "Bunnings Warehouse",
+      "tokens": [
+        "4kg",
+        "absorber",
+        "damprid",
+        "moisture",
+        "refill",
+        "super"
+      ],
+      "sizes": [
+        "3400g"
+      ],
+      "title": "DampRid 3.4kg Moisture Absorber Super Refill $13.90 + Delivery ($0 OnePass/ C&C/ in-Store)",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 13.9,
+          "votes": 80,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978026"
+        }
+      ]
+    },
+    "coles|500g-kbs-large-prawns-raw-tail|500g": {
+      "key": "coles|500g-kbs-large-prawns-raw-tail|500g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "500g",
+        "kbs",
+        "large",
+        "prawns",
+        "raw",
+        "tail"
+      ],
+      "sizes": [
+        "500g"
+      ],
+      "title": "KB's Raw Prawns, Tail On, Large, 500g $12.00 (Was $24.00, 50% off)",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 12,
+          "votes": 69,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/978048"
+        }
+      ]
+    },
+    "amazonau|4kg-absorber-damprid-moisture-refill-super|3400g": {
+      "key": "amazonau|4kg-absorber-damprid-moisture-refill-super|3400g",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "4kg",
+        "absorber",
+        "damprid",
+        "moisture",
+        "refill",
+        "super"
+      ],
+      "sizes": [
+        "3400g"
+      ],
+      "title": "DampRid 3.4kg Moisture Absorber Super Refill $13.90 ($12.51 Sub & Save) + Delivery ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 13.9,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978115"
+        }
+      ]
+    },
+    "coles|500g-bbq-belly-bites-cooked-easy-honey-made-pork-slow|500g": {
+      "key": "coles|500g-bbq-belly-bites-cooked-easy-honey-made-pork-slow|500g",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "500g",
+        "bbq",
+        "belly",
+        "bites",
+        "cooked",
+        "easy",
+        "honey",
+        "made",
+        "pork",
+        "slow"
+      ],
+      "sizes": [
+        "500g"
+      ],
+      "title": "½ Price: Made Easy Slow Cooked Honey BBQ Pork Belly Bites 500g $7.50",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 7.5,
+          "votes": 58,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/977999"
+        }
+      ]
+    },
+    "bunnings|18v-circular-cordless-delivered-kit-ozito-pcsk-pxc-saw": {
+      "key": "bunnings|18v-circular-cordless-delivered-kit-ozito-pcsk-pxc-saw",
+      "store": "bunnings",
+      "storeLabel": "Bunnings",
+      "tokens": [
+        "18v",
+        "circular",
+        "cordless",
+        "delivered",
+        "kit",
+        "ozito",
+        "pcsk",
+        "pxc",
+        "saw"
+      ],
+      "sizes": [],
+      "title": "Ozito PXC 18V Cordless Circular Saw Kit PCSK-1640 $99.98 Delivered / C&C / in-Store",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 99.98,
+          "votes": 45,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/977979"
+        }
+      ]
+    },
+    "amazonau|165g-chips-lime-mexican-salsa-tostitos|165g": {
+      "key": "amazonau|165g-chips-lime-mexican-salsa-tostitos|165g",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "165g",
+        "chips",
+        "lime",
+        "mexican",
+        "salsa",
+        "tostitos"
+      ],
+      "sizes": [
+        "165g"
+      ],
+      "title": "Tostitos Mexican Salsa/Lime Salsa Chips 165g $2.60 ($2.34 Sub & Save) + Delivery ($0 Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-10-07",
+          "price": 2.6,
+          "votes": 41,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978042"
         }
       ]
     }
