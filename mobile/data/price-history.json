@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-10-13T01:15:42.502Z",
+  "updatedAt": "2026-10-13T23:15:19.477Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -26810,6 +26810,231 @@
           "votes": 97,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/978113"
+        }
+      ]
+    },
+    "amazonau|condoms-durex-fit-invisible-reg-wide": {
+      "key": "amazonau|condoms-durex-fit-invisible-reg-wide",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "condoms",
+        "durex",
+        "fit",
+        "invisible",
+        "reg",
+        "wide"
+      ],
+      "sizes": [],
+      "title": "Durex Invisible Reg/Wide Fit Condoms Pack of 10 $4/$5 ($3.60/$4.50 S&S, RRP $11.50) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 4,
+          "votes": 54,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978840"
+        }
+      ]
+    },
+    "bunningswarehouse|2k-arlo-black-camera-floodlight-security-wired": {
+      "key": "bunningswarehouse|2k-arlo-black-camera-floodlight-security-wired",
+      "store": "bunningswarehouse",
+      "storeLabel": "Bunnings Warehouse",
+      "tokens": [
+        "2k",
+        "arlo",
+        "black",
+        "camera",
+        "floodlight",
+        "security",
+        "wired"
+      ],
+      "sizes": [],
+      "title": "Arlo Black Wired Security Floodlight & 2K Camera $49 + Delivery ($0 OnePass/ C&C/ in Select Stores)",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 49,
+          "votes": 80,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978754"
+        }
+      ]
+    },
+    "jbhifi|4k-ai-depot-metro-oled-s85f-samsung-smart-tv": {
+      "key": "jbhifi|4k-ai-depot-metro-oled-s85f-samsung-smart-tv",
+      "store": "jbhifi",
+      "storeLabel": "JB Hi-Fi",
+      "tokens": [
+        "4k",
+        "ai",
+        "depot",
+        "metro",
+        "oled",
+        "s85f",
+        "samsung",
+        "smart",
+        "tv"
+      ],
+      "sizes": [],
+      "title": "[QLD, NSW, VIC] Samsung 65\" S85F OLED 4K Smart AI TV (2025) $1645 + Metro Delivery / Depot Pickup",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 1645,
+          "votes": 76,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978831"
+        }
+      ]
+    },
+    "taplifesydneymetroonly|installation-installed-supplied-tap-taps": {
+      "key": "taplifesydneymetroonly|installation-installed-supplied-tap-taps",
+      "store": "taplifesydneymetroonly",
+      "storeLabel": "TapLife (Sydney Metro Only)",
+      "tokens": [
+        "installation",
+        "installed",
+        "supplied",
+        "tap",
+        "taps"
+      ],
+      "sizes": [],
+      "title": "[NSW] Tap Installation $150 (Was $180), Taps Supplied & Installed from $183",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 150,
+          "votes": 66,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978829"
+        }
+      ]
+    },
+    "jbhifiexcltasnt|4k-delivered-google-p7k-qled-tcl-tv-uhd": {
+      "key": "jbhifiexcltasnt|4k-delivered-google-p7k-qled-tcl-tv-uhd",
+      "store": "jbhifiexcltasnt",
+      "storeLabel": "JB Hi-Fi (Excl. TAS, NT)",
+      "tokens": [
+        "4k",
+        "delivered",
+        "google",
+        "p7k",
+        "qled",
+        "tcl",
+        "tv",
+        "uhd"
+      ],
+      "sizes": [],
+      "title": "TCL 98\" P7K 4K UHD QLED Google TV (2025) $2488 Delivered (Select Areas Only)",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 2488,
+          "votes": 72,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978809"
+        }
+      ]
+    },
+    "bunnings|0ah-18v-battery-charger-del-ozito-pxc": {
+      "key": "bunnings|0ah-18v-battery-charger-del-ozito-pxc",
+      "store": "bunnings",
+      "storeLabel": "Bunnings",
+      "tokens": [
+        "0ah",
+        "18v",
+        "battery",
+        "charger",
+        "del",
+        "ozito",
+        "pxc"
+      ],
+      "sizes": [],
+      "title": "Ozito PXC 18V 4.0Ah Battery & Charger Pack $39.98 + Del ($0 C&C/ in Limited Stores/ OnePass/ $99 Power Tools Order)",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 39.98,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978777"
+        }
+      ]
+    },
+    "bunningswarehouse|bowl-double-estilo-sink-stainless-steel": {
+      "key": "bunningswarehouse|bowl-double-estilo-sink-stainless-steel",
+      "store": "bunningswarehouse",
+      "storeLabel": "Bunnings Warehouse",
+      "tokens": [
+        "bowl",
+        "double",
+        "estilo",
+        "sink",
+        "stainless",
+        "steel"
+      ],
+      "sizes": [],
+      "title": "Estilo Stainless Steel Double Bowl Sink $49 + Delivery ($0 OnePass/ C&C/ in Select Stores)",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 49,
+          "votes": 38,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978756"
+        }
+      ]
+    },
+    "sydneytools|36v-8pce-brushless-combo-delivered-hikoki-kit-multivolt": {
+      "key": "sydneytools|36v-8pce-brushless-combo-delivered-hikoki-kit-multivolt",
+      "store": "sydneytools",
+      "storeLabel": "Sydney Tools",
+      "tokens": [
+        "36v",
+        "8pce",
+        "brushless",
+        "combo",
+        "delivered",
+        "hikoki",
+        "kit",
+        "multivolt"
+      ],
+      "sizes": [],
+      "title": "Hikoki 36V MultiVolt Brushless 8pce Combo Kit (Plunge Saw, Impact Wrench, SDS + 4x Batteries) $2,399 Delivered",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 2399,
+          "votes": 35,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978772"
+        }
+      ]
+    },
+    "dreameofficialauviaamazo|cleaner-d30-delivered-dreame-robotic-ultra-vacuum": {
+      "key": "dreameofficialauviaamazo|cleaner-d30-delivered-dreame-robotic-ultra-vacuum",
+      "store": "dreameofficialauviaamazo",
+      "storeLabel": "Dreame Official AU via Amazon AU",
+      "tokens": [
+        "cleaner",
+        "d30",
+        "delivered",
+        "dreame",
+        "robotic",
+        "ultra",
+        "vacuum"
+      ],
+      "sizes": [],
+      "title": "Dreame D30 Ultra Robotic Vacuum Cleaner $499.99 ($489.99 with Mastercard) Delivered",
+      "observations": [
+        {
+          "date": "2026-10-13",
+          "price": 499.99,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/978791"
         }
       ]
     }
