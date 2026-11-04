@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-11-03T01:31:40.984Z",
+  "updatedAt": "2026-11-03T23:56:57.671Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -31038,6 +31038,13 @@
           "votes": 54,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/979094"
+        },
+        {
+          "date": "2026-11-03",
+          "price": 17.5,
+          "votes": 31,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/981512"
         }
       ]
     },
@@ -35234,6 +35241,145 @@
           "votes": 60,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/980973"
+        }
+      ]
+    },
+    "limebluecoffee|1kg-beans-coffee-origins-save-single|1000g": {
+      "key": "limebluecoffee|1kg-beans-coffee-origins-save-single|1000g",
+      "store": "limebluecoffee",
+      "storeLabel": "Lime Blue Coffee",
+      "tokens": [
+        "1kg",
+        "beans",
+        "coffee",
+        "origins",
+        "save",
+        "single"
+      ],
+      "sizes": [
+        "1000g"
+      ],
+      "title": "1kg Coffee Beans from $22 Save 50% off Single Origins + Delivery ($0 VIC C&C/ $99 Order, Delayed Dispatch Op)",
+      "observations": [
+        {
+          "date": "2026-11-03",
+          "price": 22,
+          "votes": 50,
+          "kind": "½ PRICE",
+          "url": "https://www.ozbargain.com.au/node/981529"
+        }
+      ]
+    },
+    "totaltools|18v-210nm-4inch-5ah-battery-bosch-charger-delivered-driver-impact-skin-wrench": {
+      "key": "totaltools|18v-210nm-4inch-5ah-battery-bosch-charger-delivered-driver-impact-skin-wrench",
+      "store": "totaltools",
+      "storeLabel": "Total Tools",
+      "tokens": [
+        "18v",
+        "210nm",
+        "4inch",
+        "5ah",
+        "battery",
+        "bosch",
+        "charger",
+        "delivered",
+        "driver",
+        "impact",
+        "skin",
+        "wrench"
+      ],
+      "sizes": [],
+      "title": "Bosch 18V 1/4inch 210Nm Impact Driver and Wrench Skin + Bonus 5Ah Battery & Charger $149 Delivered / C&C",
+      "observations": [
+        {
+          "date": "2026-11-03",
+          "price": 149,
+          "votes": 73,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/981423"
+        }
+      ]
+    },
+    "coles|237ml-boss-coffee-iced-suntory|237ml": {
+      "key": "coles|237ml-boss-coffee-iced-suntory|237ml",
+      "store": "coles",
+      "storeLabel": "Coles",
+      "tokens": [
+        "237ml",
+        "boss",
+        "coffee",
+        "iced",
+        "suntory"
+      ],
+      "sizes": [
+        "237ml"
+      ],
+      "title": "1/2 Price Suntory Boss Iced Coffee Varieties 237ml 4-Pack $7.35",
+      "observations": [
+        {
+          "date": "2026-11-03",
+          "price": 7.35,
+          "votes": 71,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/981496"
+        }
+      ]
+    },
+    "telstra|41mm-45mm-active-aluminium-band-black-case-delivered-google-lte-matte-obsidian-pixel-watch": {
+      "key": "telstra|41mm-45mm-active-aluminium-band-black-case-delivered-google-lte-matte-obsidian-pixel-watch",
+      "store": "telstra",
+      "storeLabel": "Telstra",
+      "tokens": [
+        "41mm",
+        "45mm",
+        "active",
+        "aluminium",
+        "band",
+        "black",
+        "case",
+        "delivered",
+        "google",
+        "lte",
+        "matte",
+        "obsidian",
+        "pixel",
+        "watch"
+      ],
+      "sizes": [],
+      "title": "Google Pixel Watch 3 LTE Matte Black Aluminium Case with Obsidian Active Band: 41mm $199, 45mm $249 Delivered",
+      "observations": [
+        {
+          "date": "2026-11-03",
+          "price": 199,
+          "votes": 61,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/981453"
+        }
+      ]
+    },
+    "inkebookshopstorealiexpr|delivered-ebook-ink-pocket-reader-us-x3-xteink": {
+      "key": "inkebookshopstorealiexpr|delivered-ebook-ink-pocket-reader-us-x3-xteink",
+      "store": "inkebookshopstorealiexpr",
+      "storeLabel": "Ink E-book Shop Store AliExpress",
+      "tokens": [
+        "delivered",
+        "ebook",
+        "ink",
+        "pocket",
+        "reader",
+        "us",
+        "x3",
+        "xteink"
+      ],
+      "sizes": [],
+      "title": "XTEINK 3.7\" X3 Pocket E-Ink eBook Reader US$43.58 (A$62.46) Delivered",
+      "observations": [
+        {
+          "date": "2026-11-03",
+          "price": 43.58,
+          "votes": 33,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/981477"
         }
       ]
     }
