@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-11-10T01:59:09.964Z",
+  "updatedAt": "2026-11-10T23:59:05.992Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -37974,6 +37974,91 @@
           "votes": 30,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/982107"
+        }
+      ]
+    },
+    "colesubereats|30pk-45pk-cans-fee-schweppes-service-sorbent-tp|30pk+45pk": {
+      "key": "colesubereats|30pk-45pk-cans-fee-schweppes-service-sorbent-tp|30pk+45pk",
+      "store": "colesubereats",
+      "storeLabel": "Coles Uber Eats",
+      "tokens": [
+        "30pk",
+        "45pk",
+        "cans",
+        "fee",
+        "schweppes",
+        "service",
+        "sorbent",
+        "tp"
+      ],
+      "sizes": [
+        "30pk",
+        "45pk"
+      ],
+      "title": "Sorbent TP 45pk $9.93 (Expired), Schweppes Cans 30pk $17.25 + Delivery ($0 with $40 & Uber One) + Service Fee",
+      "observations": [
+        {
+          "date": "2026-11-10",
+          "price": 9.93,
+          "votes": 255,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/982199"
+        }
+      ]
+    },
+    "jbhifi|3d-ams-bambu-combo-lab-printer-pro-x2d": {
+      "key": "jbhifi|3d-ams-bambu-combo-lab-printer-pro-x2d",
+      "store": "jbhifi",
+      "storeLabel": "JB Hi-Fi",
+      "tokens": [
+        "3d",
+        "ams",
+        "bambu",
+        "combo",
+        "lab",
+        "printer",
+        "pro",
+        "x2d"
+      ],
+      "sizes": [],
+      "title": "Bambu Lab X2D Combo 3D Printer & AMS 2 Pro $1067.11 + Delivery ($0 C&C)",
+      "observations": [
+        {
+          "date": "2026-11-10",
+          "price": 1067.11,
+          "votes": 55,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/982483"
+        }
+      ]
+    },
+    "amazonau|30x-375ml-cans-del-lemonade-max-pepsi-schweppes-solo-sunkist|375ml": {
+      "key": "amazonau|30x-375ml-cans-del-lemonade-max-pepsi-schweppes-solo-sunkist|375ml",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "30x",
+        "375ml",
+        "cans",
+        "del",
+        "lemonade",
+        "max",
+        "pepsi",
+        "schweppes",
+        "solo",
+        "sunkist"
+      ],
+      "sizes": [
+        "375ml"
+      ],
+      "title": "Pepsi Max, Sunkist, Solo, Schweppes Lemonade 30x 375ml Cans $26 ($24.70 Sub & Save) + Del ($0 with Prime/ $59 Spend)",
+      "observations": [
+        {
+          "date": "2026-11-10",
+          "price": 26,
+          "votes": 60,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/982421"
         }
       ]
     }
