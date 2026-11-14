@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-11-14T00:17:22.508Z",
+  "updatedAt": "2026-11-14T22:55:46.239Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -35054,6 +35054,13 @@
           "votes": 49,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/980671"
+        },
+        {
+          "date": "2026-11-14",
+          "price": 4.5,
+          "votes": 37,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/982689"
         }
       ]
     },
@@ -39457,6 +39464,135 @@
           "votes": 30,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/982290"
+        }
+      ]
+    },
+    "amazonau|amazon-card-credit-gift-promo-purchase": {
+      "key": "amazonau|amazon-card-credit-gift-promo-purchase",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "amazon",
+        "card",
+        "credit",
+        "gift",
+        "promo",
+        "purchase"
+      ],
+      "sizes": [],
+      "title": "[Prime] Get $40 Promo Credit for $250 Amazon Gift Card Purchase",
+      "observations": [
+        {
+          "date": "2026-11-14",
+          "price": 40,
+          "votes": 86,
+          "kind": "GIFT CARD",
+          "url": "https://www.ozbargain.com.au/node/983098"
+        }
+      ]
+    },
+    "bigw|10x-8pc-cookware-delivered-everyday-handle-ingenio-points-removable-rewards-set-tefal": {
+      "key": "bigw|10x-8pc-cookware-delivered-everyday-handle-ingenio-points-removable-rewards-set-tefal",
+      "store": "bigw",
+      "storeLabel": "BIG W",
+      "tokens": [
+        "10x",
+        "8pc",
+        "cookware",
+        "delivered",
+        "everyday",
+        "handle",
+        "ingenio",
+        "points",
+        "removable",
+        "rewards",
+        "set",
+        "tefal"
+      ],
+      "sizes": [],
+      "title": "Tefal Ingenio 8pc Cookware Set with Removable Handle & 10x Bonus Everyday Rewards Points $99 (Was $349) Delivered / C&C",
+      "observations": [
+        {
+          "date": "2026-11-14",
+          "price": 99,
+          "votes": 80,
+          "kind": "REWARDS",
+          "url": "https://www.ozbargain.com.au/node/983088"
+        }
+      ]
+    },
+    "sonyau|1000xm6-cancelling-delivered-headphones-noise-sony-wh-wireless": {
+      "key": "sonyau|1000xm6-cancelling-delivered-headphones-noise-sony-wh-wireless",
+      "store": "sonyau",
+      "storeLabel": "Sony AU",
+      "tokens": [
+        "1000xm6",
+        "cancelling",
+        "delivered",
+        "headphones",
+        "noise",
+        "sony",
+        "wh",
+        "wireless"
+      ],
+      "sizes": [],
+      "title": "Sony WH-1000XM6 Noise Cancelling Wireless Headphones (All Colours, Blue Gets Flight Audio Adapter) $419.95 Delivered",
+      "observations": [
+        {
+          "date": "2026-11-14",
+          "price": 419.95,
+          "votes": 49,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/983107"
+        }
+      ]
+    },
+    "amazonau|1000xm6-cancelling-delivered-headphones-noise-sony-wh-wireless": {
+      "key": "amazonau|1000xm6-cancelling-delivered-headphones-noise-sony-wh-wireless",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "1000xm6",
+        "cancelling",
+        "delivered",
+        "headphones",
+        "noise",
+        "sony",
+        "wh",
+        "wireless"
+      ],
+      "sizes": [],
+      "title": "Sony WH-1000XM6 Noise Cancelling Wireless Headphones (Black Only) $419.95 Delivered",
+      "observations": [
+        {
+          "date": "2026-11-14",
+          "price": 419.95,
+          "votes": 47,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/983097"
+        }
+      ]
+    },
+    "jbhifi|breeze-qrevo-roborock-robotic-vacuum": {
+      "key": "jbhifi|breeze-qrevo-roborock-robotic-vacuum",
+      "store": "jbhifi",
+      "storeLabel": "JB Hi-Fi",
+      "tokens": [
+        "breeze",
+        "qrevo",
+        "roborock",
+        "robotic",
+        "vacuum"
+      ],
+      "sizes": [],
+      "title": "Roborock Qrevo 2 Breeze Robotic Vacuum $594 + Delivery ($0 C&C/ in-Store)",
+      "observations": [
+        {
+          "date": "2026-11-14",
+          "price": 594,
+          "votes": 30,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/982661"
         }
       ]
     }
