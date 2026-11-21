@@ -1,6 +1,6 @@
 {
   "startedAt": "2026-08-13T14:16:04.379Z",
-  "updatedAt": "2026-11-21T00:45:19.839Z",
+  "updatedAt": "2026-11-21T23:45:13.586Z",
   "products": {
     "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g": {
       "key": "woolworths|1kg-2kg-9kg-chicken-family-herb-homestyle-onion-roast-steggles-stuffed-whole|1000g+2000g+2900g",
@@ -42486,6 +42486,207 @@
           "votes": 30,
           "kind": "DEAL",
           "url": "https://www.ozbargain.com.au/node/983478"
+        }
+      ]
+    },
+    "amazonau|black-g305-gaming-lightspeed-logitech-mouse-wireless": {
+      "key": "amazonau|black-g305-gaming-lightspeed-logitech-mouse-wireless",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "black",
+        "g305",
+        "gaming",
+        "lightspeed",
+        "logitech",
+        "mouse",
+        "wireless"
+      ],
+      "sizes": [],
+      "title": "Logitech G305 Lightspeed Wireless Gaming Mouse, Black $39.99 (RRP $99.95) +Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 39.99,
+          "votes": 78,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984635"
+        }
+      ]
+    },
+    "amazonau|blades-oneblade-philips": {
+      "key": "amazonau|blades-oneblade-philips",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "blades",
+        "oneblade",
+        "philips"
+      ],
+      "sizes": [],
+      "title": "Philips OneBlade 360 Blades 3-Pack $39 (S&S $35.10, RRP $64.95) + Delivery ($0 Prime/$59 Spend)",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 39,
+          "votes": 72,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984616"
+        }
+      ]
+    },
+    "bunnings|18v-2ah-55cm-brushless-hedge-hp-kit-one-ryobi-trimmer": {
+      "key": "bunnings|18v-2ah-55cm-brushless-hedge-hp-kit-one-ryobi-trimmer",
+      "store": "bunnings",
+      "storeLabel": "Bunnings",
+      "tokens": [
+        "18v",
+        "2ah",
+        "55cm",
+        "brushless",
+        "hedge",
+        "hp",
+        "kit",
+        "one",
+        "ryobi",
+        "trimmer"
+      ],
+      "sizes": [],
+      "title": "Ryobi One+ 18V 55cm HP Brushless Hedge Trimmer 2Ah Kit $100 (In-Store Only)",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 100,
+          "votes": 53,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984631"
+        }
+      ]
+    },
+    "amazonau|block-delivered-global-ikasu-japan-knife-made-piece-set": {
+      "key": "amazonau|block-delivered-global-ikasu-japan-knife-made-piece-set",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "block",
+        "delivered",
+        "global",
+        "ikasu",
+        "japan",
+        "knife",
+        "made",
+        "piece",
+        "set"
+      ],
+      "sizes": [],
+      "title": "Global Ikasu V 5-Piece Knife Block Set, Made in Japan $228.75 (RRP $699) Delivered",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 228.75,
+          "votes": 57,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984568"
+        }
+      ]
+    },
+    "ubereatsfirstofficeworks|airpods-apple-officeworks-pro3-via": {
+      "key": "ubereatsfirstofficeworks|airpods-apple-officeworks-pro3-via",
+      "store": "ubereatsfirstofficeworks",
+      "storeLabel": "Uber Eats (First Officeworks Order)",
+      "tokens": [
+        "airpods",
+        "apple",
+        "officeworks",
+        "pro3",
+        "via"
+      ],
+      "sizes": [],
+      "title": "Apple Airpods Pro3 $276.99 + Delivery ($0 Uber One) via Officeworks",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 276.99,
+          "votes": 74,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984585"
+        }
+      ]
+    },
+    "mayvers|butter-first-mayvers-peanut-purchases-save-shipping-time": {
+      "key": "mayvers|butter-first-mayvers-peanut-purchases-save-shipping-time",
+      "store": "mayvers",
+      "storeLabel": "Mayvers",
+      "tokens": [
+        "butter",
+        "first",
+        "mayvers",
+        "peanut",
+        "purchases",
+        "save",
+        "shipping",
+        "time"
+      ],
+      "sizes": [],
+      "title": "10% off First-Time Purchases, & Save Up to 70% off Mayvers Peanut Butter + $10 Shipping ($0 over $80 Spend)",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 10,
+          "votes": 47,
+          "kind": "10% OFF",
+          "url": "https://www.ozbargain.com.au/node/984692"
+        }
+      ]
+    },
+    "amazonau|automatic-coffee-delivered-delonghi-evo-fully-machine-magnifica": {
+      "key": "amazonau|automatic-coffee-delivered-delonghi-evo-fully-machine-magnifica",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "automatic",
+        "coffee",
+        "delivered",
+        "delonghi",
+        "evo",
+        "fully",
+        "machine",
+        "magnifica"
+      ],
+      "sizes": [],
+      "title": "De'Longhi Magnifica Evo [Next] Fully Automatic Coffee Machine $714.60 (RRP $1,399) Delivered",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 714.6,
+          "votes": 52,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984644"
+        }
+      ]
+    },
+    "amazonau|caf-delivered-espresso-luxe-machine-ninja-premier": {
+      "key": "amazonau|caf-delivered-espresso-luxe-machine-ninja-premier",
+      "store": "amazonau",
+      "storeLabel": "Amazon AU",
+      "tokens": [
+        "caf",
+        "delivered",
+        "espresso",
+        "luxe",
+        "machine",
+        "ninja",
+        "premier"
+      ],
+      "sizes": [],
+      "title": "Ninja Luxe Café Premier Espresso Machine, 3-in-1 $589 (RRP $849.99) Delivered",
+      "observations": [
+        {
+          "date": "2026-11-21",
+          "price": 589,
+          "votes": 38,
+          "kind": "DEAL",
+          "url": "https://www.ozbargain.com.au/node/984645"
         }
       ]
     }
